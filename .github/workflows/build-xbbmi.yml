@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 
 
-name: 'Build xPack GNU Arm Embedded GCC xbbmi'
+name: 'Build xPack GNU Aarch64 Embedded GCC xbbmi'
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ on:
 jobs:
 
   macos-x64:
-    name: 'macOS Intel - GNU Arm Embedded GCC ${{ github.event.inputs.version }} build'
+    name: 'macOS Intel - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} build'
     timeout-minutes: 2880 # 2 days
 
     runs-on: [self-hosted, macos, intel]
@@ -48,7 +48,7 @@ jobs:
           submodules: true
 
       - name: 'Clean working area'
-        run: rm -rf ~/Work/arm-none-eabi-gcc-${{ github.event.inputs.version }}*
+        run: rm -rf ~/Work/aarch64-none-elf-gcc-${{ github.event.inputs.version }}*
 
       - name: 'Build macOS x64 binary'
         timeout-minutes: 1440
@@ -59,7 +59,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: '~/Work/arm-none-eabi-gcc-${{ github.event.inputs.version }}/deploy/*'
+          artifacts: '~/Work/aarch64-none-elf-gcc-${{ github.event.inputs.version }}/deploy/*'
           bodyFile: '.github/workflows/body-github-pre-releases-test.md'
           commit: 'master'
           draft: false

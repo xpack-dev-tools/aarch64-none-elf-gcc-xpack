@@ -15,8 +15,6 @@
 
 function build_versions()
 {
-  APP_PREFIX_NANO="${INSTALL_FOLDER_PATH}/${APP_LC_NAME}-nano"
-
   # Don't use a comma since the regular expression
   # that processes this string in bfd/Makefile, silently fails and the
   # bfdver.h file remains empty.
@@ -74,7 +72,7 @@ function build_versions()
   # https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1
   if [[ "${RELEASE_VERSION}" =~ 11\.2\.1-* ]]
   then
-    # https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/manifest/gcc-arm-arm-none-eabi-abe-manifest.txt
+    # https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/manifest/gcc-arm-aarch64-none-elf-abe-manifest.txt
     (
       xbb_activate
 
@@ -198,7 +196,7 @@ function build_versions()
       # https://github.com/xpack-dev-tools/binutils-gdb/tags
 
       BINUTILS_VERSION="2.37"
-      BINUTILS_TAG_NAME="binutils-${BINUTILS_VERSION}-arm-none-eabi-${ARM_RELEASE}"
+      BINUTILS_TAG_NAME="binutils-${BINUTILS_VERSION}-aarch64-none-elf-${ARM_RELEASE}"
 
       BINUTILS_SRC_FOLDER_NAME="binutils-gdb-${BINUTILS_TAG_NAME}"
       BINUTILS_ARCHIVE_NAME="${BINUTILS_TAG_NAME}.tar.gz"
@@ -216,11 +214,10 @@ function build_versions()
 
       # GCC_VERSION computer from RELEASE_VERSION
       GCC_SRC_FOLDER_NAME="gcc"
-      GCC_ARCHIVE_NAME="gcc-arm-none-eabi-${ARM_RELEASE}.tar.xz"
+      GCC_ARCHIVE_NAME="gcc-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
       GCC_ARCHIVE_URL="${ARM_URL_BASE}/gcc.tar.xz"
 
       GCC_PATCH_FILE_NAME="gcc-${GCC_VERSION}.patch.diff"
-      GCC_MULTILIB_LIST="aprofile,rmprofile"
 
       if [ "${TARGET_PLATFORM}" != "win32" ]
       then
@@ -234,26 +231,19 @@ function build_versions()
 
         NEWLIB_VERSION="4.1.0"
         NEWLIB_SRC_FOLDER_NAME="newlib-cygwin"
-        NEWLIB_ARCHIVE_NAME="newlib-arm-none-eabi-${ARM_RELEASE}.tar.xz"
+        NEWLIB_ARCHIVE_NAME="newlib-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
         NEWLIB_ARCHIVE_URL="${ARM_URL_BASE}/newlib-cygwin.tar.xz"
 
         # Task [III-2] /$HOST_NATIVE/newlib/
-        build_newlib ""
+        build_cross_newlib ""
 
         # Task [III-4] /$HOST_NATIVE/gcc-final/
         build_cross_gcc_final ""
 
-        # Once again, for the -nano variant.
-        # Task [III-3] /$HOST_NATIVE/newlib-nano/
-        build_newlib "-nano"
-
-        # Task [III-5] /$HOST_NATIVE/gcc-size-libstdcxx/
-        build_cross_gcc_final "-nano"
-
       else
 
         # Task [IV-2] /$HOST_MINGW/copy_libs/
-        copy_linux_libs
+        copy_cross_linux_libs
 
         # Task [IV-3] /$HOST_MINGW/gcc-final/
         build_cross_gcc_final ""
@@ -267,12 +257,12 @@ function build_versions()
       # Branch: gdb-11-branch
       # Revision: a10d1f2c33a9a329f3a3006e07cfe872a7cc965b
 
-      # https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/gdb-11-arm-none-eabi-11.2-2022.02.tar.gz
+      # https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/gdb-11-aarch64-none-elf-11.2-2022.02.tar.gz
 
       # From `gdb/version.in`
       GDB_VERSION="11.2"
-      GDB_SRC_FOLDER_NAME="binutils-gdb-gdb-11-arm-none-eabi-${ARM_RELEASE}"
-      GDB_ARCHIVE_NAME="gdb-11-arm-none-eabi-${ARM_RELEASE}.tar.gz"
+      GDB_SRC_FOLDER_NAME="binutils-gdb-gdb-11-aarch64-none-elf-${ARM_RELEASE}"
+      GDB_ARCHIVE_NAME="gdb-11-aarch64-none-elf-${ARM_RELEASE}.tar.gz"
       GDB_ARCHIVE_URL="https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/${GDB_ARCHIVE_NAME}"
 
       # Task [III-6] /$HOST_NATIVE/gdb/

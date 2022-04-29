@@ -1,33 +1,32 @@
 ### Disclaimer
 
-The xPack GNU Arm Embedded GCC is only a binary distribution of
-the [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm),
+The xPack GNU Aarch64 Embedded GCC is only a binary distribution of
+the [GNU Aarch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain),
 and does not intend to add new functionality, or to fix existing problems.
 
 If you have questions/suggestions related to the procedure used to
 build/publish the binary distribution, continue reading the next sections.
 
 If you have problems related to Arm GCC functionality, please use the
-official [Launchpad tracker](https://bugs.launchpad.net/gcc-arm-embedded/).
+official [Linaro bugzilla](https://bugs.linaro.org/enter_bug.cgi?product=GNU%20Binary%20Toolchain/).
 
 ### Prerequisites
 
 Before entering a new ticket, please consider the following:
 
-- [ ] read the documentation pages carefully (`share/doc/pdf/gcc/gcc.pdf`)
-- [ ] check the [xPack Forums](https://www.tapatalk.com/groups/xpack/) for similar problems
-- [ ] check the [GitHub Issues](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/issues/)
+- [ ] read the documentation pages carefully
+- [ ] check the [GitHub Discussion](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/discussions/)
+- [ ] check the [GitHub Issues](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/)
 
 If you still could not find an answer, if you have interesting use
 cases, if you have custom configurations, and generally if you have
 any experience that you would like to share with others, use the
-[xPack Forums](https://www.tapatalk.com/groups/xpack/), the
-GNU Arm Embedded GCC section.
+[GitHub Discussion](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/discussions/).
 
 If you are convinced that you identified a bug related to the binary
-distribution, not to GNU Arm Embedded GCC itself (if you have doubts,
+distribution, not to GNU Aarch64 Embedded GCC itself (if you have doubts,
 use the forum), or you have a pertinent suggestion how to enhance the
-xPack GNU Arm Embedded GCC distribution, continue and register a new issue.
+xPack GNU Aarch64 Embedded GCC distribution, continue and register a new issue.
 
 ### Description
 
@@ -45,7 +44,7 @@ xPack GNU Arm Embedded GCC distribution, continue and register a new issue.
 
 ### Versions
 
-- [Arm GCC version]
+- [Aarch64 GCC version]
 - [operating system]
 
 Please understand that without being able to reproduce the bug we cannot

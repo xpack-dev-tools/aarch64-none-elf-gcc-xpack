@@ -1,7 +1,7 @@
 {
-  "name": "@xpack-dev-tools/arm-none-eabi-gcc",
+  "name": "@xpack-dev-tools/aarch64-none-elf-gcc",
   "version": "10.3.1-2.3.1",
-  "description": "A binary xPack with the GNU Arm Embedded GCC toolchain executables",
+  "description": "A binary xPack with the GNU Aarch64 Embedded GCC toolchain executables",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack.git/"
+    "url": "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/"
   },
   "bugs": {
-    "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/issues/"
+    "url": "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/"
   },
-  "homepage": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack#readme",
+  "homepage": "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack#readme",
   "keywords": [
     "xpack",
     "gcc",
@@ -38,70 +38,70 @@
     "minimumXpmRequired": "0.10.2",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v10.3.1-2.3",
+      "baseUrl": "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/download/v10.3.1-2.3",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-arm-none-eabi-gcc-10.3.1-2.3-darwin-arm64.tar.gz",
+          "fileName": "xpack-aarch64-none-elf-gcc-10.3.1-2.3-darwin-arm64.tar.gz",
           "sha256": "a207301fb6c136f661a09024eb49424adf74cbc952a4cff150dfc7927206ab1a"
         },
         "darwin-x64": {
-          "fileName": "xpack-arm-none-eabi-gcc-10.3.1-2.3-darwin-x64.tar.gz",
+          "fileName": "xpack-aarch64-none-elf-gcc-10.3.1-2.3-darwin-x64.tar.gz",
           "sha256": "eb9218eaafb74a05fab9cbbeb49fd4fe7b85c6ba411aefc66f681a5a862e8d8e"
         },
         "linux-arm64": {
-          "fileName": "xpack-arm-none-eabi-gcc-10.3.1-2.3-linux-arm64.tar.gz",
+          "fileName": "xpack-aarch64-none-elf-gcc-10.3.1-2.3-linux-arm64.tar.gz",
           "sha256": "6e3ee605079ba084836cd057022e16c28605f4068042cd14397976b836ea1a21"
         },
         "linux-arm": {
-          "fileName": "xpack-arm-none-eabi-gcc-10.3.1-2.3-linux-arm.tar.gz",
+          "fileName": "xpack-aarch64-none-elf-gcc-10.3.1-2.3-linux-arm.tar.gz",
           "sha256": "cf152bb008697143b802a85fffffc2c9b562bc1e6d0984ad02d4ee1f1bb91790"
         },
         "linux-x64": {
-          "fileName": "xpack-arm-none-eabi-gcc-10.3.1-2.3-linux-x64.tar.gz",
+          "fileName": "xpack-aarch64-none-elf-gcc-10.3.1-2.3-linux-x64.tar.gz",
           "sha256": "559dcf1c2dfddac513110fe23da0ef254032c09967eaa901f075515d51818719"
         },
         "win32-x64": {
-          "fileName": "xpack-arm-none-eabi-gcc-10.3.1-2.3-win32-x64.zip",
+          "fileName": "xpack-aarch64-none-elf-gcc-10.3.1-2.3-win32-x64.zip",
           "sha256": "169744f784fb04ae10c60bc6a2cd69cff93cff0bf5657e9333776036f347f9c4"
         }
       }
     },
     "bin": {
-      "arm-none-eabi-addr2line": "./.content/bin/arm-none-eabi-addr2line",
-      "arm-none-eabi-ar": "./.content/bin/arm-none-eabi-ar",
-      "arm-none-eabi-as": "./.content/bin/arm-none-eabi-as",
-      "arm-none-eabi-c++": "./.content/bin/arm-none-eabi-c++",
-      "arm-none-eabi-c++filt": "./.content/bin/arm-none-eabi-c++filt",
-      "arm-none-eabi-cpp": "./.content/bin/arm-none-eabi-cpp",
-      "arm-none-eabi-elfedit": "./.content/bin/arm-none-eabi-elfedit",
-      "arm-none-eabi-g++": "./.content/bin/arm-none-eabi-g++",
-      "arm-none-eabi-gcc": "./.content/bin/arm-none-eabi-gcc",
-      "arm-none-eabi-gcc-ar": "./.content/bin/arm-none-eabi-gcc-ar",
-      "arm-none-eabi-gcc-nm": "./.content/bin/arm-none-eabi-gcc-nm",
-      "arm-none-eabi-gcc-ranlib": "./.content/bin/arm-none-eabi-gcc-ranlib",
-      "arm-none-eabi-gcov": "./.content/bin/arm-none-eabi-gcov",
-      "arm-none-eabi-gcov-dump": "./.content/bin/arm-none-eabi-gcov-dump",
-      "arm-none-eabi-gcov-tool": "./.content/bin/arm-none-eabi-gcov-tool",
-      "arm-none-eabi-gdb": "./.content/bin/arm-none-eabi-gdb",
-      "arm-none-eabi-gdb-add-index": "./.content/bin/arm-none-eabi-gdb-add-index",
-      "arm-none-eabi-gdb-add-index-py3": "./.content/bin/arm-none-eabi-gdb-add-index-py3",
-      "arm-none-eabi-gdb-py3": "./.content/bin/arm-none-eabi-gdb-py3",
-      "arm-none-eabi-gprof": "./.content/bin/arm-none-eabi-gprof",
-      "arm-none-eabi-ld": "./.content/bin/arm-none-eabi-ld",
-      "arm-none-eabi-ld.bfd": "./.content/bin/arm-none-eabi-ld.bfd",
-      "arm-none-eabi-nm": "./.content/bin/arm-none-eabi-nm",
-      "arm-none-eabi-objcopy": "./.content/bin/arm-none-eabi-objcopy",
-      "arm-none-eabi-objdump": "./.content/bin/arm-none-eabi-objdump",
-      "arm-none-eabi-ranlib": "./.content/bin/arm-none-eabi-ranlib",
-      "arm-none-eabi-readelf": "./.content/bin/arm-none-eabi-readelf",
-      "arm-none-eabi-size": "./.content/bin/arm-none-eabi-size",
-      "arm-none-eabi-strings": "./.content/bin/arm-none-eabi-strings",
-      "arm-none-eabi-strip": "./.content/bin/arm-none-eabi-strip"
+      "aarch64-none-elf-addr2line": "./.content/bin/aarch64-none-elf-addr2line",
+      "aarch64-none-elf-ar": "./.content/bin/aarch64-none-elf-ar",
+      "aarch64-none-elf-as": "./.content/bin/aarch64-none-elf-as",
+      "aarch64-none-elf-c++": "./.content/bin/aarch64-none-elf-c++",
+      "aarch64-none-elf-c++filt": "./.content/bin/aarch64-none-elf-c++filt",
+      "aarch64-none-elf-cpp": "./.content/bin/aarch64-none-elf-cpp",
+      "aarch64-none-elf-elfedit": "./.content/bin/aarch64-none-elf-elfedit",
+      "aarch64-none-elf-g++": "./.content/bin/aarch64-none-elf-g++",
+      "aarch64-none-elf-gcc": "./.content/bin/aarch64-none-elf-gcc",
+      "aarch64-none-elf-gcc-ar": "./.content/bin/aarch64-none-elf-gcc-ar",
+      "aarch64-none-elf-gcc-nm": "./.content/bin/aarch64-none-elf-gcc-nm",
+      "aarch64-none-elf-gcc-ranlib": "./.content/bin/aarch64-none-elf-gcc-ranlib",
+      "aarch64-none-elf-gcov": "./.content/bin/aarch64-none-elf-gcov",
+      "aarch64-none-elf-gcov-dump": "./.content/bin/aarch64-none-elf-gcov-dump",
+      "aarch64-none-elf-gcov-tool": "./.content/bin/aarch64-none-elf-gcov-tool",
+      "aarch64-none-elf-gdb": "./.content/bin/aarch64-none-elf-gdb",
+      "aarch64-none-elf-gdb-add-index": "./.content/bin/aarch64-none-elf-gdb-add-index",
+      "aarch64-none-elf-gdb-add-index-py3": "./.content/bin/aarch64-none-elf-gdb-add-index-py3",
+      "aarch64-none-elf-gdb-py3": "./.content/bin/aarch64-none-elf-gdb-py3",
+      "aarch64-none-elf-gprof": "./.content/bin/aarch64-none-elf-gprof",
+      "aarch64-none-elf-ld": "./.content/bin/aarch64-none-elf-ld",
+      "aarch64-none-elf-ld.bfd": "./.content/bin/aarch64-none-elf-ld.bfd",
+      "aarch64-none-elf-nm": "./.content/bin/aarch64-none-elf-nm",
+      "aarch64-none-elf-objcopy": "./.content/bin/aarch64-none-elf-objcopy",
+      "aarch64-none-elf-objdump": "./.content/bin/aarch64-none-elf-objdump",
+      "aarch64-none-elf-ranlib": "./.content/bin/aarch64-none-elf-ranlib",
+      "aarch64-none-elf-readelf": "./.content/bin/aarch64-none-elf-readelf",
+      "aarch64-none-elf-size": "./.content/bin/aarch64-none-elf-size",
+      "aarch64-none-elf-strings": "./.content/bin/aarch64-none-elf-strings",
+      "aarch64-none-elf-strip": "./.content/bin/aarch64-none-elf-strip"
     },
     "properties": {
-      "appName": "GNU Arm Embedded GCC",
-      "appLCName": "arm-none-eabi-gcc",
+      "appName": "GNU Aarch64 Embedded GCC",
+      "appLCName": "aarch64-none-elf-gcc",
       "platforms": "all",
       "LIQUIDJS": "liquidjs '{ \"APP_NAME\": \"{{ properties.appName }}\", \"APP_LC_NAME\": \"{{ properties.appLCName }}\", \"platforms\": \"{{ properties.platforms }}\" }'"
     },

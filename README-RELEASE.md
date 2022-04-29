@@ -2,7 +2,7 @@
 
 ## Release schedule
 
-The xPack GNU Arm Embedded GCC release schedule generally follows the
+The xPack GNU Aarch64 Embedded GCC release schedule generally follows the
 [Arm GNU Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1/)
 release schedule, which is about two releases per year.
 
@@ -12,7 +12,7 @@ Before starting the build, perform some checks and tweaks.
 
 ### Check Git
 
-In the `xpack-dev-tools/arm-none-eabi-gcc-xpack` Git repo:
+In the `xpack-dev-tools/aarch64-none-elf-gcc-xpack` Git repo:
 
 - switch to the `xpack-develop` branch
 - if needed, merge the `xpack` branch
@@ -38,7 +38,7 @@ the package on the `npm` server.
 
 Check GitHub issues and pull requests:
 
-- <https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/issues/>
+- <https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/>
 
 and fix them; assign them to a milestone (like `11.2.1-1.1`).
 
@@ -92,29 +92,29 @@ Before the real build, run a test build on the development machine (`wks`)
 or the production machines (`xbbma`, `xbbmi`):
 
 ```sh
-sudo rm -rf ~/Work/arm-none-eabi-gcc-*-*
+sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
 
-caffeinate bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --macos --disable-multilib
+caffeinate bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --macos
 ```
 
 Similarly on the Intel Linux (`xbbli`):
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --linux64 --disable-multilib
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --linux64
 
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --win64 --disable-multilib
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --win64
 ```
 
 ... the Arm Linux 64-bit (`xbbla64`):
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --arm64 --disable-multilib
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --arm64
 ```
 
 ... and on the Arm Linux 32-bit (`xbbla32`):
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --arm32 --disable-multilib
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --arm32
 ```
 
 The builds may take up to 3.5h:
@@ -178,11 +178,11 @@ To trigger the GitHub Actions build, use the xPack actions:
 This is equivalent to:
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbli
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbla64
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbla32
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbmi
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbma
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbli
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbla64
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbla32
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbmi
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbma
 ```
 
 These scripts require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
@@ -194,7 +194,7 @@ The full builds take about 16 hours (about 6 hours without multi-libs)
 to complete.
 
 The workflows results and logs are available from the
-[Actions](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/actions/) page.
+[Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
 
 The resulting binaries are available for testing from
 [pre-releases/test](https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/).
@@ -214,9 +214,9 @@ To trigger the GitHub Actions tests, use the xPack actions:
 These are equivalent to:
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/tests/trigger-workflow-test-prime.sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/tests/trigger-workflow-test-docker-linux-intel.sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/tests/trigger-workflow-test-docker-linux-arm.sh
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/tests/trigger-workflow-test-prime.sh
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/tests/trigger-workflow-test-docker-linux-intel.sh
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/tests/trigger-workflow-test-docker-linux-arm.sh
 ```
 
 These scripts require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
@@ -227,7 +227,7 @@ These actions use the `xpack-develop` branch of this repo and the
 binaries.
 
 The tests results are available from the
-[Actions](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/actions/) page.
+[Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
 
 Since GitHub Actions provides a single version of macOS, the
 multi-version macOS tests run on Travis.
@@ -239,14 +239,14 @@ To trigger the Travis test, use the xPack action:
 This is equivalent to:
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/tests/trigger-travis-macos.sh
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/tests/trigger-travis-macos.sh
 ```
 
 This script requires the `TRAVIS_COM_TOKEN` variable to be present
 in the environment.
 
 The test results are available from
-[travis-ci.com](https://app.travis-ci.com/github/xpack-dev-tools/arm-none-eabi-gcc-xpack/builds/).
+[travis-ci.com](https://app.travis-ci.com/github/xpack-dev-tools/aarch64-none-elf-gcc-xpack/builds/).
 
 ### Manual tests
 
@@ -262,40 +262,19 @@ For this, on each platform (Mac, GNU/Linux 64/32, Windows 64/32):
   attribute of archive and possibly the expanded folder:
 
 ```sh
-xattr -dr com.apple.quarantine xpack-arm-none-eabi-gcc-*
+xattr -dr com.apple.quarantine xpack-aarch64-none-elf-gcc-*
 ```
 
 - clone this repo locally; on Windows use the Git console;
 
 ```sh
-rm -rf ${HOME}/Work/arm-none-eabi-gcc-xpack.git; \
+rm -rf ${HOME}/Work/aarch64-none-elf-gcc-xpack.git; \
 git clone \
   --branch xpack-develop \
-  https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack.git \
-  ${HOME}/Work/arm-none-eabi-gcc-xpack.git; \
-git -C ${HOME}/Work/arm-none-eabi-gcc-xpack.git submodule update --init --recursive
+  https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git \
+  ${HOME}/Work/aarch64-none-elf-gcc-xpack.git; \
+git -C ${HOME}/Work/aarch64-none-elf-gcc-xpack.git submodule update --init --recursive
 ```
-
-- in a separate workspace, Import → General → Existing Projects into Workspace
-  the Eclipse projects available in the
-  `tests/eclipse` folder of the build repo; more details in the
-  [README.md](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/blob/xpack/tests/eclipse/README.md)
-- define the **Workspace Arm Toolchain path** to use the `Downloads`
-  temporary location
-- to test the compiler: for all projects (start with `arm-f4b-fs-lib`)
-  - remove all build folders, or **Clean all**
-  - build all configs, with the hammer, not with **Build all**, to be sure
-    errors are not missed
-- to test the debugger: for all QEMU debug configurations (start with
-  `arm-f4b-fs-debug-lto-qemu`)
-  - start the QEMU debug session,
-  - single step a few lines (Step Over)
-  - start continuous run (Resume)
-  - halt (Suspend)
-  - start (Resume)
-  - stop (Terminate)
-  - (don't miss the LTO cases, since in the past they had problems)
-- to test the Python debugger, start it with `--version`
 
 ## Create a new GitHub pre-release draft
 
@@ -304,9 +283,9 @@ git -C ${HOME}/Work/arm-none-eabi-gcc-xpack.git submodule update --init --recurs
 - run the xPack action `trigger-workflow-publish-release`
 
 The result is a
-[draft pre-release](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/)
+[draft pre-release](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/)
 tagged like **v11.2.1-1.1** (mind the dash in the middle!) and
-named like **xPack GNU Arm Embedded GCC v11.2.1-1.1** (mind the dash),
+named like **xPack GNU Aarch64 Embedded GCC v11.2.1-1.1** (mind the dash),
 with all binaries attached.
 
 - edit the draft and attach it to the `xpack-develop` branch (important!)
@@ -320,22 +299,22 @@ on the Desktop.
 In the `xpack/web-jekyll` GitHub repo:
 
 - select the `develop` branch
-- copy the new file to `_posts/releases/arm-none-eabi-gcc`
+- copy the new file to `_posts/releases/aarch64-none-elf-gcc`
 
 If any, refer to closed
-[issues](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/issues/).
+[issues](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/).
 
 ## Update the preview Web
 
 - commit the `develop` branch of `xpack/web-jekyll` GitHub repo;
-  use a message like **xPack GNU Arm Embedded GCC v11.2.1-1.1 released**
+  use a message like **xPack GNU Aarch64 Embedded GCC v11.2.1-1.1 released**
 - push to GitHub
 - wait for the GitHub Pages build to complete
 - the preview web is <https://xpack.github.io/web-preview/news/>
 
 ## Create the pre-release
 
-- go to the GitHub [Releases](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/) page
+- go to the GitHub [Releases](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/) page
 - perform the final edits and check if everything is fine
 - temporarily fill in the _Continue Reading »_ with the URL of the
   web-preview release
@@ -383,7 +362,7 @@ watching this project.
 
 After a few moments the version will be visible at:
 
-- <https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc?activeTab=versions>
+- <https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc?activeTab=versions>
 
 ## Test if the binaries can be installed with xpm
 
@@ -391,7 +370,7 @@ Run the xPack action `trigger-workflow-test-xpm`, this
 will install the package via `xpm install` on all supported platforms.
 
 The tests results are available from the
-[Actions](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/actions/) page.
+[Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
 
 ## Update the repo
 
@@ -402,13 +381,13 @@ The tests results are available from the
 
 When the release is considered stable, promote it as `latest`:
 
-- `npm dist-tag ls @xpack-dev-tools/arm-none-eabi-gcc`
-- `npm dist-tag add @xpack-dev-tools/arm-none-eabi-gcc@11.2.1-1.1.1 latest`
-- `npm dist-tag ls @xpack-dev-tools/arm-none-eabi-gcc`
+- `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
+- `npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@11.2.1-1.1.1 latest`
+- `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
 
 In case the previous version is not functional and needs to be unpublished:
 
-- `npm unpublish @xpack-dev-tools/arm-none-eabi-gcc@11.2.1-1.1.X`
+- `npm unpublish @xpack-dev-tools/aarch64-none-elf-gcc@11.2.1-1.1.X`
 
 ## Update the Web
 
@@ -419,7 +398,7 @@ In case the previous version is not functional and needs to be unpublished:
 
 ## Create the final GitHub release
 
-- go to the GitHub [Releases](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/) page
+- go to the GitHub [Releases](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/) page
 - check the download counter, it should match the number of tests
 - add a link to the Web page `[Continue reading »]()`; use an same blog URL
 - remove the _tests only_ notice
@@ -430,9 +409,9 @@ In case the previous version is not functional and needs to be unpublished:
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@xpack_project` account
-- paste the release name like **xPack GNU Arm Embedded GCC v11.2.1-1.1 released**
+- paste the release name like **xPack GNU Aarch64 Embedded GCC v11.2.1-1.1 released**
 - paste the link to the Web page
-  [release](https://xpack.github.io/arm-none-eabi-gcc/releases/)
+  [release](https://xpack.github.io/aarch64-none-elf-gcc/releases/)
 - click the **Tweet** button
 
 ## Remove pre-release binaries
@@ -447,6 +426,6 @@ Add a new topic in the **Compilers and Libraries** forum of the
 
 - title: copy release title
 - content:
-  - The **xPack GNU Arm Embedded GCC** is an alternate binary distribution that complements the official GNU Arm Embedded Toolchain maintained by Arm.
+  - The **xPack GNU Aarch64 Embedded GCC** is an alternate binary distribution that complements the official GNU Aarch64 Embedded Toolchain maintained by Arm.
   - The latest release is [11.2.1-1.1]() following Arm release from October 21, 2021 (version 10.3-2021.10).
 - tags: xpack, gnu, gcc, arm, toolchain

@@ -1,10 +1,10 @@
-# How to build the xPack GNU Arm Embedded GCC binaries
+# How to build the xPack GNU Aarch64 Embedded GCC binaries
 
 ## Introduction
 
 This project also includes the scripts and additional files required to
 build and publish the
-[xPack GNU Arm Embedded GCC](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack) binaries.
+[xPack GNU Aarch64 Embedded GCC](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack) binaries.
 
 It follows the official
 [Arm](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
@@ -33,17 +33,12 @@ For native builds, see the `build-native.sh` script.
 
 ## Repositories
 
-- <https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack.git> -
+- <https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git> -
   the URL of the xPack build scripts repository
 - <https://github.com/xpack-dev-tools/build-helper> - the URL of the
   xPack build helper, used as the `scripts/helper` submodule
-- <https://github.com/xpack-dev-tools/arm-gcc-original-scripts.git> -
-  the URL of a local repository with the original Arm build scripts
 
-The build scripts use Arm archives; occasionally, to avoid bugs, original
-repositories are used:
-
-- `git://sourceware.org/git/binutils-gdb.git`
+The build scripts use the same source code as Arm.
 
 ### Branches
 
@@ -63,17 +58,17 @@ Note: Building the Arm binaries requires an Arm machine.
 ## Download the build scripts repo
 
 The build scripts are available in the `scripts` folder of the
-[`xpack-dev-tools/arm-none-eabi-gcc-xpack`](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack)
+[`xpack-dev-tools/aarch64-none-elf-gcc-xpack`](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack)
 Git repo.
 
 To download them, issue the following commands:
 
 ```sh
-rm -rf ${HOME}/Work/arm-none-eabi-gcc-xpack.git; \
+rm -rf ${HOME}/Work/aarch64-none-elf-gcc-xpack.git; \
 git clone \
-  https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack.git \
-  ${HOME}/Work/arm-none-eabi-gcc-xpack.git; \
-git -C ${HOME}/Work/arm-none-eabi-gcc-xpack.git submodule update --init --recursive
+  https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git \
+  ${HOME}/Work/aarch64-none-elf-gcc-xpack.git; \
+git -C ${HOME}/Work/aarch64-none-elf-gcc-xpack.git submodule update --init --recursive
 ```
 
 > Note: the repository uses submodules; for a successful build it is
@@ -83,17 +78,17 @@ For development purposes, clone the `xpack-develop`
 branch:
 
 ```sh
-rm -rf ${HOME}/Work/arm-none-eabi-gcc-xpack.git; \
+rm -rf ${HOME}/Work/aarch64-none-elf-gcc-xpack.git; \
 git clone \
   --branch xpack-develop \
-  https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack.git \
-  ${HOME}/Work/arm-none-eabi-gcc-xpack.git; \
-git -C ${HOME}/Work/arm-none-eabi-gcc-xpack.git submodule update --init --recursive
+  https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git \
+  ${HOME}/Work/aarch64-none-elf-gcc-xpack.git; \
+git -C ${HOME}/Work/aarch64-none-elf-gcc-xpack.git submodule update --init --recursive
 ```
 
 ## The `Work` folder
 
-The script creates a temporary build `Work/arm-none-eabi-gcc-${version}`
+The script creates a temporary build `Work/aarch64-none-elf-gcc-${version}`
 folder in the user home. Although not recommended, if for any reasons
 you need to change the location of the `Work` folder,
 you can redefine `WORK_FOLDER_PATH` variable before invoking the script.
@@ -132,7 +127,7 @@ functional changes.
 The actual changes for each version are documented in the corresponding
 release pages:
 
-- <https://xpack.github.io/arm-none-eabi-gcc/releases/>
+- <https://xpack.github.io/aarch64-none-elf-gcc/releases/>
 
 ## How to build local/native binaries
 
@@ -140,7 +135,7 @@ release pages:
 
 The details on how to prepare the development environment for native build
 are in the
-[`README-DEVELOP.md`](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/blob/xpack/README-DEVELOP.md) file.
+[`README-DEVELOP.md`](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/README-DEVELOP.md) file.
 
 ## How to build distributions
 
@@ -169,7 +164,7 @@ Before running a build for the first time, it is recommended to preload the
 docker images.
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh preload-images
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh preload-images
 ```
 
 The result should look similar to:
@@ -203,15 +198,15 @@ network connection or a computer entering sleep.
 ```sh
 screen -S arm
 
-sudo rm -rf ~/Work/arm-none-eabi-gcc-*-*
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --disable-multilib --all
+sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --disable-multilib --all
 ```
 
 or, for development builds:
 
 ```sh
-sudo rm -rf ~/Work/arm-none-eabi-gcc-*-*
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --without-pdf --disable-tests --disable-multilib --linux64 --win64
+sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --without-pdf --disable-tests --disable-multilib --linux64 --win64
 ```
 
 When ready, run the build on the production machine (`xbbli`):
@@ -223,12 +218,12 @@ About 5 hours later, the output of the build script is a set of 4 files and
 their SHA signatures, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/arm-none-eabi-gcc-*/deploy
+$ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 682464
--rw-rw-r-- 1 ilg ilg 169389142 Oct 22 22:17 xpack-arm-none-eabi-gcc-11.2.1-1.1-linux-x64.tar.gz
--rw-rw-r-- 1 ilg ilg       117 Oct 22 22:17 xpack-arm-none-eabi-gcc-11.2.1-1.1-linux-x64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 184570818 Oct 22 23:04 xpack-arm-none-eabi-gcc-11.2.1-1.1-win32-x64.zip
--rw-rw-r-- 1 ilg ilg       114 Oct 22 23:04 xpack-arm-none-eabi-gcc-11.2.1-1.1-win32-x64.zip.sha
+-rw-rw-r-- 1 ilg ilg 169389142 Oct 22 22:17 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-x64.tar.gz
+-rw-rw-r-- 1 ilg ilg       117 Oct 22 22:17 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-x64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 184570818 Oct 22 23:04 xpack-aarch64-none-elf-gcc-11.2.1-1.1-win32-x64.zip
+-rw-rw-r-- 1 ilg ilg       114 Oct 22 23:04 xpack-aarch64-none-elf-gcc-11.2.1-1.1-win32-x64.zip.sha
 ```
 
 ### Build the Arm GNU/Linux binaries
@@ -257,7 +252,7 @@ Before running a build for the first time, it is recommended to preload the
 docker images.
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh preload-images
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh preload-images
 ```
 
 The result should look similar to:
@@ -276,8 +271,8 @@ network connection or a computer entering sleep.
 ```sh
 screen -S arm
 
-sudo rm -rf ~/Work/arm-none-eabi-gcc-*-*
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --disable-multilib --all
+sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --disable-multilib --all
 ```
 
 or, for development builds:
@@ -285,8 +280,8 @@ or, for development builds:
 ```sh
 screen -S arm
 
-sudo rm -rf ~/Work/arm-none-eabi-gcc-*-*
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --without-pdf --disable-tests --disable-multilib --arm32 --arm64
+sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --without-pdf --disable-tests --disable-multilib --arm32 --arm64
 ```
 
 To detach from the session, use `Ctrl-a` `Ctrl-d`; to reattach use
@@ -296,12 +291,12 @@ About 13-14 hours later, the output of the build script is a set of 2
 archives and their SHA signatures, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/arm-none-eabi-gcc-*/deploy
+$ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 325316
--rw-rw-r-- 1 ilg ilg 168517506 Oct 23 01:08 xpack-arm-none-eabi-gcc-11.2.1-1.1-linux-arm64.tar.gz
--rw-rw-r-- 1 ilg ilg       119 Oct 23 01:08 xpack-arm-none-eabi-gcc-11.2.1-1.1-linux-arm64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 164591258 Oct 23 08:19 xpack-arm-none-eabi-gcc-11.2.1-1.1-linux-arm.tar.gz
--rw-rw-r-- 1 ilg ilg       117 Oct 23 08:19 xpack-arm-none-eabi-gcc-11.2.1-1.1-linux-arm.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 168517506 Oct 23 01:08 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm64.tar.gz
+-rw-rw-r-- 1 ilg ilg       119 Oct 23 01:08 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 164591258 Oct 23 08:19 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm.tar.gz
+-rw-rw-r-- 1 ilg ilg       117 Oct 23 08:19 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm.tar.gz.sha
 ```
 
 ### Build the macOS binaries
@@ -324,15 +319,15 @@ To build the latest macOS version:
 ```sh
 screen -S arm
 
-sudo rm -rf ~/Work/arm-none-eabi-gcc-*-*
-caffeinate bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop  --disable-multilib --macos
+sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
+caffeinate bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop  --disable-multilib --macos
 ```
 
 or, for development builds:
 
 ```sh
-sudo rm -rf ~/Work/arm-none-eabi-gcc-*-*
-caffeinate bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh --develop --without-pdf --disable-tests --disable-multilib --macos
+sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
+caffeinate bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --without-pdf --disable-tests --disable-multilib --macos
 ```
 
 To detach from the session, use `Ctrl-a` `Ctrl-d`; to reattach use
@@ -342,10 +337,10 @@ In about 4 hours, the output of the build script is a compressed archive
 and its SHA signature, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/arm-none-eabi-gcc-*/deploy
+$ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 321872
--rw-r--r--  1 ilg  staff  164794316 Oct 23 00:27 xpack-arm-none-eabi-gcc-11.2.1-1.1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff        118 Oct 23 00:27 xpack-arm-none-eabi-gcc-11.2.1-1.1-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  164794316 Oct 23 00:27 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff        118 Oct 23 00:27 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-x64.tar.gz.sha
 ```
 
 ## Subsequent runs
@@ -373,13 +368,13 @@ should be run after or together with `--linux64`.
 To remove most build files, use:
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh clean
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh clean
 ```
 
 To also remove the repository and the output files, use:
 
 ```sh
-bash ${HOME}/Work/arm-none-eabi-gcc-xpack.git/scripts/helper/build.sh cleanall
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh cleanall
 ```
 
 For production builds it is recommended to completely remove the build folder.
@@ -429,8 +424,8 @@ program from there. For example on macOS the output should
 look like:
 
 ```console
-$ .../xpack-arm-none-eabi-gcc/bin/arm-none-eabi-gcc --version
-arm-none-eabi-gcc (xPack GNU Arm Embedded GCC x86_64) 11.2.1 20201103 (release)
+$ .../xpack-aarch64-none-elf-gcc/bin/aarch64-none-elf-gcc --version
+aarch64-none-elf-gcc (xPack GNU Aarch64 Embedded GCC x86_64) 11.2.1 20201103 (release)
 Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -442,47 +437,47 @@ After install, the package should create a structure like this (only the
 first two depth levels are shown):
 
 ```console
-$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/arm-none-eabi-gcc/11.2.1-1.1/.content/
-/Users/ilg/Library/xPacks/\@xpack-dev-tools/arm-none-eabi-gcc/11.2.1-1.1/.content/
+$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.2.1-1.1/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.2.1-1.1/.content/
 ├── README.md
-├── arm-none-eabi
+├── aarch64-none-elf
 │   ├── bin
 │   ├── include
 │   ├── lib
 │   └── share
 ├── bin
-│   ├── arm-none-eabi-addr2line
-│   ├── arm-none-eabi-ar
-│   ├── arm-none-eabi-as
-│   ├── arm-none-eabi-c++
-│   ├── arm-none-eabi-c++filt
-│   ├── arm-none-eabi-cpp
-│   ├── arm-none-eabi-elfedit
-│   ├── arm-none-eabi-g++
-│   ├── arm-none-eabi-gcc
-│   ├── arm-none-eabi-gcc-11.2.1
-│   ├── arm-none-eabi-gcc-ar
-│   ├── arm-none-eabi-gcc-nm
-│   ├── arm-none-eabi-gcc-ranlib
-│   ├── arm-none-eabi-gcov
-│   ├── arm-none-eabi-gcov-dump
-│   ├── arm-none-eabi-gcov-tool
-│   ├── arm-none-eabi-gdb
-│   ├── arm-none-eabi-gdb-add-index
-│   ├── arm-none-eabi-gdb-add-index-py3
-│   ├── arm-none-eabi-gdb-py3
-│   ├── arm-none-eabi-gprof
-│   ├── arm-none-eabi-ld
-│   ├── arm-none-eabi-ld.bfd
-│   ├── arm-none-eabi-lto-dump
-│   ├── arm-none-eabi-nm
-│   ├── arm-none-eabi-objcopy
-│   ├── arm-none-eabi-objdump
-│   ├── arm-none-eabi-ranlib
-│   ├── arm-none-eabi-readelf
-│   ├── arm-none-eabi-size
-│   ├── arm-none-eabi-strings
-│   └── arm-none-eabi-strip
+│   ├── aarch64-none-elf-addr2line
+│   ├── aarch64-none-elf-ar
+│   ├── aarch64-none-elf-as
+│   ├── aarch64-none-elf-c++
+│   ├── aarch64-none-elf-c++filt
+│   ├── aarch64-none-elf-cpp
+│   ├── aarch64-none-elf-elfedit
+│   ├── aarch64-none-elf-g++
+│   ├── aarch64-none-elf-gcc
+│   ├── aarch64-none-elf-gcc-11.2.1
+│   ├── aarch64-none-elf-gcc-ar
+│   ├── aarch64-none-elf-gcc-nm
+│   ├── aarch64-none-elf-gcc-ranlib
+│   ├── aarch64-none-elf-gcov
+│   ├── aarch64-none-elf-gcov-dump
+│   ├── aarch64-none-elf-gcov-tool
+│   ├── aarch64-none-elf-gdb
+│   ├── aarch64-none-elf-gdb-add-index
+│   ├── aarch64-none-elf-gdb-add-index-py3
+│   ├── aarch64-none-elf-gdb-py3
+│   ├── aarch64-none-elf-gprof
+│   ├── aarch64-none-elf-ld
+│   ├── aarch64-none-elf-ld.bfd
+│   ├── aarch64-none-elf-lto-dump
+│   ├── aarch64-none-elf-nm
+│   ├── aarch64-none-elf-objcopy
+│   ├── aarch64-none-elf-objdump
+│   ├── aarch64-none-elf-ranlib
+│   ├── aarch64-none-elf-readelf
+│   ├── aarch64-none-elf-size
+│   ├── aarch64-none-elf-strings
+│   └── aarch64-none-elf-strip
 ├── distro-info
 │   ├── CHANGELOG.md
 │   ├── arm-readme.txt
@@ -523,7 +518,7 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/arm-none-eabi-gcc/11.2.1
 │   └── libz.1.dylib -> libz.1.2.8.dylib
 └── share
     ├── doc
-    └── gcc-arm-none-eabi
+    └── gcc-aarch64-none-elf
 
 21 directories, 59 files
 ```

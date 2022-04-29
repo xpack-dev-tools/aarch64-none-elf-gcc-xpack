@@ -1,13 +1,13 @@
 # -----------------------------------------------------------------------------
 # This file is part of the xPacks distribution.
 #   (https://xpack.github.io)
-# Copyright (c) 2019 Liviu Ionescu.
+# Copyright (c) 2022 Liviu Ionescu.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 # -----------------------------------------------------------------------------
 
-# Helper script used in the second edition of the build scripts.
+# Helper script used in the xPack Dev Tools build scripts.
 # As the name implies, it should contain only definitions and should
 # be included with 'source' by the host and container scripts.
 
@@ -16,10 +16,10 @@
 # -----------------------------------------------------------------------------
 
 # Used to display the application name.
-APP_NAME=${APP_NAME:-"GNU Arm Embedded GCC"}
+APP_NAME=${APP_NAME:-"GNU Aarch64 Embedded GCC"}
 
 # Used as part of file/folder paths.
-APP_LC_NAME=${APP_LC_NAME:-"arm-none-eabi-gcc"}
+APP_LC_NAME=${APP_LC_NAME:-"aarch64-none-elf-gcc"}
 
 DISTRO_NAME=${DISTRO_NAME:-"xPack"}
 DISTRO_LC_NAME=${DISTRO_LC_NAME:-"xpack"}
@@ -29,7 +29,7 @@ APP_DESCRIPTION="${DISTRO_NAME} ${APP_NAME}"
 
 # -----------------------------------------------------------------------------
 
-GCC_TARGET=${GCC_TARGET:-"arm-none-eabi"}
+GCC_TARGET=${GCC_TARGET:-"aarch64-none-elf"}
 
 # -----------------------------------------------------------------------------
 
