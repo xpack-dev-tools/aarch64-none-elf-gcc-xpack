@@ -119,11 +119,11 @@ bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --devel
 
 The builds may take up to 3.5h:
 
-- `xbbmi`: 120 min
-- `xbbma`: 34 min
-- `xbbli`: 40 min, 143 min with multilib:
-- `xbbla64`: 199 min
-- `xbbla32`: 203 min
+- `xbbmi`: 108 min
+- `xbbma`: 31 min
+- `xbbli`: 33 min Linux, 17 min Windows
+- `xbbla64`: 163 min
+- `xbbla32`: 175 min
 
 Work on the scripts until all platforms pass the build.
 
