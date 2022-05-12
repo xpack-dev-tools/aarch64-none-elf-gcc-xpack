@@ -25,6 +25,9 @@ Download the new _Source code_ archive (like
 `gcc-arm-src-snapshot-11.2-2022.02.tar.xz` from
 [Arm](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1)
 
+Download the latest Darwin archive
+and copy the `manifest.txt` tile to extras.
+
 ### Increase the version
 
 From `gcc/BASE-VER`, determine the GCC version (like `11.2.1`)
@@ -74,11 +77,7 @@ recreate the archives with the correct file.
 - add a new `if` with the new version before the existing code
 
 To find the actual versions of the dependent libraries, check the
-snapshot archive provided by arm.
-
-### update binutils
-
-...
+snapshot archive provided by Arm.
 
 ### Update helper
 
@@ -88,7 +87,7 @@ With a git client, go to the helper repo and update to the latest master commit.
 
 ### Development run the build scripts
 
-Before the real build, run a test build on the development machine (`wks`)
+Before the real build, run a test build on the development machine (`wksi`)
 or the production machines (`xbbma`, `xbbmi`):
 
 ```sh
@@ -149,12 +148,12 @@ and, when ready, rerun the full build.
 Run the `generate-workflows` to re-generate the
 GitHub workflow files; commit and push if necessary.
 
-- on the macOS machine (`xbbmi`) open ssh sessions to the Linux
-machines (`xbbli`, `xbbla64` and `xbbla32`):
+- on the macOS machine (`xbbmi`) open ssh sessions to the build
+machines (`xbbma`, `xbbli`, `xbbla64` and `xbbla32`):
 
 ```sh
+caffeinate ssh xbbma
 caffeinate ssh xbbli
-
 caffeinate ssh xbbla64
 caffeinate ssh xbbla32
 ```
