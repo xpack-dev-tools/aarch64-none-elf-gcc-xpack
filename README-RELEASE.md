@@ -158,10 +158,10 @@ caffeinate ssh xbbla64
 caffeinate ssh xbbla32
 ```
 
-Start the runner on all three machines:
+Start the runner on all machines:
 
 ```sh
-~/actions-runner/run.sh
+~/actions-runners/xpack-dev-tools/run.sh &
 ```
 
 Check that both the project Git and the submodule are pushed to GitHub.
@@ -185,12 +185,21 @@ bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/trigger-workflow
 ```
 
 These scripts require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
-in the environment.
+in the environment, and the organization `PUBLISH_TOKEN` to be visible in the
+Settings → Action →
+[Secrets](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/settings/secrets/actions)
+page.
 
 These commands use the `xpack-develop` branch of this repo.
 
 The full builds take about 16 hours (about 6 hours without multi-libs)
 to complete.
+
+- `xbbmi`: ?
+- `xbbma`: ?
+- `xbbli`: ? (including Windows)
+- `xbbla64`: ?
+- `xbbla32`: ?
 
 The workflows results and logs are available from the
 [Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
@@ -203,6 +212,20 @@ The resulting binaries are available for testing from
 ### CI tests
 
 The automation is provided by GitHub Actions.
+
+On the macOS machine (`xbbmi`) open a ssh sessions to the Arm/Linux
+test machine `xbbla`:
+
+```sh
+caffeinate ssh xbbla
+```
+
+Start both runners (to allow the 32/64-bit tests to run in parallel):
+
+```sh
+~/actions-runners/xpack-dev-tools/1/run.sh &
+~/actions-runners/xpack-dev-tools/2/run.sh &
+```
 
 To trigger the GitHub Actions tests, use the xPack actions:
 
@@ -328,7 +351,14 @@ watching this project.
 
 - check and possibly update the `ls -l` output
 - check and possibly update the output of the `--version` runs
+watching this project.
 - commit changes
+
+## Check the list of links
+
+- open the `package.json` file
+- check if the links in the `bin` property cover the actual binaries
+- if necessary, also check on Windows
 
 ## Update package.json binaries
 
