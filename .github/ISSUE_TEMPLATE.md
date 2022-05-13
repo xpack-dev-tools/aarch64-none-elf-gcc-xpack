@@ -1,7 +1,7 @@
 ### Disclaimer
 
-The xPack GNU Aarch64 Embedded GCC is only a binary distribution of
-the [GNU Aarch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain),
+The xPack GNU AArch64 Embedded GCC is only a binary distribution of
+the [GNU AArch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain),
 and does not intend to add new functionality, or to fix existing problems.
 
 If you have questions/suggestions related to the procedure used to
@@ -24,9 +24,9 @@ any experience that you would like to share with others, use the
 [GitHub Discussion](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/discussions/).
 
 If you are convinced that you identified a bug related to the binary
-distribution, not to GNU Aarch64 Embedded GCC itself (if you have doubts,
+distribution, not to GNU AArch64 Embedded GCC itself (if you have doubts,
 use the forum), or you have a pertinent suggestion how to enhance the
-xPack GNU Aarch64 Embedded GCC distribution, continue and register a new issue.
+xPack GNU AArch64 Embedded GCC distribution, continue and register a new issue.
 
 ### Description
 
@@ -44,7 +44,7 @@ xPack GNU Aarch64 Embedded GCC distribution, continue and register a new issue.
 
 ### Versions
 
-- [Aarch64 GCC version]
+- [AArch64 GCC version]
 - [operating system]
 
 Please understand that without being able to reproduce the bug we cannot

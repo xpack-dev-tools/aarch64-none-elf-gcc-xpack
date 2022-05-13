@@ -1,7 +1,7 @@
-# xPack GNU Aarch64 Embedded GCC
+# xPack GNU AArch64 Embedded GCC
 
-The **xPack GNU Aarch64 Embedded GCC**
-is the **xPack** version of the **GNU Aarch64 Toolchain**
+The **xPack GNU AArch64 Embedded GCC**
+is the **xPack** version of the **GNU AArch64 Toolchain**
 maintained by Arm.
 
 For more details, please read the corresponding release pages:

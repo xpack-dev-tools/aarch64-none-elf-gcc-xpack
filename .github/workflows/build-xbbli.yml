@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 
 
-name: 'Build xPack GNU Aarch64 Embedded GCC xbbli'
+name: 'Build xPack GNU AArch64 Embedded GCC xbbli'
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ on:
 jobs:
 
   linux-x64:
-    name: 'Linux Intel - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} build'
+    name: 'Linux Intel - GNU AArch64 Embedded GCC ${{ github.event.inputs.version }} build'
     timeout-minutes: 5760 # 4 days
     runs-on: [self-hosted, linux, x64]
     steps:

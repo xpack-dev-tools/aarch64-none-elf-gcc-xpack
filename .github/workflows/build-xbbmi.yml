@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 
 
-name: 'Build xPack GNU Aarch64 Embedded GCC xbbmi'
+name: 'Build xPack GNU AArch64 Embedded GCC xbbmi'
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ on:
 jobs:
 
   macos-x64:
-    name: 'macOS Intel - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} build'
+    name: 'macOS Intel - GNU AArch64 Embedded GCC ${{ github.event.inputs.version }} build'
     timeout-minutes: 2880 # 2 days
 
     runs-on: [self-hosted, macos, intel]

@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 
 
-name: 'Publish the xPack GNU Aarch64 Embedded GCC release'
+name: 'Publish the xPack GNU AArch64 Embedded GCC release'
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ on:
 jobs:
 
   linux-x64:
-    name: 'Linux Intel - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
+    name: 'Linux Intel - GNU AArch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
     runs-on: [self-hosted, linux, x64]
     steps:
       - name: 'Machine'
@@ -56,7 +56,7 @@ jobs:
           bodyFile: '.github/workflows/body-github-release.md'
           commit: 'xpack-develop'
           draft: true
-          name: 'xPack GNU Aarch64 Embedded GCC v${{ github.event.inputs.version }}'
+          name: 'xPack GNU AArch64 Embedded GCC v${{ github.event.inputs.version }}'
           omitBodyDuringUpdate: true
           omitDraftDuringUpdate: true
           omitNameDuringUpdate: true
@@ -72,7 +72,7 @@ jobs:
 
 
   linux-arm:
-    name: 'Linux Arm 32 - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
+    name: 'Linux Arm 32 - GNU AArch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
     runs-on: [self-hosted, linux, arm, xbbla32]
     steps:
       - name: 'Machine'
@@ -96,7 +96,7 @@ jobs:
           bodyFile: '.github/workflows/body-github-release.md'
           commit: 'xpack-develop'
           draft: true
-          name: 'xPack GNU Aarch64 Embedded GCC v${{ github.event.inputs.version }}'
+          name: 'xPack GNU AArch64 Embedded GCC v${{ github.event.inputs.version }}'
           omitBodyDuringUpdate: true
           omitDraftDuringUpdate: true
           omitNameDuringUpdate: true
@@ -112,7 +112,7 @@ jobs:
 
 
   linux-arm64:
-    name: 'Linux Arm 64 - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
+    name: 'Linux Arm 64 - GNU AArch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
     runs-on: [self-hosted, linux, arm64, xbbla64]
     steps:
       - name: 'Machine'
@@ -136,7 +136,7 @@ jobs:
           bodyFile: '.github/workflows/body-github-release.md'
           commit: 'xpack-develop'
           draft: true
-          name: 'xPack GNU Aarch64 Embedded GCC v${{ github.event.inputs.version }}'
+          name: 'xPack GNU AArch64 Embedded GCC v${{ github.event.inputs.version }}'
           omitBodyDuringUpdate: true
           omitDraftDuringUpdate: true
           omitNameDuringUpdate: true
@@ -152,7 +152,7 @@ jobs:
 
 
   macos-x64:
-    name: 'macOS Intel - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
+    name: 'macOS Intel - GNU AArch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
 
     runs-on: [self-hosted, macos, intel]
 
@@ -178,7 +178,7 @@ jobs:
           bodyFile: '.github/workflows/body-github-release.md'
           commit: 'xpack-develop'
           draft: true
-          name: 'xPack GNU Aarch64 Embedded GCC v${{ github.event.inputs.version }}'
+          name: 'xPack GNU AArch64 Embedded GCC v${{ github.event.inputs.version }}'
           omitBodyDuringUpdate: true
           omitDraftDuringUpdate: true
           omitNameDuringUpdate: true
@@ -194,7 +194,7 @@ jobs:
 
 
   macos-arm64:
-    name: 'macOS Arm - GNU Aarch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
+    name: 'macOS Arm - GNU AArch64 Embedded GCC ${{ github.event.inputs.version }} publish release'
 
     runs-on: [self-hosted, macos, apple]
 
@@ -225,7 +225,7 @@ jobs:
           bodyFile: '.github/workflows/body-github-release.md'
           commit: 'xpack-develop'
           draft: true
-          name: 'xPack GNU Aarch64 Embedded GCC v${{ github.event.inputs.version }}'
+          name: 'xPack GNU AArch64 Embedded GCC v${{ github.event.inputs.version }}'
           omitBodyDuringUpdate: true
           omitDraftDuringUpdate: true
           omitNameDuringUpdate: true

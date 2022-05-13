@@ -1,10 +1,10 @@
-# How to build the xPack GNU Aarch64 Embedded GCC binaries
+# How to build the xPack GNU AArch64 Embedded GCC binaries
 
 ## Introduction
 
 This project also includes the scripts and additional files required to
 build and publish the
-[xPack GNU Aarch64 Embedded GCC](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack) binaries.
+[xPack GNU AArch64 Embedded GCC](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack) binaries.
 
 It follows the official
 [Arm](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain)
@@ -425,7 +425,7 @@ look like:
 
 ```console
 $ .../Downloads/xpack-aarch64-none-elf-gcc-11.2.1-1.1/bin/aarch64-none-elf-gcc --version
-aarch64-none-elf-gcc (xPack GNU Aarch64 Embedded GCC x86_64) 11.2.1 20220111
+aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 11.2.1 20220111
 Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

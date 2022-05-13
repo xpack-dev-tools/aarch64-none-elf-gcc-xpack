@@ -1,9 +1,9 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/xpack-dev-tools/aarch64-none-elf-gcc-xpack)](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases)
 [![npm (scoped)](https://img.shields.io/npm/v/@xpack-dev-tools/aarch64-none-elf-gcc.svg)](https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc)
 
-# The xPack GNU Aarch64 Embedded GCC
+# The xPack GNU AArch64 Embedded GCC
 
-A standalone cross-platform (Windows/macOS/Linux) **GNU Aarch64 Embedded GCC**
+A standalone cross-platform (Windows/macOS/Linux) **GNU AArch64 Embedded GCC**
 binary distribution, intended for reproducible builds.
 
 In addition to the the binary archives and the package meta data,
@@ -14,7 +14,7 @@ this project also includes the build scripts.
 This open source project is hosted on GitHub as
 [`xpack-dev-tools/aarch64-none-elf-gcc-xpack`](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack)
 and provides the platform specific binaries for the
-[xPack GNU Aarch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/).
+[xPack GNU AArch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/).
 
 The binaries can be installed automatically as **binary xPacks** or manually as
 **portable archives**.
@@ -28,12 +28,12 @@ distribution, by Arm.
 ## User info
 
 This section is intended as a shortcut for those who plan
-to use the GNU Aarch64 Embedded GCC binaries. For full details please read the
-[xPack GNU Aarch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/) pages.
+to use the GNU AArch64 Embedded GCC binaries. For full details please read the
+[xPack GNU AArch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/) pages.
 
 ### Easy install
 
-The easiest way to install GNU Aarch64 Embedded GCC is using the **binary xPack**, available as
+The easiest way to install GNU AArch64 Embedded GCC is using the **binary xPack**, available as
 [`@xpack-dev-tools/aarch64-none-elf-gcc`](https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc)
 from the [`npmjs.com`](https://www.npmjs.com) registry.
 
@@ -76,7 +76,7 @@ This location is configurable via the environment variable
 [xpm folders](https://xpack.github.io/xpm/folders/) page.
 
 For xPacks aware tools,
-it is also possible to install GNU Aarch64 Embedded GCC globally,
+it is also possible to install GNU AArch64 Embedded GCC globally,
 in the user home folder:
 
 ```sh
@@ -101,7 +101,7 @@ xpm uninstall --global @xpack-dev-tools/aarch64-none-elf-gcc
 
 ### Manual install
 
-For all platforms, the **xPack GNU Aarch64 Embedded GCC**
+For all platforms, the **xPack GNU AArch64 Embedded GCC**
 binaries are released as portable
 archives that can be installed in any location.
 

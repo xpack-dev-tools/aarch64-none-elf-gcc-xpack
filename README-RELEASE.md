@@ -2,7 +2,7 @@
 
 ## Release schedule
 
-The xPack GNU Aarch64 Embedded GCC release schedule generally follows the
+The xPack GNU AArch64 Embedded GCC release schedule generally follows the
 [Arm GNU Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1/)
 release schedule, which is about two releases per year.
 
@@ -284,7 +284,7 @@ git -C ${HOME}/Work/aarch64-none-elf-gcc-xpack.git submodule update --init --rec
 The result is a
 [draft pre-release](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/)
 tagged like **v11.2.1-1.1** (mind the dash in the middle!) and
-named like **xPack GNU Aarch64 Embedded GCC v11.2.1-1.1** (mind the dash),
+named like **xPack GNU AArch64 Embedded GCC v11.2.1-1.1** (mind the dash),
 with all binaries attached.
 
 - edit the draft and attach it to the `xpack-develop` branch (important!)
@@ -306,7 +306,7 @@ If any, refer to closed
 ## Update the preview Web
 
 - commit the `develop` branch of `xpack/web-jekyll` GitHub repo;
-  use a message like **xPack GNU Aarch64 Embedded GCC v11.2.1-1.1 released**
+  use a message like **xPack GNU AArch64 Embedded GCC v11.2.1-1.1 released**
 - push to GitHub
 - wait for the GitHub Pages build to complete
 - the preview web is <https://xpack.github.io/web-preview/news/>
@@ -408,7 +408,7 @@ In case the previous version is not functional and needs to be unpublished:
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@xpack_project` account
-- paste the release name like **xPack GNU Aarch64 Embedded GCC v11.2.1-1.1 released**
+- paste the release name like **xPack GNU AArch64 Embedded GCC v11.2.1-1.1 released**
 - paste the link to the Web page
   [release](https://xpack.github.io/aarch64-none-elf-gcc/releases/)
 - click the **Tweet** button
@@ -425,6 +425,6 @@ Add a new topic in the **Compilers and Libraries** forum of the
 
 - title: copy release title
 - content:
-  - The **xPack GNU Aarch64 Embedded GCC** is an alternate binary distribution that complements the official GNU Aarch64 Embedded Toolchain maintained by Arm.
+  - The **xPack GNU AArch64 Embedded GCC** is an alternate binary distribution that complements the official GNU AArch64 Embedded Toolchain maintained by Arm.
   - The latest release is [11.2.1-1.1]() following Arm release from October 21, 2021 (version 10.3-2021.10).
 - tags: xpack, gnu, gcc, arm, toolchain

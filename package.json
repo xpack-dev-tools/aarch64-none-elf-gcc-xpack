@@ -1,7 +1,7 @@
 {
   "name": "@xpack-dev-tools/aarch64-none-elf-gcc",
   "version": "10.3.1-2.3.1",
-  "description": "A binary xPack with the GNU Aarch64 Embedded GCC toolchain executables",
+  "description": "A binary xPack with the GNU AArch64 Embedded GCC toolchain executables",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
@@ -100,7 +100,7 @@
       "aarch64-none-elf-strip": "./.content/bin/aarch64-none-elf-strip"
     },
     "properties": {
-      "appName": "GNU Aarch64 Embedded GCC",
+      "appName": "GNU AArch64 Embedded GCC",
       "appLCName": "aarch64-none-elf-gcc",
       "platforms": "all",
       "LIQUIDJS": "liquidjs '{ \"APP_NAME\": \"{{ properties.appName }}\", \"APP_LC_NAME\": \"{{ properties.appLCName }}\", \"platforms\": \"{{ properties.platforms }}\" }'"

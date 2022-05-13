@@ -1,5 +1,5 @@
 ---
-title:  xPack Aarch64 Embedded GCC v{{ RELEASE_VERSION }} released
+title:  xPack AArch64 Embedded GCC v{{ RELEASE_VERSION }} released
 
 TODO: select one summary
 
@@ -31,9 +31,9 @@ tags:
 
 ---
 
-[The xPack Aarch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/)
+[The xPack AArch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/)
 is a standalone cross-platform binary distribution of
-[GNU Aarch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain).
+[GNU AArch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain).
 
 There are separate binaries for **Windows** (Intel 64-bit),
 **macOS** (Intel 64-bit, Apple Silicon 64-bit)
@@ -63,7 +63,7 @@ The binary files are available from GitHub [Releases]({% raw %}{{ page.download_
 
 ## Install
 
-The full details of installing the **xPack Aarch64 Embedded GCC** on various platforms
+The full details of installing the **xPack AArch64 Embedded GCC** on various platforms
 are presented in the separate
 [Install]({% raw %}{{ site.baseurl }}{% endraw %}/aarch64-none-elf-gcc/install/) page.
 
@@ -123,12 +123,12 @@ xpm uninstall --global @xpack-dev-tools/aarch64-none-elf-gcc
 
 ## Compliance
 
-The xPack Aarch64 Embedded GCC generally follows the official
+The xPack AArch64 Embedded GCC generally follows the official
 [Arm Embedded GCC](http://aarch64-none-elf-gcc.org) releases.
 
 The current version is based on:
 
-- [GNU Aarch64 Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
+- [GNU AArch64 Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
 release **{% raw %}{{ page.arm_version }}{% endraw %}** from {% raw %}{{ page.arm_date }}{% endraw %} and uses the
 `gcc-aarch64-none-elf-{% raw %}{{ page.arm_version }}{% endraw %}-src.tar.bz2` source invariant.
 

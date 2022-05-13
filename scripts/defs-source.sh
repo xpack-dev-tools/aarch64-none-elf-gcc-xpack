@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------------------
 
 # Used to display the application name.
-APP_NAME=${APP_NAME:-"GNU Aarch64 Embedded GCC"}
+APP_NAME=${APP_NAME:-"GNU AArch64 Embedded GCC"}
 
 # Used as part of file/folder paths.
 APP_LC_NAME=${APP_LC_NAME:-"aarch64-none-elf-gcc"}
