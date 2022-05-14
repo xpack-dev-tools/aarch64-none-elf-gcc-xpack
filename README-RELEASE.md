@@ -304,6 +304,9 @@ git -C ${HOME}/Work/aarch64-none-elf-gcc-xpack.git submodule update --init --rec
 - commit and push the `xpack-develop` branch
 - run the xPack action `trigger-workflow-publish-release`
 
+The workflows results and logs are available from the
+[Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
+
 The result is a
 [draft pre-release](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/)
 tagged like **v11.2.1-1.1** (mind the dash in the middle!) and
@@ -347,11 +350,11 @@ If any, refer to closed
 Note: at this moment the system should send a notification to all clients
 watching this project.
 
-## Update the README listings and examples
+## Update the README-BUILD listings and examples
 
 - check and possibly update the `ls -l` output
 - check and possibly update the output of the `--version` runs
-watching this project.
+- check and possibly update the output of `tree -L 2`
 - commit changes
 
 ## Check the list of links
@@ -447,6 +450,14 @@ In case the previous version is not functional and needs to be unpublished:
 
 - go to <https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/>
 - remove the test binaries
+
+## Clean the work area
+
+Run the xPack action `trigger-workflow-deep-clean`, this
+will remove the build folders on all supported platforms.
+
+The tests results are available from the
+[Actions](https://github.com/xpack-dev-tools/qemu-arm-xpack/actions/) page.
 
 ## Announce to Arm community
 
