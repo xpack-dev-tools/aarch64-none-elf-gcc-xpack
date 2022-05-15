@@ -467,4 +467,9 @@ Add a new topic in the **Compilers and Libraries** forum of the
 - content:
   - The **xPack GNU AArch64 Embedded GCC** is an alternate binary distribution that complements the official GNU AArch64 Embedded Toolchain maintained by Arm.
   - The latest release is [11.2.1-1.1]() following Arm release from October 21, 2021 (version 10.3-2021.10).
-- tags: xpack, gnu, gcc, arm, toolchain
+- tags: xpack, gnu, gcc, arm, aarch64, toolchain
+
+NOTE: do not use markdown, but format the text with the blog editor.
+
+Update with actual details from
+[Arm GNU Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1/)
