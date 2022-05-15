@@ -457,7 +457,7 @@ Run the xPack action `trigger-workflow-deep-clean`, this
 will remove the build folders on all supported platforms.
 
 The tests results are available from the
-[Actions](https://github.com/xpack-dev-tools/qemu-arm-xpack/actions/) page.
+[Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
 
 ## Announce to Arm community
 
