@@ -12,6 +12,7 @@ arm_version: 11.2-2022.02
 arm_date: February 15, 2022
 version: {{ RELEASE_VERSION }}
 npm_subversion: 1
+python_version: 10
 download_url: https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/tag/v{{ RELEASE_VERSION }}/
 
 date:   {{ RELEASE_DATE }}
@@ -124,18 +125,13 @@ xpm uninstall --global @xpack-dev-tools/aarch64-none-elf-gcc
 ## Compliance
 
 The xPack AArch64 Embedded GCC generally follows the official
-[Arm Embedded GCC](http://aarch64-none-elf-gcc.org) releases.
+[Arm Embedded GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads)
+releases.
 
 The current version is based on:
 
 - [GNU AArch64 Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
-release **{% raw %}{{ page.arm_version }}{% endraw %}** from {% raw %}{{ page.arm_date }}{% endraw %} and uses the
-`gcc-aarch64-none-elf-{% raw %}{{ page.arm_version }}{% endraw %}-src.tar.bz2` source invariant.
-
-For more details see the original Arm release text files:
-
-- `distro-info/arm-readme.txt`
-- `distro-info/arm-release.txt`
+release **{% raw %}{{ page.arm_version }}{% endraw %}** from {% raw %}{{ page.arm_date }}{% endraw %} and uses the same sources.
 
 ## Supported libraries
 
@@ -144,6 +140,7 @@ The supported libraries are:
 ```console
 $ aarch64-none-elf-gcc -print-multi-lib
 .;
+ilp32;@mabi=ilp32
 ```
 
 ## Changes
@@ -154,7 +151,7 @@ Compared to the Arm version, there should be no functional changes.
 
 Support for Python scripting was added to GDB. This distribution provides
 a separate binary, `aarch64-none-elf-gdb-py3` with
-support for **Python 3.10**.
+support for **Python 3.{% raw %}{{ page.python_version }}{% endraw %}**.
 
 The Python 3 run-time is included, so GDB does not need any version of
 Python to be installed, and is insensitive to the presence of other
@@ -211,7 +208,8 @@ relative path.
 
 ## Documentation
 
-The original documentation is available in the `share/doc` folder.
+The original documentation is available
+[online](https://gcc.gnu.org/onlinedocs/).
 
 ## Build
 
