@@ -214,16 +214,16 @@ When ready, run the build on the production machine (`xbbli`):
 To detach from the session, use `Ctrl-a` `Ctrl-d`; to reattach use
 `screen -r arm`; to kill the session use `Ctrl-a` `Ctrl-k` and confirm.
 
-About 5 hours later, the output of the build script is a set of 4 files and
+About 1 hour later, the output of the build script is a set of 4 files and
 their SHA signatures, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
-total 682464
--rw-rw-r-- 1 ilg ilg 169389142 Oct 22 22:17 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-x64.tar.gz
--rw-rw-r-- 1 ilg ilg       117 Oct 22 22:17 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-x64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 184570818 Oct 22 23:04 xpack-aarch64-none-elf-gcc-11.2.1-1.1-win32-x64.zip
--rw-rw-r-- 1 ilg ilg       114 Oct 22 23:04 xpack-aarch64-none-elf-gcc-11.2.1-1.1-win32-x64.zip.sha
+total 249352
+-rw-rw-rw- 1 ilg ilg 121050450 May 15 08:40 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-x64.tar.gz
+-rw-rw-rw- 1 ilg ilg       121 May 15 08:40 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-x64.tar.gz.sha
+-rw-rw-rw- 1 ilg ilg 134272873 May 15 08:57 xpack-aarch64-none-elf-gcc-11.2.1-1.1-win32-x64.zip
+-rw-rw-rw- 1 ilg ilg       118 May 15 08:57 xpack-aarch64-none-elf-gcc-11.2.1-1.1-win32-x64.zip.sha
 ```
 
 ### Build the Arm GNU/Linux binaries
@@ -273,7 +273,8 @@ network connection or a computer entering sleep.
 screen -S arm
 
 sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
-bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --arm64 --arm32
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --arm64
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --arm32
 ```
 
 or, for development builds:
@@ -282,7 +283,8 @@ or, for development builds:
 screen -S arm
 
 sudo rm -rf ~/Work/aarch64-none-elf-gcc-*-*
-bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --disable-tests --arm64 --arm32
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --disable-tests --arm64
+bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build.sh --develop --disable-tests --arm32
 ```
 
 To detach from the session, use `Ctrl-a` `Ctrl-d`; to reattach use
@@ -293,11 +295,18 @@ archives and their SHA signatures, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
-total 325316
--rw-rw-r-- 1 ilg ilg 168517506 Oct 23 01:08 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm64.tar.gz
--rw-rw-r-- 1 ilg ilg       119 Oct 23 01:08 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 164591258 Oct 23 08:19 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm.tar.gz
--rw-rw-r-- 1 ilg ilg       117 Oct 23 08:19 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm.tar.gz.sha
+total 116500
+-rw-rw-rw- 1 ilg ilg 119291455 May 15 10:50 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm64.tar.gz
+-rw-rw-rw- 1 ilg ilg       123 May 15 10:50 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm64.tar.gz.sha
+```
+
+and:
+
+```console
+$ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
+total 110880
+-rw-rw-rw- 1 ilg ilg 113528873 May 15 10:59 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm.tar.gz
+-rw-rw-rw- 1 ilg ilg       121 May 15 10:59 xpack-aarch64-none-elf-gcc-11.2.1-1.1-linux-arm.tar.gz.sha
 ```
 
 ### Build the macOS binaries
@@ -333,14 +342,23 @@ caffeinate bash ${HOME}/Work/aarch64-none-elf-gcc-xpack.git/scripts/helper/build
 To detach from the session, use `Ctrl-a` `Ctrl-d`; to reattach use
 `screen -r arm`; to kill the session use `Ctrl-a` `Ctrl-k` and confirm.
 
-In about 4 hours, the output of the build script is a compressed archive
+In about 2 hours, the output of the build script is a compressed archive
 and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
-total 321872
--rw-r--r--  1 ilg  staff  164794316 Oct 23 00:27 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff        118 Oct 23 00:27 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-x64.tar.gz.sha
+total 230152
+-rw-r--r--  1 ilg  staff  116660473 May 15 09:57 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff        122 May 15 09:57 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-x64.tar.gz.sha
+```
+
+and:
+
+```console
+$ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
+total 227064
+-rw-r--r--  1 ilg  staff  116250268 May 15 08:35 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff        124 May 15 08:35 xpack-aarch64-none-elf-gcc-11.2.1-1.1-darwin-arm64.tar.gz.sha
 ```
 
 ## Subsequent runs
@@ -425,10 +443,8 @@ look like:
 
 ```console
 $ .../Downloads/xpack-aarch64-none-elf-gcc-11.2.1-1.1/bin/aarch64-none-elf-gcc --version
-aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 11.2.1 20220111
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+aarch64-none-elf-gcc (xPack GNU Aarch64 Embedded GCC x86_64) 11.2.1 20220111
+...
 ```
 
 ## Installed folders
