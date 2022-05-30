@@ -172,6 +172,11 @@ the distribution.
 
 {% raw %}{% include note.html content="TUI is not available on Windows." %}{% endraw %}
 
+### No Guile
+
+Due to the difficulties of building standalone Guile libraries on all
+platforms, support for Guile scripting in GDB is currently not available.
+
 ## Bug fixes
 
 - none
