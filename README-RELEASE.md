@@ -194,10 +194,10 @@ These commands use the `xpack-develop` branch of this repo.
 
 The full builds take about 3 hours to complete.
 
-- `xbbmi`: 1h52
-- `xbbma`: 28 min
+- `xbbmi`: 1h55
+- `xbbma`: 30 min
 - `xbbli`: 1h (including Windows)
-- `xbbla64`: 2h43
+- `xbbla64`: 2h45
 - `xbbla32`: 2h55
 
 The workflows results and logs are available from the
