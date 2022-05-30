@@ -1,5 +1,5 @@
 ---
-title:  xPack AArch64 Embedded GCC v{{ RELEASE_VERSION }} released
+title:  xPack GNU AArch64 Embedded GCC v{{ RELEASE_VERSION }} released
 
 TODO: select one summary
 
@@ -32,7 +32,7 @@ tags:
 
 ---
 
-[The xPack AArch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/)
+[The xPack GNU AArch64 Embedded GCC](https://xpack.github.io/aarch64-none-elf-gcc/)
 is a standalone cross-platform binary distribution of
 [GNU AArch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain).
 
@@ -64,7 +64,7 @@ The binary files are available from GitHub [Releases]({% raw %}{{ page.download_
 
 ## Install
 
-The full details of installing the **xPack AArch64 Embedded GCC** on various platforms
+The full details of installing the **xPack GNU AArch64 Embedded GCC** on various platforms
 are presented in the separate
 [Install]({% raw %}{{ site.baseurl }}{% endraw %}/aarch64-none-elf-gcc/install/) page.
 
@@ -124,7 +124,7 @@ xpm uninstall --global @xpack-dev-tools/aarch64-none-elf-gcc
 
 ## Compliance
 
-The xPack AArch64 Embedded GCC generally follows the official
+The xPack GNU AArch64 Embedded GCC generally follows the official
 [Arm Embedded GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads)
 releases.
 
@@ -147,6 +147,14 @@ ilp32;@mabi=ilp32
 
 Compared to the Arm version, there should be no functional changes.
 
+### XML parsing in GDB
+
+Some advanced GDB servers, like the one provided with SEGGER J-Link, are
+capable of passing an XML with the target capabilities to the GDB client.
+For unknown reasons, the Arm toolchain distribution came without XML
+parsing support. The xPack distribution brings back support for
+XML parsing and full integration with the SEGGER J-Link GDB server.
+
 ### Python
 
 Support for Python scripting was added to GDB. This distribution provides
@@ -159,10 +167,15 @@ versions.
 
 ### Text User Interface (TUI)
 
-Support for TUI was added to GDB. The `ncurses` library (v6.3) was added to
+Support for TUI was added to GDB. The `ncurses` library was added to
 the distribution.
 
 {% raw %}{% include note.html content="TUI is not available on Windows." %}{% endraw %}
+
+### No Guile
+
+Due to the difficulties of building standalone Guile libraries on all
+platforms, support for Guile scripting in GDB is currently not available.
 
 ## Bug fixes
 
@@ -208,7 +221,7 @@ relative path.
 
 ## Documentation
 
-The original documentation is available
+The original GNU GCC documentation is available
 [online](https://gcc.gnu.org/onlinedocs/).
 
 ## Build
