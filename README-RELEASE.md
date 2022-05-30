@@ -276,14 +276,14 @@ functional.
 
 For this, on each platform (Mac, GNU/Linux 64/32, Windows 64/32):
 
-- unpack the archive in `Desktop` or in `Downloads`, and rename the version
+- unpack the archive in `Downloads`, and rename the version
   folder, by replacing a dash with a space; this will test paths with spaces;
   on Windows the current paths always use spaces, so renaming is not needed;
 - on macOS it is necessary to remove the `com.apple.quarantine`
   attribute of archive and possibly the expanded folder:
 
 ```sh
-xattr -dr com.apple.quarantine xpack-aarch64-none-elf-gcc-*
+xattr -dr com.apple.quarantine  ~/Downloads/xpack-aarch64-none-elf-gcc-*
 ```
 
 - clone this repo locally; on Windows use the Git console;
@@ -463,7 +463,7 @@ The tests results are available from the
 Add a new topic in the **Compilers and Libraries** forum of the
 [Arm Developer Community](https://community.arm.com/support-forums/f/compilers-and-libraries-forum)
 
-- title: copy release title
+- title: xPack GNU AArch64 Embedded GCC v11.2.1-1.1 released
 - content:
   - The **xPack GNU AArch64 Embedded GCC** is an alternate binary distribution that complements the official GNU AArch64 Embedded Toolchain maintained by Arm.
   - The latest release is [11.2.1-1.1]() following Arm release from October 21, 2021 (version 10.3-2021.10).
