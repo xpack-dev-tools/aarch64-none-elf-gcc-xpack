@@ -37,6 +37,7 @@
     "libcrypto",
     "libexec",
     "libgcc",
+    "libgcov",
     "libgmp",
     "libiconv",
     "libisl",
