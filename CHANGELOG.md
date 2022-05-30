@@ -2,10 +2,13 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2022-05-31
+
+- v11.2.1-1.2 released
+
 ## 2022-05-30
 
-- v11.2.1-1.2.1 published on npmjs.com
-- v11.2.1-1.2 released
+- v11.2.1-1.2 prepared
 - fix libgcov.a in helper
 - fix GDB issue in helper
 
