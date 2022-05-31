@@ -43,27 +43,27 @@
       "platforms": {
         "darwin-arm64": {
           "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-darwin-arm64.tar.gz",
-          "sha256": "98a5dac858a3317e7d650b2eaad5dc034d1eb47fc415035ad4d13ac49d8fefdd"
+          "sha256": "13790cf505cda92e12d5da01ac916fdecf4d724b8497828d446b7bc494d13a6b"
         },
         "darwin-x64": {
           "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-darwin-x64.tar.gz",
-          "sha256": "95f5b1355019fdcbf25b533cc15a76305c78b63d09d251f83fa85ea41dac6084"
+          "sha256": "d32aa91694e5fea3e721fe9269a74f05887cf94c97636f9ccd4ae3ecfd034fa5"
         },
         "linux-arm64": {
           "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-arm64.tar.gz",
-          "sha256": "8b5f80fe0ffe2376f193fe7b6835f553909c9384370bd991d8ec9a6ca926e978"
+          "sha256": "9eb0b95e8267e7d86dc18cad44744f984ef8b1c50df030c854abd5e5e99a3c68"
         },
         "linux-arm": {
           "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-arm.tar.gz",
-          "sha256": "b00d208e9247f01aad45563df3586a3a1e8ed88cf74c8f36c3d577215025e941"
+          "sha256": "b49737e1ec729fe069cfa33915a209a8a4c155a69d096e92b3e2dc8820ff164b"
         },
         "linux-x64": {
           "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-x64.tar.gz",
-          "sha256": "70d46ce9389c6b1d14021267fe0342e68394acd68a4ccca6f263ca5e676f4ded"
+          "sha256": "e14ac6851317da56d192757e028460afc64b998c446d97b3761873a2b91058d8"
         },
         "win32-x64": {
           "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-win32-x64.zip",
-          "sha256": "67f4e04f597a15204fa3bd244cd53f6cecb994973368013f695357be0fe0ff78"
+          "sha256": "78deba2be085002cb31c80591792264e250aee9ae6d4d996871679781db16706"
         }
       }
     },
