@@ -443,7 +443,7 @@ look like:
 
 ```console
 $ .../Downloads/xpack-aarch64-none-elf-gcc-11.2.1-1.2/bin/aarch64-none-elf-gcc --version
-aarch64-none-elf-gcc (xPack GNU Aarch64 Embedded GCC x86_64) 11.2.1 20220111
+aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 11.2.1 20220111
 ...
 ```
 
