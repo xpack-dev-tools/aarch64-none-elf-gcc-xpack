@@ -77,6 +77,40 @@ Note: if you missed to update the `CHANGELOG.md` before starting the build,
 edit the file and rerun the build, it should take only a few minutes to
 recreate the archives with the correct file.
 
+### Update local binutils-gdb fork
+
+With a Git client:
+
+- checkout the branch mentioned in the release notes
+  (like `binutils-2_38-branch`)
+- identify the commit ID
+- add a tag like `binutils-2.38-arm-none-eabi-11.3.rel1`
+- push the tag to origin
+- check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
+
+Similarly for GDB:
+
+- checkout the branch mentioned in the release notes
+  (like `gdb-12-branch`)
+- identify the commit ID
+- add a tag like `gdb-12-arm-none-eabi-11.3.rel1`
+- push the tag to origin
+- check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
+
+### Update local gdb fork
+
+With a Git client:
+
+- checkout the branch mentioned in the release notes
+  (like `ARM/arm-11`)
+- identify the commit ID
+- create a branch like `arm-11-arm-none-eabi-11.3.rel1`
+- cherry pick the commits
+  (like _Try to get support for Apple Silicon_)
+- select the new commit
+- right click -> Save as Patch...
+- copy to `patches/gcc-11.3.1.patch.diff`
+
 ### Update the version specific code
 
 - open the `common-versions-source.sh` file
@@ -385,12 +419,12 @@ watching this project.
 
 - select the `xpack-develop` branch
 - check the latest commits `npm run git-log`
-- update `CHANGELOG.md`, add a line like _- v11.3.1-1.1.2 published on npmjs.com_
-- commit with a message like _CHANGELOG: publish npm v11.3.1-1.1.2_
+- update `CHANGELOG.md`, add a line like _- v11.3.1-1.1.1 published on npmjs.com_
+- commit with a message like _CHANGELOG: publish npm v11.3.1-1.1.1_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
-- `npm version 11.3.1-1.1.2`; the first 5 numbers are the same as the
+- `npm version 11.3.1-1.1.1`; the first 5 numbers are the same as the
   GitHub release; the sixth number is the npm specific version
 - the commits and the tag should have been pushed by the `postversion` script;
   if not, push them with `git push origin --tags`
@@ -419,7 +453,7 @@ The tests results are available from the
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
-- `npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.1.2 latest`
+- `npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.1.1 latest`
 - `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
 
 In case the previous version is not functional and needs to be unpublished:
