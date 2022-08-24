@@ -237,6 +237,42 @@ function build_versions()
       # Arm: In `configure`, search for `PACKAGE_VERSION=`.
       build_isl "0.15"
 
+     # -----------------------------------------------------------------------
+
+      # The task descriptions are from the Arm build script.
+
+      # Task [III-0] /$HOST_NATIVE/binutils/
+      # Task [IV-1] /$HOST_MINGW/binutils/
+
+      build_cross_binutils
+      # The nano requirement (copy_dir to libs) included above.
+
+      # -----------------------------------------------------------------------
+
+      if [ "${TARGET_PLATFORM}" != "win32" ]
+      then
+
+        # Task [III-1] /$HOST_NATIVE/gcc-first/
+        build_cross_gcc_first
+
+        # Task [III-2] /$HOST_NATIVE/newlib/
+        build_cross_newlib ""
+
+        # Task [III-4] /$HOST_NATIVE/gcc-final/
+        build_cross_gcc_final ""
+
+      else
+
+        # Task [IV-2] /$HOST_MINGW/copy_libs/
+        copy_cross_linux_libs
+
+        # Task [IV-3] /$HOST_MINGW/gcc-final/
+        build_cross_gcc_final ""
+
+      fi
+
+      # -----------------------------------------------------------------------
+
       # https://www.bytereef.org/mpdecimal/download.html
       build_libmpdec "2.5.1" # "2.5.0" # Used by Python
 
@@ -316,42 +352,6 @@ function build_versions()
         fi
       fi
 
-      # -----------------------------------------------------------------------
-
-      # The task descriptions are from the Arm build script.
-
-      # Task [III-0] /$HOST_NATIVE/binutils/
-      # Task [IV-1] /$HOST_MINGW/binutils/
-
-      build_cross_binutils
-      # The nano requirement (copy_dir to libs) included above.
-
-      # -----------------------------------------------------------------------
-
-      if [ "${TARGET_PLATFORM}" != "win32" ]
-      then
-
-        # Task [III-1] /$HOST_NATIVE/gcc-first/
-        build_cross_gcc_first
-
-        # Task [III-2] /$HOST_NATIVE/newlib/
-        build_cross_newlib ""
-
-        # Task [III-4] /$HOST_NATIVE/gcc-final/
-        build_cross_gcc_final ""
-
-      else
-
-        # Task [IV-2] /$HOST_MINGW/copy_libs/
-        copy_cross_linux_libs
-
-        # Task [IV-3] /$HOST_MINGW/gcc-final/
-        build_cross_gcc_final ""
-
-      fi
-
-      # -----------------------------------------------------------------------
-
       # Task [III-6] /$HOST_NATIVE/gdb/
       # Task [IV-4] /$HOST_MINGW/gdb/
       build_cross_gdb ""
@@ -360,6 +360,7 @@ function build_versions()
       then
         build_cross_gdb "-py3"
       fi
+
     )
 
   else
