@@ -69,15 +69,147 @@ function build_versions()
 
   # In reverse chronological order.
   # Keep them in sync with the release manifest.txt file.
-  # https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1
-  if [[ "${RELEASE_VERSION}" =~ 11\.2\.1-* ]]
+  # https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads
+
+  if [[ "${RELEASE_VERSION}" =~ 11\.*\.*-* ]]
   then
-    # https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/manifest/gcc-arm-aarch64-none-elf-abe-manifest.txt
     (
       xbb_activate
 
-      ARM_RELEASE="11.2-2022.02"
-      ARM_URL_BASE="https://developer.arm.com/-/media/Files/downloads/gnu/${ARM_RELEASE}/src"
+      if [[ "${RELEASE_VERSION}" =~ 11\.3\.1-* ]]
+      then
+        # https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/manifest/arm-gnu-toolchain-arm-none-eabi-abe-manifest.txt
+
+        ARM_RELEASE="11.3.rel1"
+        ARM_URL_BASE="https://developer.arm.com/-/media/Files/downloads/gnu/${ARM_RELEASE}/src"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # Repository: git://sourceware.org/git/binutils-gdb.git
+        # Branch: binutils-2_38-branch
+        # Revision: 5c0b4ee406035917d0e50aa138194fab57ae6bf8
+        # https://github.com/xpack-dev-tools/binutils-gdb/tags
+
+        BINUTILS_VERSION="2.38"
+        BINUTILS_TAG_NAME="binutils-${BINUTILS_VERSION}-aarch64-none-elf-${ARM_RELEASE}"
+
+        BINUTILS_SRC_FOLDER_NAME="binutils-gdb-${BINUTILS_TAG_NAME}"
+        BINUTILS_ARCHIVE_NAME="${BINUTILS_TAG_NAME}.tar.gz"
+        BINUTILS_ARCHIVE_URL="https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/${BINUTILS_ARCHIVE_NAME}"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # Repository: git://gcc.gnu.org/git/gcc.git
+        # Branch: refs/vendors/ARM/heads/arm-11
+        # Revision: 4249a65c814287af667aa78789436d3fc618e80a
+
+        # GCC_VERSION computer from RELEASE_VERSION
+        GCC_SRC_FOLDER_NAME="gcc"
+        GCC_ARCHIVE_NAME="gcc-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
+        GCC_ARCHIVE_URL="${ARM_URL_BASE}/gcc.tar.xz"
+
+        GCC_PATCH_FILE_NAME="gcc-${GCC_VERSION}-cross.patch.diff"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # http://www.sourceware.org/newlib/
+        # Repository: git://sourceware.org/git/newlib-cygwin.git
+        # Revision: bfee9c6ab0c3c9a5742e84509d01ec6472aa62c4
+
+        NEWLIB_VERSION="4.1.0"
+        NEWLIB_SRC_FOLDER_NAME="newlib-cygwin"
+        NEWLIB_ARCHIVE_NAME="newlib-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
+        NEWLIB_ARCHIVE_URL="${ARM_URL_BASE}/newlib-cygwin.tar.xz"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # Repository: git://sourceware.org/git/binutils-gdb.git
+        # Branch: gdb-12-branch
+        # Revision: 7f70cce769c1eced62012b0529907ea957cb9c55
+
+        # https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/gdb-11-aarch64-none-elf-11.2-2022.02.tar.gz
+
+        # From `gdb/version.in`
+        GDB_VERSION="12.1"
+        GDB_TAG_NAME="gdb-12-arm-none-eabi-${ARM_RELEASE}"
+
+        GDB_SRC_FOLDER_NAME="binutils-gdb-${GDB_TAG_NAME}"
+        GDB_ARCHIVE_NAME="${GDB_TAG_NAME}.tar.gz"
+
+        # Mandatory, otherwise gdb-py3 is not relocatable.
+        GDB_PATCH_FILE_NAME="gdb-${GDB_VERSION}-cross.patch.diff"
+
+      elif [[ "${RELEASE_VERSION}" =~ 11\.2\.1-* ]]
+      then
+        # https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/manifest/gcc-arm-aarch64-none-elf-abe-manifest.txt
+
+        ARM_RELEASE="11.2-2022.02"
+        ARM_URL_BASE="https://developer.arm.com/-/media/Files/downloads/gnu/${ARM_RELEASE}/src"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # Repository: git://sourceware.org/git/binutils-gdb.git
+        # Branch: binutils-2_37-branch
+        # Revision: 5f62caec8175cf80a29f2bcab2c5077cbfae8c89
+        # https://github.com/xpack-dev-tools/binutils-gdb/tags
+
+        BINUTILS_VERSION="2.37"
+        BINUTILS_TAG_NAME="binutils-${BINUTILS_VERSION}-aarch64-none-elf-${ARM_RELEASE}"
+
+        BINUTILS_SRC_FOLDER_NAME="binutils-gdb-${BINUTILS_TAG_NAME}"
+        BINUTILS_ARCHIVE_NAME="${BINUTILS_TAG_NAME}.tar.gz"
+        BINUTILS_ARCHIVE_URL="https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/${BINUTILS_ARCHIVE_NAME}"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # Repository: git://gcc.gnu.org/git/gcc.git
+        # Branch: refs/vendors/ARM/heads/arm-11
+        # Revision:028202d8ad150f23fcccd4d923c96aff4c2607cf
+
+        # GCC_VERSION computer from RELEASE_VERSION
+        GCC_SRC_FOLDER_NAME="gcc"
+        GCC_ARCHIVE_NAME="gcc-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
+        GCC_ARCHIVE_URL="${ARM_URL_BASE}/gcc.tar.xz"
+
+        GCC_PATCH_FILE_NAME="gcc-${GCC_VERSION}-cross.patch.diff"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # Repository: git://sourceware.org/git/newlib-cygwin.git
+        # Revision: 2a3a03972b35377aef8d3d52d873ac3b8fcc512c
+
+        NEWLIB_VERSION="4.1.0"
+        NEWLIB_SRC_FOLDER_NAME="newlib-cygwin"
+        NEWLIB_ARCHIVE_NAME="newlib-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
+        NEWLIB_ARCHIVE_URL="${ARM_URL_BASE}/newlib-cygwin.tar.xz"
+
+        # ---------------------------------------------------------------------
+
+        # Arm: release notes.
+        # Repository: git://sourceware.org/git/binutils-gdb.git
+        # Branch: gdb-11-branch
+        # Revision: a10d1f2c33a9a329f3a3006e07cfe872a7cc965b
+
+        # https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/gdb-11-aarch64-none-elf-11.2-2022.02.tar.gz
+
+        # From `gdb/version.in`
+        GDB_VERSION="11.2"
+        GDB_TAG_NAME="gdb-11-arm-none-eabi-${ARM_RELEASE}"
+
+        GDB_SRC_FOLDER_NAME="binutils-gdb-${GDB_TAG_NAME}"
+        GDB_ARCHIVE_NAME="${GDB_TAG_NAME}.tar.gz"
+
+        # Mandatory, otherwise gdb-py3 is not relocatable.
+        GDB_PATCH_FILE_NAME="gdb-${GDB_VERSION}-cross.patch.diff"
+
+      fi
 
       # -------------------------------------------------------------------------
       # Build dependent libraries.
@@ -189,50 +321,16 @@ function build_versions()
       # Task [III-0] /$HOST_NATIVE/binutils/
       # Task [IV-1] /$HOST_MINGW/binutils/
 
-      # Arm: release notes.
-      # Repository: git://sourceware.org/git/binutils-gdb.git
-      # Branch: binutils-2_37-branch
-      # Revision: 5f62caec8175cf80a29f2bcab2c5077cbfae8c89
-      # https://github.com/xpack-dev-tools/binutils-gdb/tags
-
-      BINUTILS_VERSION="2.37"
-      BINUTILS_TAG_NAME="binutils-${BINUTILS_VERSION}-aarch64-none-elf-${ARM_RELEASE}"
-
-      BINUTILS_SRC_FOLDER_NAME="binutils-gdb-${BINUTILS_TAG_NAME}"
-      BINUTILS_ARCHIVE_NAME="${BINUTILS_TAG_NAME}.tar.gz"
-      BINUTILS_ARCHIVE_URL="https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/${BINUTILS_ARCHIVE_NAME}"
-
       build_cross_binutils
       # The nano requirement (copy_dir to libs) included above.
 
       # -----------------------------------------------------------------------
-
-      # Arm: release notes.
-      # Repository: git://gcc.gnu.org/git/gcc.git
-      # Branch: refs/vendors/ARM/heads/arm-11
-      # Revision:028202d8ad150f23fcccd4d923c96aff4c2607cf
-
-      # GCC_VERSION computer from RELEASE_VERSION
-      GCC_SRC_FOLDER_NAME="gcc"
-      GCC_ARCHIVE_NAME="gcc-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
-      GCC_ARCHIVE_URL="${ARM_URL_BASE}/gcc.tar.xz"
-
-      GCC_PATCH_FILE_NAME="gcc-${GCC_VERSION}.patch.diff"
 
       if [ "${TARGET_PLATFORM}" != "win32" ]
       then
 
         # Task [III-1] /$HOST_NATIVE/gcc-first/
         build_cross_gcc_first
-
-        # Arm: release notes.
-        # Repository: git://sourceware.org/git/newlib-cygwin.git
-        # Revision: 2a3a03972b35377aef8d3d52d873ac3b8fcc512c
-
-        NEWLIB_VERSION="4.1.0"
-        NEWLIB_SRC_FOLDER_NAME="newlib-cygwin"
-        NEWLIB_ARCHIVE_NAME="newlib-aarch64-none-elf-${ARM_RELEASE}.tar.xz"
-        NEWLIB_ARCHIVE_URL="${ARM_URL_BASE}/newlib-cygwin.tar.xz"
 
         # Task [III-2] /$HOST_NATIVE/newlib/
         build_cross_newlib ""
@@ -251,22 +349,6 @@ function build_versions()
       fi
 
       # -----------------------------------------------------------------------
-
-      # Arm: release notes.
-      # Repository: git://sourceware.org/git/binutils-gdb.git
-      # Branch: gdb-11-branch
-      # Revision: a10d1f2c33a9a329f3a3006e07cfe872a7cc965b
-
-      # https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/gdb-11-aarch64-none-elf-11.2-2022.02.tar.gz
-
-      # From `gdb/version.in`
-      GDB_VERSION="11.2"
-      GDB_SRC_FOLDER_NAME="binutils-gdb-gdb-11-aarch64-none-elf-${ARM_RELEASE}"
-      GDB_ARCHIVE_NAME="gdb-11-aarch64-none-elf-${ARM_RELEASE}.tar.gz"
-      GDB_ARCHIVE_URL="https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/${GDB_ARCHIVE_NAME}"
-
-      # Mandatory, otherwise gdb-py3 is not relocatable.
-      GDB_PATCH_FILE_NAME="gdb-${GDB_VERSION}.patch.diff"
 
       # Task [III-6] /$HOST_NATIVE/gdb/
       # Task [IV-4] /$HOST_MINGW/gdb/
