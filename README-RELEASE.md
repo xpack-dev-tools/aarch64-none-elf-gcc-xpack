@@ -84,7 +84,7 @@ With a Git client:
 - checkout the branch mentioned in the release notes
   (like `binutils-2_38-branch`)
 - identify the commit ID
-- add a tag like `binutils-2.38-arm-none-eabi-11.3.rel1`
+- add a tag like `binutils-2.38-aarch64-none-elf-11.3.rel1`
 - push the tag to origin
 - check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
 
@@ -93,23 +93,23 @@ Similarly for GDB:
 - checkout the branch mentioned in the release notes
   (like `gdb-12-branch`)
 - identify the commit ID
-- add a tag like `gdb-12-arm-none-eabi-11.3.rel1`
+- add a tag like `gdb-12-aarch64-none-elf-11.3.rel1`
 - push the tag to origin
 - check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
 
-### Update local gdb fork
+### Update local gcc fork
 
 With a Git client:
 
 - checkout the branch mentioned in the release notes
   (like `ARM/arm-11`)
 - identify the commit ID
-- create a branch like `arm-11-arm-none-eabi-11.3.rel1`
+- create a branch like `arm-11-aarch64-none-elf-11.3.rel1`
 - cherry pick the commits
   (like _Try to get support for Apple Silicon_)
 - select the new commit
 - right click -> Save as Patch...
-- copy to `patches/gcc-11.3.1.patch.diff`
+- copy to `patches/gcc-11.3.1-cross.patch.diff`
 
 ### Update the version specific code
 
