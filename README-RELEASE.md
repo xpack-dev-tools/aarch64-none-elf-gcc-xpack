@@ -181,9 +181,8 @@ From here it'll be cloned on the production machines.
 
 The automation is provided by GitHub Actions and three self-hosted runners.
 
-It is recommended to do **a first run without the multi-libs**
-(see the `defs-source.sh` file), test it,
-and, when ready, rerun the full build.
+There is no multilib configuration for AArch64, so the final build
+can be started from the very beginning.
 
 Run the `generate-workflows` to re-generate the
 GitHub workflow files; commit and push if necessary.
