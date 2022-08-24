@@ -237,6 +237,16 @@ function build_versions()
       # Arm: In `configure`, search for `PACKAGE_VERSION=`.
       build_isl "0.15"
 
+      # https://ftp.gnu.org/pub/gnu/libiconv/
+      # Arm: In `configure`, search for `PACKAGE_VERSION=`.
+      # macOS fails without it.
+      build_libiconv "1.15"
+
+      # https://sourceforge.net/projects/lzmautils/files/
+      # Raspberry Pi binutils fails without it.
+      build_xz "5.2.5" # "5.2.3"
+
+
      # -----------------------------------------------------------------------
 
       # The task descriptions are from the Arm build script.
@@ -280,13 +290,6 @@ function build_versions()
       # Arm: from release notes
       # https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1
       build_expat "2.2.5" # "2.1.1"
-
-      # https://ftp.gnu.org/pub/gnu/libiconv/
-      # Arm: In `configure`, search for `PACKAGE_VERSION=`.
-      build_libiconv "1.15"
-
-      # https://sourceforge.net/projects/lzmautils/files/
-      build_xz "5.2.5" # "5.2.3"
 
       # Fails on mingw. 0.8.13 is deprecated. Not used anyway.
       # build_libelf "0.8.13"
