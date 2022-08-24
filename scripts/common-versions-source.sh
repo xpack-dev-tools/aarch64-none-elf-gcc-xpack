@@ -139,6 +139,7 @@ function build_versions()
 
         GDB_SRC_FOLDER_NAME="binutils-gdb-${GDB_TAG_NAME}"
         GDB_ARCHIVE_NAME="${GDB_TAG_NAME}.tar.gz"
+        GDB_ARCHIVE_URL="https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/${GDB_ARCHIVE_NAME}"
 
         # Mandatory, otherwise gdb-py3 is not relocatable.
         GDB_PATCH_FILE_NAME="gdb-${GDB_VERSION}-cross.patch.diff"
@@ -205,6 +206,7 @@ function build_versions()
 
         GDB_SRC_FOLDER_NAME="binutils-gdb-${GDB_TAG_NAME}"
         GDB_ARCHIVE_NAME="${GDB_TAG_NAME}.tar.gz"
+        GDB_ARCHIVE_URL="https://github.com/xpack-dev-tools/binutils-gdb/archive/refs/tags/${GDB_ARCHIVE_NAME}"
 
         # Mandatory, otherwise gdb-py3 is not relocatable.
         GDB_PATCH_FILE_NAME="gdb-${GDB_VERSION}-cross.patch.diff"
