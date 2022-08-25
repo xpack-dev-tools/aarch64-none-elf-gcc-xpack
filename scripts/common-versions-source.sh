@@ -327,7 +327,6 @@ function build_versions()
       # `python3-config.sh`
       PYTHON3_VERSION="3.10.4"
       WITH_GDB_PY3="y"
-      # WITH_GDB_PY3=""
 
       if [ "${WITH_GDB_PY3}" == "y" ]
       then
