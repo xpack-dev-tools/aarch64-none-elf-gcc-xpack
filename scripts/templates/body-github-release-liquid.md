@@ -4,7 +4,7 @@ Version **{{ RELEASE_VERSION }}** is a maintenance release of the **xPack GNU AA
 
 Or (TODO: edit!):
 
-Version **{{ RELEASE_VERSION }}** is a new release of the **xPack GNU AArch64 Embedded GCC** package, following the upstream [Arm Embedded GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain) release **11.2-2022.02** from DATE. (TODO: edit!)
+Version **{{ RELEASE_VERSION }}** is a new release of the **xPack GNU AArch64 Embedded GCC** package, following the upstream [Arm GNU Toolchain](https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain) release **11.3.Rel1** from DATE. (TODO: edit!)
 
 [Continue reading »](TODO: edit, add URL!)
 
