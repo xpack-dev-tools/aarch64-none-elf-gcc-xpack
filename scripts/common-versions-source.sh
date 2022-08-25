@@ -57,6 +57,8 @@ function build_versions()
 
   NCURSES_DISABLE_WIDEC="y"
 
+  WITH_GDB_PY3=""
+
   # ---------------------------------------------------------------------------
 
   GCC_VERSION="$(echo "${RELEASE_VERSION}" | sed -e 's|-.*||')"
@@ -246,7 +248,6 @@ function build_versions()
       # Raspberry Pi binutils fails without it.
       build_xz "5.2.5" # "5.2.3"
 
-
      # -----------------------------------------------------------------------
 
       # The task descriptions are from the Arm build script.
@@ -259,7 +260,7 @@ function build_versions()
 
       # -----------------------------------------------------------------------
 
-      if [ "${TARGET_PLATFORM}" != "win32" ]
+      if [ "${TARGET_PLATFORM}" == "linux" -o "${TARGET_PLATFORM}" == "darwin" ]
       then
 
         # Task [III-1] /$HOST_NATIVE/gcc-first/
@@ -271,7 +272,8 @@ function build_versions()
         # Task [III-4] /$HOST_NATIVE/gcc-final/
         build_cross_gcc_final ""
 
-      else
+      elif [ "${TARGET_PLATFORM}" == "win32" ]
+      then
 
         # Task [IV-2] /$HOST_MINGW/copy_libs/
         copy_cross_linux_libs
@@ -282,9 +284,6 @@ function build_versions()
       fi
 
       # -----------------------------------------------------------------------
-
-      # https://www.bytereef.org/mpdecimal/download.html
-      build_libmpdec "2.5.1" # "2.5.0" # Used by Python
 
       # https://github.com/libexpat/libexpat/releases
       # Arm: from release notes
@@ -297,31 +296,16 @@ function build_versions()
       # http://ftp.gnu.org/pub/gnu/gettext/
       build_gettext "0.21"
 
-      # https://www.python.org/ftp/python/
-      # Requires `scripts/helper/extras/python/pyconfig-win-3.10.4.h` &
-      # `python3-config.sh`
-      PYTHON3_VERSION="3.10.4"
-      WITH_GDB_PY3="y"
-
-      if [ "${TARGET_PLATFORM}" == "win32" ]
+      # Used by ncurses. Fails on macOS.
+      if [ "${TARGET_PLATFORM}" == "linux" ]
       then
-        if [ "${WITH_GDB_PY3}" == "y" ]
-        then
-          # Shortcut, use the existing pyton.exe instead of building
-          # if from sources. It also downloads the sources.
-          download_python3_win "${PYTHON3_VERSION}"
+        # https://github.com/telmich/gpm/tags
+        # https://github.com/xpack-dev-tools/gpm/tags
+        build_gpm "1.20.7-1" # "1.20.7"
+      fi
 
-          add_python3_win_syslibs
-        fi
-      else # linux or darwin
-        # Used by ncurses. Fails on macOS.
-        if [ "${TARGET_PLATFORM}" == "linux" ]
-        then
-          # https://github.com/telmich/gpm/tags
-          # https://github.com/xpack-dev-tools/gpm/tags
-          build_gpm "1.20.7-1" # "1.20.7"
-        fi
-
+      if [ "${TARGET_PLATFORM}" == "linux" -o "${TARGET_PLATFORM}" == "darwin" ]
+      then
         # https://ftp.gnu.org/gnu/ncurses/
         build_ncurses "6.3" # "6.2"
 
@@ -332,12 +316,36 @@ function build_versions()
         build_bzip2 "1.0.8"
         # https://github.com/libffi/libffi/releases
         build_libffi  "3.4.2" # "3.3"
+      fi
 
-        # We cannot rely on a python shared library in the system, even
-        # the custom build from sources does not have one.
+      # Task [III-6] /$HOST_NATIVE/gdb/
+      # Task [IV-4] /$HOST_MINGW/gdb/
+      build_cross_gdb ""
 
-        if [ "${WITH_GDB_PY3}" == "y" ]
+      # https://www.python.org/ftp/python/
+      # Requires `scripts/helper/extras/python/pyconfig-win-3.10.4.h` &
+      # `python3-config.sh`
+      PYTHON3_VERSION="3.10.4"
+      WITH_GDB_PY3="y"
+      # WITH_GDB_PY3=""
+
+      if [ "${WITH_GDB_PY3}" == "y" ]
+      then
+
+        if [ "${TARGET_PLATFORM}" == "win32" ]
         then
+          # Shortcut, use the existing pyton.exe instead of building
+          # if from sources. It also downloads the sources.
+          download_python3_win "${PYTHON3_VERSION}"
+
+          add_python3_win_syslibs
+        else # linux or darwin
+          # We cannot rely on a python shared library in the system, even
+          # the custom build from sources does not have one.
+
+          # https://www.bytereef.org/mpdecimal/download.html
+          build_libmpdec "2.5.1" # "2.5.0"
+
           # Required by a Python 3 module.
           # https://www.sqlite.org/download.html
           build_sqlite  "3380200" # "3.32.3"
@@ -353,14 +361,7 @@ function build_versions()
 
           add_python3_syslibs
         fi
-      fi
 
-      # Task [III-6] /$HOST_NATIVE/gdb/
-      # Task [IV-4] /$HOST_MINGW/gdb/
-      build_cross_gdb ""
-
-      if [ "${WITH_GDB_PY3}" == "y" ]
-      then
         build_cross_gdb "-py3"
       fi
 
