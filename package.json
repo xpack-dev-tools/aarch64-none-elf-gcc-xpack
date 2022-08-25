@@ -38,32 +38,32 @@
     "minimumXpmRequired": "0.10.2",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/download/v11.2.1-1.2",
+      "baseUrl": "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/download/v11.3.1-1.1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-darwin-arm64.tar.gz",
-          "sha256": "13790cf505cda92e12d5da01ac916fdecf4d724b8497828d446b7bc494d13a6b"
+          "fileName": "xpack-aarch64-none-elf-gcc-11.3.1-1.1-darwin-arm64.tar.gz",
+          "sha256": "7ddb902469db43160db84c59f97ff60783b3e7b75ec1d98442e259b5e03c3201"
         },
         "darwin-x64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-darwin-x64.tar.gz",
-          "sha256": "d32aa91694e5fea3e721fe9269a74f05887cf94c97636f9ccd4ae3ecfd034fa5"
+          "fileName": "xpack-aarch64-none-elf-gcc-11.3.1-1.1-darwin-x64.tar.gz",
+          "sha256": "26a0a9d9098d58c758aceab30a6ac00d62d9c5d9a7b32b6494b99338c8457396"
         },
         "linux-arm64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-arm64.tar.gz",
-          "sha256": "9eb0b95e8267e7d86dc18cad44744f984ef8b1c50df030c854abd5e5e99a3c68"
+          "fileName": "xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm64.tar.gz",
+          "sha256": "81f610aa047f669cfcb9701737b2aed6a0956df822bdab813b1d1ca0182985c6"
         },
         "linux-arm": {
-          "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-arm.tar.gz",
-          "sha256": "b49737e1ec729fe069cfa33915a209a8a4c155a69d096e92b3e2dc8820ff164b"
+          "fileName": "xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm.tar.gz",
+          "sha256": "37d170e50ca785d5c885d77f96f0eeb3d471e3e88e6b5e36770d2f0467c873f0"
         },
         "linux-x64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-x64.tar.gz",
-          "sha256": "e14ac6851317da56d192757e028460afc64b998c446d97b3761873a2b91058d8"
+          "fileName": "xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-x64.tar.gz",
+          "sha256": "60c9d00697981f7e721f81df69a830b4c9d3da52f3cb53f8ae86420faa808864"
         },
         "win32-x64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-11.2.1-1.2-win32-x64.zip",
-          "sha256": "78deba2be085002cb31c80591792264e250aee9ae6d4d996871679781db16706"
+          "fileName": "xpack-aarch64-none-elf-gcc-11.3.1-1.1-win32-x64.zip",
+          "sha256": "c63dbea1fcd6a303fde1359e51d1819064a47ac2a3ed7cd353b554a22f3ab310"
         }
       }
     },
