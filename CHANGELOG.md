@@ -2,6 +2,11 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2022-08-27
+
+- v11.3.1-1.2 prepared
+- update to latest helper, to fix GDB damaging AS.
+
 ## 2022-08-25
 
 - v11.3.1-1.1.1 published on npmjs.com

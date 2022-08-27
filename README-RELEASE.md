@@ -38,7 +38,7 @@ add the release, and copy to extras.
 
 From `gcc/BASE-VER`, determine the GCC version (like `11.3.1`)
 and update the `scripts/VERSION`
-file; the format is `11.3.1-1.1`. The fourth number is the Arm release
+file; the format is `11.3.1-1.2`. The fourth number is the Arm release
 number and the fifth is the xPack release number
 of this version. A sixth number will be added when publishing
 the package on the `npm` server.
@@ -49,7 +49,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/>
 
-and fix them; assign them to a milestone (like `11.3.1-1.1`).
+and fix them; assign them to a milestone (like `11.3.1-1.2`).
 
 ### Check `README.md`
 
@@ -59,7 +59,7 @@ but in the version specific release page.
 
 ### Update versions in `README` files
 
-Update both full 5 numbers (`11.3.1-1.1`) and short 3 numbers (`11.3.1`)
+Update both full 5 numbers (`11.3.1-1.2`) and short 3 numbers (`11.3.1`)
 versions in:
 
 - update version in `README-RELEASE.md`
@@ -70,8 +70,8 @@ versions in:
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _- v11.3.1-1.1 prepared_
-- commit with a message like _prepare v11.3.1-1.1_
+- add a new entry like _- v11.3.1-1.2 prepared_
+- commit with a message like _prepare v11.3.1-1.2_
 
 Note: if you missed to update the `CHANGELOG.md` before starting the build,
 edit the file and rerun the build, it should take only a few minutes to
@@ -338,7 +338,7 @@ git -C ${HOME}/Work/aarch64-none-elf-gcc-xpack.git submodule update --init --rec
 
 ## Create a new GitHub pre-release draft
 
-- in `CHANGELOG.md`, add the release date and a message like _- v11.3.1-1.1 released_
+- in `CHANGELOG.md`, add the release date and a message like _- v11.3.1-1.2 released_
 - commit and push the `xpack-develop` branch
 - run the xPack action `trigger-workflow-publish-release`
 
@@ -347,8 +347,8 @@ The workflows results and logs are available from the
 
 The result is a
 [draft pre-release](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/)
-tagged like **v11.3.1-1.1** (mind the dash in the middle!) and
-named like **xPack GNU AArch64 Embedded GCC v11.3.1-1.1** (mind the dash),
+tagged like **v11.3.1-1.2** (mind the dash in the middle!) and
+named like **xPack GNU AArch64 Embedded GCC v11.3.1-1.2** (mind the dash),
 with all binaries attached.
 
 - edit the draft and attach it to the `xpack-develop` branch (important!)
@@ -370,7 +370,7 @@ If any, refer to closed
 ## Update the preview Web
 
 - commit the `develop` branch of `xpack/web-jekyll` GitHub repo;
-  use a message like **xPack GNU AArch64 Embedded GCC v11.3.1-1.1 released**
+  use a message like **xPack GNU AArch64 Embedded GCC v11.3.1-1.2 released**
 - push to GitHub
 - wait for the GitHub Pages build to complete
 - the preview web is <https://xpack.github.io/web-preview/news/>
@@ -412,18 +412,18 @@ watching this project.
 - compare the SHA sums with those shown by `cat *.sha`
 - check the executable names
 - commit all changes, use a message like
-  `package.json: update urls for 11.3.1-1.1 release` (without `v`)
+  `package.json: update urls for 11.3.1-1.2 release` (without `v`)
 
 ## Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - check the latest commits `npm run git-log`
-- update `CHANGELOG.md`, add a line like _- v11.3.1-1.1.1 published on npmjs.com_
-- commit with a message like _CHANGELOG: publish npm v11.3.1-1.1.1_
+- update `CHANGELOG.md`, add a line like _- v11.3.1-1.2.1 published on npmjs.com_
+- commit with a message like _CHANGELOG: publish npm v11.3.1-1.2.1_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
-- `npm version 11.3.1-1.1.1`; the first 5 numbers are the same as the
+- `npm version 11.3.1-1.2.1`; the first 5 numbers are the same as the
   GitHub release; the sixth number is the npm specific version
 - the commits and the tag should have been pushed by the `postversion` script;
   if not, push them with `git push origin --tags`
@@ -452,12 +452,12 @@ The tests results are available from the
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
-- `npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.1.1 latest`
+- `npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.2.1 latest`
 - `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
 
 In case the previous version is not functional and needs to be unpublished:
 
-- `npm unpublish @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.1.X`
+- `npm unpublish @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.2.X`
 
 ## Update the Web
 
@@ -479,7 +479,7 @@ In case the previous version is not functional and needs to be unpublished:
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@xpack_project` account
-- paste the release name like **xPack GNU AArch64 Embedded GCC v11.3.1-1.1 released**
+- paste the release name like **xPack GNU AArch64 Embedded GCC v11.3.1-1.2 released**
 - paste the link to the Web page
   [release](https://xpack.github.io/aarch64-none-elf-gcc/releases/)
 - click the **Tweet** button
@@ -502,10 +502,10 @@ The tests results are available from the
 Add a new topic in the **Compilers and Libraries** forum of the
 [Arm Developer Community](https://community.arm.com/support-forums/f/compilers-and-libraries-forum)
 
-- title: xPack GNU AArch64 Embedded GCC v11.3.1-1.1 released
+- title: xPack GNU AArch64 Embedded GCC v11.3.1-1.2 released
 - content:
   - The **xPack GNU AArch64 Embedded GCC** is an alternate binary distribution that complements the official GNU AArch64 Embedded Toolchain maintained by Arm.
-  - The latest release is [11.3.1-1.1]() following Arm release from October 21, 2021 (version 10.3-2021.10).
+  - The latest release is [11.3.1-1.2]() following Arm release from October 21, 2021 (version 10.3-2021.10).
 - tags: xpack, gnu, gcc, arm, aarch64, toolchain
 
 NOTE: do not use markdown, but format the text with the blog editor.

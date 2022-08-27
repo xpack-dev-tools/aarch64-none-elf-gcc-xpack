@@ -113,7 +113,7 @@ not be accepted by bash.
 
 ## Versioning
 
-The version string is an extension to semver, the format looks like `11.3.1-1.1`.
+The version string is an extension to semver, the format looks like `11.3.1-1.2`.
 It includes the three digits with the original GCC version, a fourth
 digit with the Arm release, a fifth digit with the xPack release number.
 
@@ -220,10 +220,10 @@ their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 249352
--rw-rw-rw- 1 ilg ilg 121050450 May 15 08:40 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-x64.tar.gz
--rw-rw-rw- 1 ilg ilg       121 May 15 08:40 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-x64.tar.gz.sha
--rw-rw-rw- 1 ilg ilg 134272873 May 15 08:57 xpack-aarch64-none-elf-gcc-11.3.1-1.1-win32-x64.zip
--rw-rw-rw- 1 ilg ilg       118 May 15 08:57 xpack-aarch64-none-elf-gcc-11.3.1-1.1-win32-x64.zip.sha
+-rw-rw-rw- 1 ilg ilg 121050450 May 15 08:40 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-x64.tar.gz
+-rw-rw-rw- 1 ilg ilg       121 May 15 08:40 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-x64.tar.gz.sha
+-rw-rw-rw- 1 ilg ilg 134272873 May 15 08:57 xpack-aarch64-none-elf-gcc-11.3.1-1.2-win32-x64.zip
+-rw-rw-rw- 1 ilg ilg       118 May 15 08:57 xpack-aarch64-none-elf-gcc-11.3.1-1.2-win32-x64.zip.sha
 ```
 
 ### Build the Arm GNU/Linux binaries
@@ -296,8 +296,8 @@ archives and their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 116500
--rw-rw-rw- 1 ilg ilg 119291455 May 15 10:50 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm64.tar.gz
--rw-rw-rw- 1 ilg ilg       123 May 15 10:50 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm64.tar.gz.sha
+-rw-rw-rw- 1 ilg ilg 119291455 May 15 10:50 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-arm64.tar.gz
+-rw-rw-rw- 1 ilg ilg       123 May 15 10:50 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-arm64.tar.gz.sha
 ```
 
 and:
@@ -305,8 +305,8 @@ and:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 110880
--rw-rw-rw- 1 ilg ilg 113528873 May 15 10:59 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm.tar.gz
--rw-rw-rw- 1 ilg ilg       121 May 15 10:59 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm.tar.gz.sha
+-rw-rw-rw- 1 ilg ilg 113528873 May 15 10:59 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-arm.tar.gz
+-rw-rw-rw- 1 ilg ilg       121 May 15 10:59 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-arm.tar.gz.sha
 ```
 
 ### Build the macOS binaries
@@ -348,8 +348,8 @@ and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 230152
--rw-r--r--  1 ilg  staff  116660473 May 15 09:57 xpack-aarch64-none-elf-gcc-11.3.1-1.1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff        122 May 15 09:57 xpack-aarch64-none-elf-gcc-11.3.1-1.1-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  116660473 May 15 09:57 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff        122 May 15 09:57 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-x64.tar.gz.sha
 ```
 
 and:
@@ -357,8 +357,8 @@ and:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-*/deploy
 total 227064
--rw-r--r--  1 ilg  staff  116250268 May 15 08:35 xpack-aarch64-none-elf-gcc-11.3.1-1.1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff        124 May 15 08:35 xpack-aarch64-none-elf-gcc-11.3.1-1.1-darwin-arm64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  116250268 May 15 08:35 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff        124 May 15 08:35 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-arm64.tar.gz.sha
 ```
 
 ## Subsequent runs
@@ -442,7 +442,7 @@ program from there. For example on macOS the output should
 look like:
 
 ```console
-$ .../Downloads/xpack-aarch64-none-elf-gcc-11.3.1-1.1/bin/aarch64-none-elf-gcc --version
+$ .../Downloads/xpack-aarch64-none-elf-gcc-11.3.1-1.2/bin/aarch64-none-elf-gcc --version
 aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 11.3.1 20220111
 ...
 ```
@@ -453,8 +453,8 @@ After install, the package should create a structure like this (only the
 first two depth levels are shown):
 
 ```console
-$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.3.1-1.1/.content/
-/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.3.1-1.1/.content/
+$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.3.1-1.2/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.3.1-1.2/.content/
 ├── README.md
 ├── aarch64-none-elf
 │   ├── bin
