@@ -94,7 +94,7 @@ versions in:
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _- v11.3.1-1.2 prepared_
+- add a new entry like _* v11.3.1-1.2 prepared_
 - commit with a message like _prepare v11.3.1-1.2_
 
 Note: if you missed to update the `CHANGELOG.md` before starting the build,
@@ -364,7 +364,7 @@ git -C ${HOME}/Work/aarch64-none-elf-gcc-xpack.git submodule update --init --rec
 
 ## Create a new GitHub pre-release draft
 
-- in `CHANGELOG.md`, add the release date and a message like _- v11.3.1-1.2 released_
+- in `CHANGELOG.md`, add the release date and a message like _* v11.3.1-1.2 released_
 - commit with _CHANGELOG update_
 - check and possibly update the `templates/body-github-release-liquid.md`
 - push the `xpack-develop` branch
@@ -447,7 +447,7 @@ watching this project.
 
 - select the `xpack-develop` branch
 - check the latest commits `npm run git-log`
-- update `CHANGELOG.md`, add a line like _- v11.3.1-1.2.1 published on npmjs.com_
+- update `CHANGELOG.md`, add a line like _* v11.3.1-1.2.1 published on npmjs.com_
 - commit with a message like _CHANGELOG: publish npm v11.3.1-1.2.1_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
@@ -456,8 +456,8 @@ watching this project.
   GitHub release; the sixth number is the npm specific version
 - the commits and the tag should have been pushed by the `postversion` script;
   if not, push them with `git push origin --tags`
-- `npm publish --tag next` (use `--access public` when publishing for
-  the first time)
+- `npm publish --tag next` (use `npm publish --access public`
+  when publishing for the first time; add the `next` tag)
 
 After a few moments the version will be visible at:
 
