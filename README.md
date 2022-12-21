@@ -1,5 +1,7 @@
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/xpack-dev-tools/aarch64-none-elf-gcc-xpack)](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases)
-[![npm (scoped)](https://img.shields.io/npm/v/@xpack-dev-tools/aarch64-none-elf-gcc.svg)](https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/xpack-dev-tools/aarch64-none-elf-gcc-xpack)](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/package.json)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/xpack-dev-tools/aarch64-none-elf-gcc-xpack)](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/)
+[![npm (scoped)](https://img.shields.io/npm/v/@xpack-dev-tools/aarch64-none-elf-gcc.svg?color=blue)](https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc/)
+[![license](https://img.shields.io/github/license/xpack-dev-tools/aarch64-none-elf-gcc-xpack)](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/LICENSE)
 
 # The xPack GNU AArch64 Embedded GCC
 
@@ -22,7 +24,7 @@ The binaries can be installed automatically as **binary xPacks** or manually as
 ## Release schedule
 
 This distribution plans to follow the official
-[Arm GNU Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads-1/)
+[Arm GNU Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads/)
 distribution, by Arm.
 
 ## User info
@@ -39,11 +41,17 @@ from the [`npmjs.com`](https://www.npmjs.com) registry.
 
 #### Prerequisites
 
-The only requirement is a recent
-`xpm`, which is a portable
-[Node.js](https://nodejs.org) command line application. To install it,
-follow the instructions from the
-[xpm](https://xpack.github.io/xpm/install/) page.
+A recent [xpm](https://xpack.github.io/xpm/),
+which is a portable [Node.js](https://nodejs.org/) command line application.
+
+It is recommended to update to the latest version with:
+
+```sh
+npm install --location=global xpm@latest
+```
+
+For details please follow the instructions in the
+[xPack install](https://xpack.github.io/install/) page.
 
 #### Install
 
@@ -83,9 +91,101 @@ in the user home folder:
 xpm install --global @xpack-dev-tools/aarch64-none-elf-gcc@latest
 ```
 
+After install, the package should create a structure like this (macOS files;
+only the first two depth levels are shown):
+
+```console
+$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.3.1-1.2/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/11.3.1-1.2/.content/
+├── README.md
+├── aarch64-none-elf
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   └── share
+├── bin
+│   ├── aarch64-none-elf-addr2line
+│   ├── aarch64-none-elf-ar
+│   ├── aarch64-none-elf-as
+│   ├── aarch64-none-elf-as-py3
+│   ├── aarch64-none-elf-c++
+│   ├── aarch64-none-elf-c++filt
+│   ├── aarch64-none-elf-cpp
+│   ├── aarch64-none-elf-elfedit
+│   ├── aarch64-none-elf-g++
+│   ├── aarch64-none-elf-gcc
+│   ├── aarch64-none-elf-gcc-11.3.1
+│   ├── aarch64-none-elf-gcc-ar
+│   ├── aarch64-none-elf-gcc-nm
+│   ├── aarch64-none-elf-gcc-ranlib
+│   ├── aarch64-none-elf-gcov
+│   ├── aarch64-none-elf-gcov-dump
+│   ├── aarch64-none-elf-gcov-tool
+│   ├── aarch64-none-elf-gdb
+│   ├── aarch64-none-elf-gdb-add-index
+│   ├── aarch64-none-elf-gdb-add-index-py3
+│   ├── aarch64-none-elf-gdb-py3
+│   ├── aarch64-none-elf-gfortran
+│   ├── aarch64-none-elf-gprof
+│   ├── aarch64-none-elf-gprof-py3
+│   ├── aarch64-none-elf-ld
+│   ├── aarch64-none-elf-ld.bfd
+│   ├── aarch64-none-elf-lto-dump
+│   ├── aarch64-none-elf-nm
+│   ├── aarch64-none-elf-objcopy
+│   ├── aarch64-none-elf-objdump
+│   ├── aarch64-none-elf-ranlib
+│   ├── aarch64-none-elf-readelf
+│   ├── aarch64-none-elf-size
+│   ├── aarch64-none-elf-strings
+│   └── aarch64-none-elf-strip
+├── distro-info
+│   ├── CHANGELOG.md
+│   ├── licenses
+│   ├── patches
+│   └── scripts
+├── include
+│   └── gdb
+├── lib
+│   ├── bfd-plugins
+│   ├── gcc
+│   ├── libcc1.0.so
+│   ├── libcc1.so -> libcc1.0.so
+│   └── python3.10
+├── libexec
+│   ├── gcc
+│   ├── libcrypt.2.dylib
+│   ├── libcrypto.1.1.dylib
+│   ├── libffi.8.dylib
+│   ├── libgcc_s.1.dylib
+│   ├── libgmp.10.dylib
+│   ├── libiconv.2.dylib
+│   ├── libisl.15.dylib
+│   ├── liblzma.5.dylib
+│   ├── libmpc.3.dylib
+│   ├── libmpfr.4.dylib
+│   ├── libncurses.6.dylib
+│   ├── libpanel.6.dylib
+│   ├── libpython3.10.dylib
+│   ├── libreadline.8.1.dylib
+│   ├── libreadline.8.dylib -> libreadline.8.1.dylib
+│   ├── libsqlite3.0.dylib
+│   ├── libssl.1.1.dylib
+│   ├── libstdc++.6.dylib
+│   ├── libz.1.2.12.dylib
+│   └── libz.1.dylib -> libz.1.2.12.dylib
+└── share
+    ├── doc
+    └── gcc-11.3.1
+
+21 directories, 59 files
+```
+
+No other files are installed in any system folders or other locations.
+
 #### Uninstall
 
-To remove the links from the current project:
+To remove the links created by xpm in the current project:
 
 ```sh
 cd my-project
@@ -128,13 +228,12 @@ with caution, and prefer exact matches, like `11.3.1-1.2`.
 
 ## Maintainer info
 
-- [How to build](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/README-BUILD.md)
-- [How to make new releases](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/README-RELEASE.md)
-- [Developer info](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/README-DEVELOP.md)
+For maintainer info, please see the
+[README-MAINTAINER](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/README-MAINTAINER.md)
 
 ## Support
 
-The quick answer is to use the GitHub
+The quick advice for getting support is to use the GitHub
 [Discussions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/discussions/).
 
 For more details please read the
