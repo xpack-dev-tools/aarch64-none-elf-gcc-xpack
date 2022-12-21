@@ -37,15 +37,15 @@ function build_application_versioned_components()
 
   # ---------------------------------------------------------------------------
 
-  if [ "${XBB_HOST_PLATFORM}" == "darwin" ]
+  if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "darwin" ]
   then
     XBB_LTO_PLUGIN_ORIGINAL_NAME="liblto_plugin.so"
     XBB_LTO_PLUGIN_BFD_PATH="lib/bfd-plugins/liblto_plugin.so"
-  elif [ "${XBB_HOST_PLATFORM}" == "linux" ]
+  elif [ "${XBB_REQUESTED_HOST_PLATFORM}" == "linux" ]
   then
     XBB_LTO_PLUGIN_ORIGINAL_NAME="liblto_plugin.so"
     XBB_LTO_PLUGIN_BFD_PATH="lib/bfd-plugins/liblto_plugin.so"
-  elif [ "${XBB_HOST_PLATFORM}" == "win32" ]
+  elif [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
   then
     XBB_LTO_PLUGIN_ORIGINAL_NAME="liblto_plugin.dll"
     XBB_LTO_PLUGIN_BFD_PATH="lib/bfd-plugins/liblto_plugin.dll"
