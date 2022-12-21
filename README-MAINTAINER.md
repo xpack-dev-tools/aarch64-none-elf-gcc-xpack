@@ -28,7 +28,7 @@ git clone \
   ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-Same for the helper and link it to the central xPacks store:
+Same for the **helper** and link it to the central xPacks store:
 
 ```sh
 rm -rf ~/Work/xbb-helper-xpack.git && \
