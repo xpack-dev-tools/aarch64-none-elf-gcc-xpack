@@ -86,7 +86,7 @@ fi
 # -----------------------------------------------------------------------------
 
 tests_parse_options "$@"
-set -x
+
 tests_perform_common
 
 # Completed successfully.
