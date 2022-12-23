@@ -104,7 +104,7 @@
       "aarch64-none-elf-strip": "./.content/bin/aarch64-none-elf-strip"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^0.11.35"
+      "@xpack-dev-tools/xbb-helper": "^0.11.36"
     },
     "properties": {
       "appName": "GNU AArch64 Embedded GCC",
@@ -245,7 +245,8 @@
        ],
         "devDependencies": {
           "@xpack-dev-tools/clang": "14.0.6-2.1",
-          "@xpack-dev-tools/realpath": "9.1.0-1.1"
+          "@xpack-dev-tools/realpath": "9.1.0-1.1",
+          "@xpack-dev-tools/sed": "4.9.0-1.1"
         },
         "actions": {
           "build": "caffeinate {{ properties.commandBashBuild }}",
@@ -311,7 +312,7 @@
     }
   },
   "bundleDependencies": [],
-  "_devDependenciesUrls": [
+  "$devDependenciesUrls": [
     "https://www.npmjs.com/package/liquidjs"
   ],
   "devDependencies": {
