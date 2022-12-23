@@ -18,9 +18,6 @@ function tests_run_all()
 
   test_binutils_cross "${test_bin_path}" "${XBB_APPLICATION_TARGET_TRIPLET}"
 
-  unset SHELL
-  xbb_show_env
-
   test_cross_gcc "${test_bin_path}" "${XBB_APPLICATION_TARGET_TRIPLET}"
 
   test_cross_gdb "${test_bin_path}" "${XBB_APPLICATION_TARGET_TRIPLET}"
