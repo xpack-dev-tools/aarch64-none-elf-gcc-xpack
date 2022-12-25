@@ -291,7 +291,7 @@ xpm install --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 1h48 later, the output of the build script is a compressed
+About 50 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
@@ -325,7 +325,7 @@ xpm install --config darwin-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 caffeinate xpm run build-develop --config darwin-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 31 minutes later, the output of the build script is a compressed
+About 20 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
@@ -358,7 +358,7 @@ xpm run docker-link-deps --config linux-x64 -C ~/Work/aarch64-none-elf-gcc-xpack
 xpm run docker-build-develop --config linux-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 33 minutes later, the output of the build script is a compressed
+About 30 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
