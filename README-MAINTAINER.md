@@ -382,7 +382,7 @@ xpm run docker-link-deps --config win32-x64 -C ~/Work/aarch64-none-elf-gcc-xpack
 xpm run docker-build-develop --config win32-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 33 minutes later, the output of the build script is a compressed
+About 30 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
@@ -414,7 +414,7 @@ xpm run docker-link-deps --config linux-arm64 -C ~/Work/aarch64-none-elf-gcc-xpa
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 3h50 later, the output of the build script is a compressed
+About 3h00 later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
@@ -446,7 +446,7 @@ xpm run docker-link-deps --config linux-arm -C ~/Work/aarch64-none-elf-gcc-xpack
 xpm run docker-build-develop --config linux-arm -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 3h40 later, the output of the build script is a compressed
+About 2h55 later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
