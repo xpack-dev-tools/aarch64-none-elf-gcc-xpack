@@ -262,7 +262,7 @@ xpm install --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 Run the native build:
 
 ```sh
-caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
+xpm run build-develop --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
 The build takes about 1h30 minutes.
@@ -287,7 +287,7 @@ xpm link -C ~/Work/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/aarch64-none-elf-gcc-xpack.git && \
 xpm run deep-clean --config darwin-x64  -C ~/Work/aarch64-none-elf-gcc-xpack.git && \
 xpm install --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
-caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
+xpm run build-develop --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
 About 50 minutes later, the output of the build script is a compressed
@@ -320,7 +320,7 @@ xpm link -C ~/Work/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/aarch64-none-elf-gcc-xpack.git && \
 xpm run deep-clean --config darwin-arm64  -C ~/Work/aarch64-none-elf-gcc-xpack.git && \
 xpm install --config darwin-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
-caffeinate xpm run build-develop --config darwin-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
+xpm run build-develop --config darwin-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
 About 20 minutes later, the output of the build script is a compressed
