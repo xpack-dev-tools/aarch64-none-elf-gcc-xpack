@@ -288,14 +288,14 @@ xpm install --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 xpm run build-develop --config darwin-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 50 minutes later, the output of the build script is a compressed
+About 55 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/darwin-x64/deploy
-total 196816
--rw-r--r--  1 ilg  staff  96097205 Dec 11 00:07 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff       119 Dec 11 00:07 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-x64.tar.gz.sha
+total 231080
+-rw-r--r--  1 ilg  staff  115138684 Feb  1 22:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff        122 Feb  1 22:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -321,14 +321,14 @@ xpm install --config darwin-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 xpm run build-develop --config darwin-arm64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 20 minutes later, the output of the build script is a compressed
+About 25 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/darwin-arm64/deploy
-total 198336
--rw-r--r--  1 ilg  staff  89834866 Dec 10 19:30 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff       121 Dec 10 19:30 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-arm64.tar.gz.sha
+total 230280
+-rw-r--r--  1 ilg  staff  112123545 Feb  1 22:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff        124 Feb  1 22:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -356,14 +356,14 @@ xpm run docker-link-deps --config linux-x64 -C ~/Work/aarch64-none-elf-gcc-xpack
 xpm run docker-build-develop --config linux-x64 -C ~/Work/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 30 minutes later, the output of the build script is a compressed
+About 40 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/linux-x64/deploy
-total 100248
--rw-r--r-- 1 ilg ilg 102647164 Dec 10 17:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-x64.tar.gz
--rw-r--r-- 1 ilg ilg       118 Dec 10 17:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-x64.tar.gz.sha
+total 119720
+-rw-r--r-- 1 ilg ilg 122589099 Feb  1 19:58 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-x64.tar.gz
+-rw-r--r-- 1 ilg ilg       121 Feb  1 19:58 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Windows binaries
@@ -387,9 +387,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/win32-x64/deploy
-total 101784
--rw-r--r-- 1 ilg ilg 104214825 Dec 10 14:37 xpack-aarch64-none-elf-gcc-12.2.1-1.1-win32-x64.zip
--rw-r--r-- 1 ilg ilg       115 Dec 10 14:37 xpack-aarch64-none-elf-gcc-12.2.1-1.1-win32-x64.zip.sha
+total 117336
+-rw-r--r-- 1 ilg ilg 120144861 Feb  1 19:51 xpack-aarch64-none-elf-gcc-12.2.1-1.1-win32-x64.zip
+-rw-r--r-- 1 ilg ilg       118 Feb  1 19:51 xpack-aarch64-none-elf-gcc-12.2.1-1.1-win32-x64.zip.sha
 ```
 
 #### Arm GNU/Linux 64-bit
