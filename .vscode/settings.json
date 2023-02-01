@@ -17,6 +17,7 @@
   "cSpell.ignoreWords": [
     "DT_RPATH",
     "DT_RUNPATH",
+    "FUNCNAME",
     "Ionescu",
     "Linaro",
     "Liviu",
@@ -30,10 +31,12 @@
     "binutils",
     "caffeinate",
     "cleanall",
+    "cleanups",
     "dylib",
     "eabi",
     "elfedit",
     "endraw",
+    "filespec",
     "filt",
     "gcov",
     "gfortran",
@@ -48,6 +51,7 @@
     "libgmp",
     "libiconv",
     "libisl",
+    "liblto",
     "libmpc",
     "libmpfr",
     "libncurses",
@@ -59,6 +63,7 @@
     "libz",
     "linux",
     "liquidjs",
+    "loglevel",
     "mabi",
     "multilib",
     "multilibs",
@@ -87,6 +92,7 @@
     "xbbma",
     "xbbmi",
     "xpack",
-    "xpacks"
+    "xpacks",
+    "zstd"
   ]
 }
