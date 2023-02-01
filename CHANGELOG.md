@@ -2,9 +2,145 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-02-01
+
+* v12.2.1-1.1 prepared
+* 2643e2d re-generate workflows
+* 57c550d package.json: bump deps
+
+## 2023-01-28
+
+* 628fbfb versioning.sh: use versioning functions
+* dd29fdf README-MAINTAINER remove caffeinate xpm
+
+## 2023-01-27
+
+* 7bd3631 package.json: reorder scripts
+
+## 2023-01-24
+
+* dae51a9 README updates
+
+## 2023-01-22
+
+* 074d4f7 README update
+
+## 2023-01-21
+
+* 70d1d32 versioning.sh: FUNCNAME[0]
+
+## 2023-01-09
+
+* 167b862 package.json: bump deps
+* 5622470 package.json: loglevel info
+
+## 2023-01-02
+
+* a898327 package.json: add gcc to windows deps
+
+## 2023-01-01
+
+* 20e9366 package.json: pass xpm version & loglevel
+* 46c4366 package.json: add cmake & ninja deps
+* 11db99f application.sh: add zstd
+* dc42b3b README update
+
+## 2022-12-30
+
+* b5f2eed README-MAINTAINER: xpm run install
+* e5c3425 package.json: bump deps
+* 179ea38 versioning.sh: regexp
+
+## 2022-12-27
+
+* 5762df3 README update
+* da5936b re-generate from templates
+
+## 2022-12-26
+
+* 4766620 README updates
+
+## 2022-12-25
+
+* e82f186 README update
+* 2ca4ecf versioning.sh: remove explicit xbb_set_executables_install_path
+* 18d513e package.json: add m4 dep
+
+## 2022-12-24
+
+* 141657c CHANGELOG update
+* 824f970 versioning.sh: explicit set_executables
+* b7a42db README update
+* e295eaa versioning.sh: update for .git.patch
+* bc8ffda re-generate workflows
+* c4d1858 rename functions
+
+## 2022-12-23
+
+* b4f3a69 package.json: bump deps
+* b92c22b Revert "test.sh: -x"
+* 5345613 package.json: bump deps
+* e76f58d test.sh: -x
+* e39d160 Revert "tests/run.sh: unset SHELL"
+* 8fe494a package.json: bump deps
+* 4c4fcd4 tests/run.sh: unset SHELL
+* e776686 versioning.sh: cosmetics
+* be34c45 README update
+* 19b30ee CHANGELOG.md: use bullet lits
+* 366d2fc package.json: bump deps
+
 ## 2022-12-21
 
-* update for XBB v5.0.0
+* 72e929d package.json: bump deps
+* 40a178e re-generate workflows + --develop for windows
+* 99f2225 package.json: bump deps
+* 58f32dc test-prime: try windows-2019
+* aad54f4 package.json: bump deps
+* 0934363 test-prime.yml: temporary --develop for windows
+* cb98a87 versioning.sh: cleanups XBB_LTO_PLUGIN_*
+* d506803 package.json: bump deps
+* 247ef36 versioning.sh: use REQUESTED to copy liblto_plugin
+* 4992a91 README update
+* 07d70cd package.json: bump deps
+* b445403 update for xbb v5.0; bump version to 11.3.1-1.3
+
+## 2022-11-18
+
+* 119368d .vscode/settings.json: watcherExclude
+
+## 2022-11-16
+
+* bda1b42 remove submodule
+
+## 2022-10-04
+
+* eee9cef README-RELEASE update for bullet lists in CHANGELOG
+
+## 2022-09-25
+
+* 2ad6f68 README-RELEASE update
+
+## 2022-09-17
+
+* d948e3b README-BUILD update
+
+## 2022-09-10
+
+* d058e16 .vscode/settings.json: ignoreWords
+* b825302 body-jekyll: update
+
+## 2022-09-03
+
+* 55b53a8 READMEs updates
+
+## 2022-09-01
+
+* 3873d6c zypper -q --no-gpg-checks in
+
+## 2022-08-31
+
+* 0bdd6c4 body-jekyll update
+* 7789359 README-RELEASE update
 
 ## 2022-08-27
 

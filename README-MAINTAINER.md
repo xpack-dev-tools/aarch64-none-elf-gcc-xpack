@@ -101,22 +101,24 @@ update the dependencies in `package.json`.
 
 Download the new _Source code_ archive (like
 `arm-gnu-toolchain-src-snapshot-*.tar.xz` from
-[Arm](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads)
+[Arm Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 
-Download the latest Darwin archive (like
+Download the latest **macOS (x86_64) hosted cross toolchains** archive (like
 `arm-gnu-toolchain-*-darwin-x86_64-aarch64-none-elf.tar.xz`)
 and copy the file with the configurations
 (`*-darwin-x86_64-aarch64-none-elf-manifest.txt`) to extras.
 
 Download the ABE manifest with the individual source URLs
-(`arm-gnu-toolchain-aarch64-none-elf-abe-manifest.txt`), rename to
-add the release, and copy to extras.
+(`arm-gnu-toolchain-aarch64-none-elf-abe-manifest.txt`) and copy to extras.
+
+From the ABE manifest, identify the `gcc_url` and `gcc_filespec`,
+compose the url (like `https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/src/gcc.tar.xz) and download the archive.
 
 ### Increase the version
 
-From `gcc/BASE-VER`, determine the GCC version (like `11.3.1`)
+From `gcc/BASE-VER`, determine the GCC version (like `12.2.1`)
 and update the `scripts/VERSION`
-file; the format is `11.3.1-1.2`. The fourth number is the Arm release
+file; the format is `12.2.1-1.1`. The fourth number is the Arm release
 number and the fifth is the xPack release number
 of this version. A sixth number will be added when publishing
 the package on the `npm` server.
@@ -127,7 +129,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/>
 
-and fix them; assign them to a milestone (like `11.3.1-1.2`).
+and fix them; assign them to a milestone (like `12.2.1-1.1`).
 
 ### Check `README.md`
 
@@ -137,7 +139,7 @@ but in the version specific release page.
 
 ### Update versions in `README` files
 
-Update both full 5 numbers (`11.3.1-1.2`) and short 3 numbers (`11.3.1`)
+Update both full 5 numbers (`12.2.1-1.1`) and short 3 numbers (`12.2.1`)
 versions in:
 
 - update version in `README-MAINTAINER.md`
@@ -147,17 +149,17 @@ versions in:
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v11.3.1-1.2 prepared_
-- commit with a message like _prepare v11.3.1-1.2_
+- add a new entry like _* v12.2.1-1.1 prepared_
+- commit with a message like _prepare v12.2.1-1.1_
 
 ### Update local binutils-gdb fork
 
 With a Git client:
 
 - checkout the branch mentioned in the release notes
-  (like `binutils-2_38-branch`)
-- identify the commit ID
-- add a tag like `binutils-2.38-aarch64-none-elf-11.3.rel1`
+  (like `binutils-2_39-branch`)
+- identify the commit ID (search upwards)
+- add a tag like `binutils-2.39-aarch64-none-elf-12.2.rel1`
 - push the tag to origin
 - check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
 
@@ -165,8 +167,8 @@ Similarly for GDB:
 
 - checkout the branch mentioned in the release notes
   (like `gdb-12-branch`)
-- identify the commit ID
-- add a tag like `gdb-12-aarch64-none-elf-11.3.rel1`
+- identify the commit ID (search upwards)
+- add a tag like `gdb-12-aarch64-none-elf-12.2.rel1`
 - push the tag to origin
 - check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
 
@@ -175,14 +177,14 @@ Similarly for GDB:
 With a Git client:
 
 - checkout the branch mentioned in the release notes
-  (like `ARM/arm-11`)
-- identify the commit ID
-- create a branch like `arm-11-aarch64-none-elf-11.3.rel1`
+  (like `ARM/arm-12`)
+- identify the commit ID (search upwards)
+- create a branch like `arm-12-aarch64-none-elf-12.2.rel1`
 - cherry pick the commits
   (like _Try to get support for Apple Silicon_)
 - select the new commit
 - right click -> Save as Patch...
-- copy to `patches/gcc-11.3.1-cross.git.patch`
+- copy to helper `patches/gcc-12.2.1-cross.git.patch`
 
 ### Update the version specific code
 
@@ -206,10 +208,6 @@ Before the real build, run test builds on all platforms.
 All actions are defined as **xPack actions** and can be conveniently
 triggered via the VS Code graphical interface, using the
 [xPack extension](https://marketplace.visualstudio.com/items?itemName=ilg-vscode.xpack).
-
-#### Temporarily disable multilib
-
-In the `scripts.application.sh` enable the `WITHOUT_MULTILIB="y"` definition.
 
 #### Patches
 
@@ -296,8 +294,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/darwin-x64/deploy
 total 196816
--rw-r--r--  1 ilg  staff  96097205 Dec 11 00:07 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff       119 Dec 11 00:07 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  96097205 Dec 11 00:07 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff       119 Dec 11 00:07 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -329,8 +327,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/darwin-arm64/deploy
 total 198336
--rw-r--r--  1 ilg  staff  89834866 Dec 10 19:30 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff       121 Dec 10 19:30 xpack-aarch64-none-elf-gcc-11.3.1-1.2-darwin-arm64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  89834866 Dec 10 19:30 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff       121 Dec 10 19:30 xpack-aarch64-none-elf-gcc-12.2.1-1.1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -364,8 +362,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/linux-x64/deploy
 total 100248
--rw-r--r-- 1 ilg ilg 102647164 Dec 10 17:19 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-x64.tar.gz
--rw-r--r-- 1 ilg ilg       118 Dec 10 17:19 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-x64.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 102647164 Dec 10 17:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-x64.tar.gz
+-rw-r--r-- 1 ilg ilg       118 Dec 10 17:19 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Windows binaries
@@ -390,8 +388,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/win32-x64/deploy
 total 101784
--rw-r--r-- 1 ilg ilg 104214825 Dec 10 14:37 xpack-aarch64-none-elf-gcc-11.3.1-1.2-win32-x64.zip
--rw-r--r-- 1 ilg ilg       115 Dec 10 14:37 xpack-aarch64-none-elf-gcc-11.3.1-1.2-win32-x64.zip.sha
+-rw-r--r-- 1 ilg ilg 104214825 Dec 10 14:37 xpack-aarch64-none-elf-gcc-12.2.1-1.1-win32-x64.zip
+-rw-r--r-- 1 ilg ilg       115 Dec 10 14:37 xpack-aarch64-none-elf-gcc-12.2.1-1.1-win32-x64.zip.sha
 ```
 
 #### Arm GNU/Linux 64-bit
@@ -423,8 +421,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/linux-arm64/deploy
 total 169440
--rw-rw-rw- 1 root root 94181557 Aug 21 05:04 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm64.tar.gz
--rw-rw-rw- 1 root root      106 Aug 21 05:04 xpack-aarch64-none-elf-gcc-11.3.1-1.1-linux-arm64.tar.gz.sha
+-rw-rw-rw- 1 root root 94181557 Aug 21 05:04 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-arm64.tar.gz
+-rw-rw-rw- 1 root root      106 Aug 21 05:04 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -456,8 +454,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/aarch64-none-elf-gcc-xpack.git/build/linux-arm/deploy
 total 97460
--rw-r--r-- 1 ilg ilg 99793275 Dec 11 15:51 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-arm64.tar.gz
--rw-r--r-- 1 ilg ilg      120 Dec 11 15:51 xpack-aarch64-none-elf-gcc-11.3.1-1.2-linux-arm64.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 99793275 Dec 11 15:51 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-arm64.tar.gz
+-rw-r--r-- 1 ilg ilg      120 Dec 11 15:51 xpack-aarch64-none-elf-gcc-12.2.1-1.1-linux-arm64.tar.gz.sha
 ```
 
 ### Files cache
@@ -657,7 +655,7 @@ git clone \
 
 ## Create a new GitHub pre-release draft
 
-- in `CHANGELOG.md`, add the release date and a message like _* v11.3.1-1.2 released_
+- in `CHANGELOG.md`, add the release date and a message like _* v12.2.1-1.1 released_
 - commit with _CHANGELOG update_
 - check and possibly update the `templates/body-github-release-liquid.md`
 - push the `xpack-develop` branch
@@ -668,8 +666,8 @@ The workflows results and logs are available from the
 
 The result is a
 [draft pre-release](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/)
-tagged like **v11.3.1-1.2** (mind the dash in the middle!) and
-named like **xPack GNU AArch64 Embedded GCC v11.3.1-1.2** (mind the dash),
+tagged like **v12.2.1-1.1** (mind the dash in the middle!) and
+named like **xPack GNU AArch64 Embedded GCC v12.2.1-1.1** (mind the dash),
 with all binaries attached.
 
 - edit the draft and attach it to the `xpack-develop` branch (important!)
@@ -692,7 +690,7 @@ If any, refer to closed
 ## Update the preview Web
 
 - commit the `develop` branch of `xpack/web-jekyll` GitHub repo;
-  use a message like _xPack GNU AArch64 Embedded GCC v11.3.1-1.2 released_
+  use a message like _xPack GNU AArch64 Embedded GCC v12.2.1-1.1 released_
 - push to GitHub
 - wait for the GitHub Pages build to complete
 - the preview web is <https://xpack.github.io/web-preview/news/>
@@ -734,18 +732,18 @@ watching this project.
 - compare the SHA sums with those shown by `cat *.sha`
 - check the executable names
 - commit all changes, use a message like
-  _package.json: update urls for 11.3.1-1.2 release_ (without _v_)
+  _package.json: update urls for 12.2.1-1.1 release_ (without _v_)
 
 ## Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - check the latest commits `npm run git-log`
-- update `CHANGELOG.md`, add a line like _* v11.3.1-1.2.1 published on npmjs.com_
-- commit with a message like _CHANGELOG: publish npm v11.3.1-1.2.1_
+- update `CHANGELOG.md`, add a line like _* v12.2.1-1.1.1 published on npmjs.com_
+- commit with a message like _CHANGELOG: publish npm v12.2.1-1.1.1_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
-- `npm version 11.3.1-1.2.1`; the first 5 numbers are the same as the
+- `npm version 12.2.1-1.1.1`; the first 5 numbers are the same as the
   GitHub release; the sixth number is the npm specific version
 - the commits and the tag should have been pushed by the `postversion` script;
   if not, push them with `git push origin --tags`
@@ -774,12 +772,12 @@ The tests results are available from the
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
-- `npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.2.1 latest`
+- `npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@12.2.1-1.1.1 latest`
 - `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
 
 In case the previous version is not functional and needs to be unpublished:
 
-- `npm unpublish @xpack-dev-tools/aarch64-none-elf-gcc@11.3.1-1.2.1`
+- `npm unpublish @xpack-dev-tools/aarch64-none-elf-gcc@12.2.1-1.1.1`
 
 ## Update the Web
 
@@ -801,7 +799,7 @@ In case the previous version is not functional and needs to be unpublished:
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@xpack_project` account
-- paste the release name like **xPack GNU AArch64 Embedded GCC v11.3.1-1.2 released**
+- paste the release name like **xPack GNU AArch64 Embedded GCC v12.2.1-1.1 released**
 - paste the link to the Web page
   [release](https://xpack.github.io/aarch64-none-elf-gcc/releases/)
 - click the **Tweet** button
@@ -824,10 +822,10 @@ The results are available from the
 Add a new topic in the **Compilers and Libraries** forum of the
 [Arm Developer Community](https://community.arm.com/support-forums/f/compilers-and-libraries-forum)
 
-- title: xPack GNU AArch64 Embedded GCC v11.3.1-1.2 released
+- title: xPack GNU AArch64 Embedded GCC v12.2.1-1.1 released
 - content:
   - The **xPack GNU AArch64 Embedded GCC** is an alternate binary distribution that complements the official GNU AArch64 Embedded Toolchain maintained by Arm.
-  - The latest release is [11.3.1-1.2]() following Arm release from October 21, 2021 (version 10.3-2021.10).
+  - The latest release is [12.2.1-1.1]() following Arm release from October 21, 2021 (version 10.3-2021.10).
 - tags: xpack, gnu, gcc, arm, aarch64, toolchain
 
 NOTE: do not use markdown, but format the text with the blog editor.
