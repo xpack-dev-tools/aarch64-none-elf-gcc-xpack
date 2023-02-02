@@ -471,27 +471,18 @@ location (like
 <https://github.com/xpack-dev-tools/files-cache/tree/master/libs>),
 place them in the XBB cache (`Work/cache`) and restart the build.
 
-## Push the build scripts
-
-In this Git repo:
-
-- push the `xpack-develop` branch to GitHub
-- possibly push the helper project too
-
-From here it'll be cloned on the production machines.
-
 ## Run the CI build
 
 The automation is provided by GitHub Actions and three self-hosted runners.
 
-It is recommended to do **a first run without the multi-libs**
-(see the `application.sh` file), test it,
-and, when ready, rerun the full build.
+### Generate the GitHub workflows
 
 Run the `generate-workflows` to re-generate the
 GitHub workflow files; commit and push if necessary.
 
-- on a permanently running machine (`berry`) open ssh sessions to the build
+### Start the self-hosted runners
+
+- on the development machine (`wksi`) open ssh sessions to the build
 machines (`xbbma`, `xbbli`, `xbbla64` and `xbbla32`):
 
 ```sh
@@ -518,9 +509,18 @@ For `xbbli` & `xbbla64` start two runners:
 ~/actions-runners/xpack-dev-tools/2/run.sh &
 ```
 
-Check that the project is pushed to GitHub.
+## Push the build scripts
 
-To trigger the GitHub Actions build, use the xPack actions:
+In this Git repo:
+
+- push the `xpack-develop` branch to GitHub
+- possibly push the helper project too
+
+From here it'll be cloned on the production machines.
+
+### Manually trigger the build GitHub Actions
+
+To trigger the GitHub Actions builds, use the xPack actions:
 
 - `trigger-workflow-build-xbbli`
 - `trigger-workflow-build-xbbla64`
@@ -545,6 +545,8 @@ Settings → Action →
 page.
 
 These commands use the `xpack-develop` branch of this repo.
+
+## Durations & results
 
 The full builds take about 3 hours
 to complete:
