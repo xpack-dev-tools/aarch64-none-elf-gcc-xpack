@@ -7,8 +7,8 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fix
 
 summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream Arm release."
 
-arm_version: 12.2.Rel1
-arm_date: December 22, 2022
+arm_version: "12.2.Rel1"
+arm_date: "December 22, 2022"
 gcc_version: "12.2.1"
 binutils_version: "2.39"
 newlib_version: "4.2.0"
@@ -16,7 +16,8 @@ gdb_version: "12.1"
 python_version: "3.11.1"
 
 version: "{{ XBB_RELEASE_VERSION }}"
-npm_subversion: 1
+npm_subversion: "1"
+
 download_url: https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
 
 date:   {{ RELEASE_DATE }}
