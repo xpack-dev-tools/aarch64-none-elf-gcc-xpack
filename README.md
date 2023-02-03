@@ -107,7 +107,6 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.
 │   ├── aarch64-none-elf-addr2line
 │   ├── aarch64-none-elf-ar
 │   ├── aarch64-none-elf-as
-│   ├── aarch64-none-elf-as-py3
 │   ├── aarch64-none-elf-c++
 │   ├── aarch64-none-elf-c++filt
 │   ├── aarch64-none-elf-cpp
@@ -127,7 +126,6 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.
 │   ├── aarch64-none-elf-gdb-py3
 │   ├── aarch64-none-elf-gfortran
 │   ├── aarch64-none-elf-gprof
-│   ├── aarch64-none-elf-gprof-py3
 │   ├── aarch64-none-elf-ld
 │   ├── aarch64-none-elf-ld.bfd
 │   ├── aarch64-none-elf-lto-dump
@@ -151,13 +149,15 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.
 │   ├── gcc
 │   ├── libcc1.0.so
 │   ├── libcc1.so -> libcc1.0.so
-│   └── python3.10
+│   └── python3.11
 ├── libexec
 │   ├── gcc
+│   ├── libbz2.1.0.8.dylib
 │   ├── libcrypt.2.dylib
 │   ├── libcrypto.1.1.dylib
+│   ├── libexpat.1.6.7.dylib
+│   ├── libexpat.1.dylib -> libexpat.1.6.7.dylib
 │   ├── libffi.8.dylib
-│   ├── libgcc_s.1.dylib
 │   ├── libgmp.10.dylib
 │   ├── libiconv.2.dylib
 │   ├── libisl.15.dylib
@@ -166,19 +166,18 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.
 │   ├── libmpfr.4.dylib
 │   ├── libncurses.6.dylib
 │   ├── libpanel.6.dylib
-│   ├── libpython3.10.dylib
-│   ├── libreadline.8.1.dylib
-│   ├── libreadline.8.dylib -> libreadline.8.1.dylib
+│   ├── libpython3.11.dylib
+│   ├── libreadline.8.2.dylib
+│   ├── libreadline.8.dylib -> libreadline.8.2.dylib
 │   ├── libsqlite3.0.dylib
 │   ├── libssl.1.1.dylib
-│   ├── libstdc++.6.dylib
-│   ├── libz.1.2.12.dylib
-│   └── libz.1.dylib -> libz.1.2.12.dylib
+│   ├── libz.1.2.13.dylib
+│   ├── libz.1.dylib -> libz.1.2.13.dylib
+│   └── libzstd.1.5.2.dylib
 └── share
-    ├── doc
     └── gcc-12.2.1
 
-21 directories, 59 files
+20 directories, 59 files
 ```
 
 No other files are installed in any system folders or other locations.

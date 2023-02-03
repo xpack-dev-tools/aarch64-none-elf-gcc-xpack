@@ -548,14 +548,13 @@ These commands use the `xpack-develop` branch of this repo.
 
 ## Durations & results
 
-The full builds take about 3 hours
-to complete:
+The builds take about 3h40 to complete:
 
-- `xbbmi`: 1h55
-- `xbbma`: 30 min
-- `xbbli`: 1h (including Windows)
-- `xbbla64`: 2h45
-- `xbbla32`: 2h55
+- `xbbmi`: 1h00
+- `xbbma`: 0h23
+- `xbbli`: 1h00 (0h31 Linux, 0h27 Windows)
+- `xbbla64`: 3h30
+- `xbbla32`: 3h37
 
 The workflows results and logs are available from the
 [Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
