@@ -2,8 +2,24 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-02-03
+
+* v12.2.1-1.1 released
+* 6e3b9b8 README updates
+* b7b2183 templates updates
+* fef3546 .vscode/settings.json: ignoreWords
+
+## 2023-02-02
+
+* 1a2e04b README update
+* 6f2ae1c package.json: bump deps
+
 ## 2023-02-01
 
+* f0d43d6 README update
+* 2ba09ce prepare v12.2.1-1.1
+* 5e1bad9 .vscode/settings.json: ignoreWords
+* c660b31 extras: use sub-folders, add 12.2
 * v12.2.1-1.1 prepared
 * 2643e2d re-generate workflows
 * 57c550d package.json: bump deps
