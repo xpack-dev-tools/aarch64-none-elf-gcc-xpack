@@ -1,7 +1,7 @@
 ### Disclaimer
 
 The xPack GNU AArch64 Embedded GCC is only a binary distribution of
-the [GNU AArch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain),
+the [Arm GNU Toolchain](https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain),
 and does not intend to add new functionality, or to fix existing problems.
 
 If you have questions/suggestions related to the procedure used to
