@@ -89,7 +89,7 @@ a dependency for a project is quite easy:
 cd my-project
 xpm init # Only at first use.
 
-xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest
+xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest --verbose
 
 ls -l xpacks/.bin
 ```
@@ -97,14 +97,14 @@ ls -l xpacks/.bin
 To install this specific version, use:
 
 ```sh
-xpm install @xpack-dev-tools/aarch64-none-elf-gcc@{% raw %}{{ page.version }}.{{ page.npm_subversion }}{% endraw %}
+xpm install @xpack-dev-tools/aarch64-none-elf-gcc@{% raw %}{{ page.version }}.{{ page.npm_subversion }}{% endraw %} --verbose
 ```
 
 For xPacks aware tools, like the **Eclipse Embedded C/C++ plug-ins**,
 it is also possible to install Arm Embedded GCC globally, in the user home folder.
 
 ```sh
-xpm install --global @xpack-dev-tools/aarch64-none-elf-gcc@latest
+xpm install --global @xpack-dev-tools/aarch64-none-elf-gcc@latest --verbose
 ```
 
 Eclipse will automatically
@@ -135,7 +135,7 @@ releases.
 
 The current version is based on:
 
-- [Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+- [Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/)
 release **{% raw %}{{ page.arm_version }}{% endraw %}** from {% raw %}{{ page.arm_date }}{% endraw %}
 and uses the same sources. It includes:
   - GCC {% raw %}{{ page.gcc_version }}{% endraw %}
