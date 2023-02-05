@@ -4,8 +4,12 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-02-05
 
+* v12.2.1-1.2.1 published on npmjs.com
+* 7c8fb2b package.json: update urls for 12.2.1-1.2 release
 * v12.2.1-1.2 released
-* v12.2.1-1.2 prepared
+* 148abde README update
+* 2d07b9a CHANGELOG update
+* 20c1b7e prepare v12.2.1-1.2
 * 3cf23d3 READMEs updates
 * 9077f32 package.json: bump deps
 * c98410a templates updates
