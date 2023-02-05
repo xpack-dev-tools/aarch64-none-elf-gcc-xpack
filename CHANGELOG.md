@@ -2,9 +2,21 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-02-05
+
+* v12.2.1-1.2 prepared
+* 3cf23d3 READMEs updates
+* 9077f32 package.json: bump deps
+* c98410a templates updates
+
 ## 2023-02-03
 
-* v12.2.1-1.1.1 published on npmjs.com
+* d2bccd1 READMEs updates
+* 4203f72 ISSUE_TEMPLATE update
+* 6e1f871 body-jekyll update
+* 53b81e3 12.2.1-1.1.1
+* 2b3cb26 CHANGELOG: publish npm v12.2.1-1.1.1
+* 63739f7 package.json update
 * e635b5d package.json: update urls for 12.2.1-1.1 release
 * b172c85 body-jekyll update
 * 2f10424 CHANGELOG update

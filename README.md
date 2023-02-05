@@ -95,8 +95,8 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.2.1-1.1/.content/
-/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.2.1-1.1/.content/
+$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.2.1-1.2/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.2.1-1.2/.content/
 ├── README.md
 ├── aarch64-none-elf
 │   ├── bin
@@ -219,11 +219,11 @@ but since semver allows only three numbers, all additional ones can
 be added only as pre-release strings, separated by a dash,
 like `12.2.1-1`.
 When published as a npm package, the version gets
-a fifth number, like `12.2.1-1.1`.
+a fifth number, like `12.2.1-1.2`.
 
 Since adherence of third party packages to semver is not guaranteed,
 it is recommended to use semver expressions like `^12.2.1` and `~12.2.1`
-with caution, and prefer exact matches, like `12.2.1-1.1`.
+with caution, and prefer exact matches, like `12.2.1-1.2`.
 
 ## Maintainer info
 
