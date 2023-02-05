@@ -66,7 +66,7 @@ A recent [xpm](https://xpack.github.io/xpm/), which is a portable
 ## Release schedule
 
 The xPack GNU Arm Embedded GCC release schedule generally follows the
-[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/)
 release schedule, which is about two releases per year.
 
 ## How to make new releases
@@ -101,7 +101,7 @@ update the dependencies in `package.json`.
 
 Download the new _Source code_ archive (like
 `arm-gnu-toolchain-src-snapshot-*.tar.xz` from
-[Arm Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+[Arm Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/)
 
 Download the latest **macOS (x86_64) hosted cross toolchains** archive (like
 `arm-gnu-toolchain-*-darwin-x86_64-aarch64-none-elf.tar.xz`)
@@ -180,11 +180,6 @@ With a Git client:
   (like `ARM/arm-12`)
 - identify the commit ID (search upwards)
 - create a branch like `arm-12-aarch64-none-elf-12.2.rel1`
-- cherry pick the commits
-  (like _Try to get support for Apple Silicon_)
-- select the new commit
-- right click -> Save as Patch...
-- copy to helper `patches/gcc-12.2.1-cross.git.patch`
 
 ### Update the version specific code
 
@@ -518,6 +513,11 @@ In this Git repo:
 
 From here it'll be cloned on the production machines.
 
+### Check for disk space
+
+Check if the build machines have enough free space and eventually
+do some cleanups.
+
 ### Manually trigger the build GitHub Actions
 
 To trigger the GitHub Actions builds, use the xPack actions:
@@ -832,4 +832,4 @@ Add a new topic in the **Compilers and Libraries** forum of the
 NOTE: do not use markdown, but format the text with the blog editor.
 
 Update with actual details from
-[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/)

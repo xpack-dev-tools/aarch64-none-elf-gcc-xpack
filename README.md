@@ -24,7 +24,7 @@ The binaries can be installed automatically as **binary xPacks** or manually as
 ## Release schedule
 
 This distribution plans to follow the official
-[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/)
 distribution, by Arm.
 
 ## User info
@@ -63,7 +63,7 @@ a dependency for a project is quite easy:
 cd my-project
 xpm init # Only at first use.
 
-xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest
+xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest --verbose
 
 ls -l xpacks/.bin
 ```
@@ -88,7 +88,7 @@ it is also possible to install GNU AArch64 Embedded GCC globally,
 in the user home folder:
 
 ```sh
-xpm install --global @xpack-dev-tools/aarch64-none-elf-gcc@latest
+xpm install --global @xpack-dev-tools/aarch64-none-elf-gcc@latest --verbose
 ```
 
 After install, the package should create a structure like this (macOS files;
