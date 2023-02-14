@@ -20,6 +20,8 @@ npm_subversion: "1"
 
 download_url: https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
 
+comments: true
+
 date:   {{ RELEASE_DATE }}
 
 categories:
