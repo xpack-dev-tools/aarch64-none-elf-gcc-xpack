@@ -646,7 +646,7 @@ and check the binaries.
 On macOS, remove the `com.apple.quarantine` flag:
 
 ```sh
-xattr -dr com.apple.quarantine ${HOME}/Downloads/xpack-*
+xattr -cr ${HOME}/Downloads/xpack-*
 ```
 
 - unpack the archive in `Downloads`, and rename the version
