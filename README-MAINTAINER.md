@@ -834,6 +834,10 @@ In case the previous version is not functional and needs to be unpublished:
   [release](https://xpack.github.io/aarch64-none-elf-gcc/releases/)
 - click the **Tweet** button
 
+## Check SourceForge mirror
+
+- <https://sourceforge.net/projects/aarch64-none-elf-gcc-xpack/files/>
+
 ## Remove the pre-release binaries
 
 - go to <https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/>
