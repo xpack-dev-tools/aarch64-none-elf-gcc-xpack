@@ -99,7 +99,7 @@
       "aarch64-none-elf-strip": "./.content/bin/aarch64-none-elf-strip"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^1.4.9"
+      "@xpack-dev-tools/xbb-helper": "^1.4.14"
     },
     "properties": {
       "appName": "GNU AArch64 Embedded GCC",
