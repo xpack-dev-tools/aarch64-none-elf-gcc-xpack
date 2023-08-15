@@ -139,7 +139,7 @@ Download the ABE manifest with the individual source URLs
 From the ABE manifest, identify the `gcc_url` and `gcc_filespec`,
 compose the url (like `https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/src/gcc.tar.xz) and download the archive.
 
-To get the newlib version, check the manifest.txt; download the archive from:
+To get the **newlib** version, check the manifest.txt; download the archive from:
 
 - <https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/src/newlib-cygwin.tar.xz>
 
@@ -192,22 +192,22 @@ Use a new version, suffixed by `.pre`.
 With a Git client:
 
 - checkout the branch mentioned in the release notes
-  (like `binutils-2_39-branch`)
+  (like `binutils-2_40-branch`)
 - identify the commit ID (search upwards)
-- add a tag like `binutils-2.39-aarch64-none-elf-12.3.rel1`
+- add a tag like `binutils-2.40-aarch64-none-elf-12.3.rel1`
 - push the tag to origin
 - check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
 
 Similarly for GDB:
 
 - checkout the branch mentioned in the release notes
-  (like `gdb-12-branch`)
+  (like `gdb-13-branch`)
 - identify the commit ID (search upwards)
-- add a tag like `gdb-12-aarch64-none-elf-12.3.rel1`
+- add a tag like `gdb-13-aarch64-none-elf-12.3.rel1`
 - push the tag to origin
 - check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
 
-### Update local gcc fork
+### Update local gcc fork (if commit ID present in manifest.txt)
 
 With a Git client:
 
@@ -215,6 +215,10 @@ With a Git client:
   (like `ARM/arm-12`)
 - identify the commit ID (search upwards)
 - create a branch like `arm-12-aarch64-none-elf-12.3.rel1`
+
+### Update the gdb-*-cross.git.patch in helper
+
+Copy/paste a previous one; adjust if necessary.
 
 ### Update the version specific code
 
