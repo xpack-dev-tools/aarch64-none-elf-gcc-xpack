@@ -2,9 +2,86 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-08-15
+
+* v12.3.1-1.1 prepared
+* 16bf8f1 .vscode/settings.json ignoreWords
+* ab01209 re-generate workflows
+* 3f2b0b9 README-MAINTAINER rename xbbla
+* e18ac22 package.json: rename xbbla
+* bbc21f3 package.json: bump deps
+* 803884a READMEs update
+* a63beab package.json: bump deps
+
+## 2023-08-05
+
+* 7d81011 READMEs update
+
+## 2023-08-04
+
+* f161a4b READMEs update
+* d610985 READMEs update
+* e0ee51b package.json: add build-develop-debug
+* 2d7bb38 READMEs update
+
+## 2023-08-03
+
+* 2f0fc3e package.json: reorder build actions
+* 62f1073 READMEs update
+* 80d6d6c package.json: bump deps
+
+## 2023-07-28
+
+* 802b62e READMEs update
+* f740518 package.json: bump deps
+* 5e41b47 package.json: liquidjs --context --template
+* 839afde scripts cosmetics
+* cef9b27 re-generate workflows
+* 8225966 READMEs update
+* 993a705 package.json: minXpm 0.16.3 & @xpack-dev-tools/xbb-helper
+* 073b0b4 READMEs update
+* 9c85a2b package.json: bump deps
+
+## 2023-07-26
+
+* 87efda9 package.json: move scripts to actions
+* dee86fd package.json: update xpack-dev-tools path
+* fff4ebf READMEs update xpack-dev-tools path
+* ed17fec body-jekyll update
+* e399298 READMEs update
+
+## 2023-07-17
+
+* 76e9b77 package.json: bump deps
+
+## 2023-03-25
+
+* 077b0ce READMEs update
+* 693b3cd READMEs update prerequisites
+* 7f2182a package.json: mkdir -pv cache
+
+## 2023-02-22
+
+* 5378bfa READMEs update
+
+## 2023-02-14
+
+* 4b0b346 body-jekyll update
+
+## 2023-02-10
+
+* 0e87ad1 package.json: update Work/xpacks
+* 81c78c0 READMEs update
+
+## 2023-02-07
+
+* 401050d READMEs update
+* d8a4f8c body-jekyll update
+
 ## 2023-02-05
 
-* v12.2.1-1.2.1 published on npmjs.com
+* 69d674b 12.2.1-1.2.1
+* 7816462 CHANGELOG: publish npm v12.2.1-1.2.1
 * 7c8fb2b package.json: update urls for 12.2.1-1.2 release
 * v12.2.1-1.2 released
 * 148abde README update
