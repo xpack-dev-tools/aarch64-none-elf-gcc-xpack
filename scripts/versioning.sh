@@ -90,8 +90,8 @@ function application_build_versioned_components()
       # https://github.com/xpack-dev-tools/binutils-gdb/tags/
 
       # From `gdb/version.in`
-      XBB_GDB_VERSION="12.1"
-      XBB_GDB_TAG_NAME="gdb-12-aarch64-none-elf-${XBB_ARM_RELEASE}"
+      XBB_GDB_VERSION="13.2"
+      XBB_GDB_TAG_NAME="gdb-13-aarch64-none-elf-${XBB_ARM_RELEASE}"
 
       XBB_GDB_SRC_FOLDER_NAME="binutils-gdb-${XBB_GDB_TAG_NAME}"
       XBB_GDB_ARCHIVE_NAME="${XBB_GDB_TAG_NAME}.tar.gz"
@@ -105,7 +105,7 @@ function application_build_versioned_components()
       # Arm: release notes.
       # Repository: git://gcc.gnu.org/git/gcc.git
       # Branch: refs/vendors/ARM/heads/arm-12
-      # Revision: ed5092f464a08af47b8a75a3601e7bd6f7e14e8b
+      # Revision: ?
 
       # XBB_GCC_VERSION computer from XBB_RELEASE_VERSION
       XBB_GCC_SRC_FOLDER_NAME="gcc"
