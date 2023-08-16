@@ -261,6 +261,22 @@ function application_build_versioned_components()
     # gdb needs a newer bison than available on macOS
     bison_build "3.8.2"
 
+    libtool_build "2.4.7"
+
+    libunistring_build "1.1"
+
+    # autopoint required by flex autogen.sh
+    gettext_build "0.22"
+
+    # Required by flex.
+    autotools_build
+    (
+      xbb_activate_installed_bin
+
+      # gcc on macOS 10.13 is 2.5.35
+      flex_build "2.6.4"
+    )
+
     # -------------------------------------------------------------------------
     # Build the target dependencies.
 
