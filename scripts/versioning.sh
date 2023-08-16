@@ -258,6 +258,9 @@ function application_build_versioned_components()
       gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
     fi
 
+    # gdb needs a newer bison than available on macOS
+    bison_build "3.8.2"
+
     # -------------------------------------------------------------------------
     # Build the target dependencies.
 
