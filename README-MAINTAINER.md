@@ -275,7 +275,7 @@ For a debug build:
 xpm run build-develop-debug --config darwin-x64 -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git
 ```
 
-The build takes about 1h30 minutes.
+The build takes about 55 minutes.
 
 When functional, push the `xpack-develop` branch to GitHub.
 
@@ -333,14 +333,14 @@ xpm install --config darwin-arm64 -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc
 xpm run build-develop --config darwin-arm64 -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git
 ```
 
-About 25 minutes later, the output of the build script is a compressed
+About 30 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/darwin-arm64/deploy
-total 230280
--rw-r--r--  1 ilg  staff  112123545 Feb  1 22:19 xpack-aarch64-none-elf-gcc-12.3.1-1.1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff        124 Feb  1 22:19 xpack-aarch64-none-elf-gcc-12.3.1-1.1-darwin-arm64.tar.gz.sha
+total 230152
+-rw-r--r--  1 ilg  staff  112897459 Aug 16 21:44 xpack-aarch64-none-elf-gcc-12.3.1-1.1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff        124 Aug 16 21:44 xpack-aarch64-none-elf-gcc-12.3.1-1.1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
