@@ -23,7 +23,12 @@ XBB_APPLICATION_DISTRO_TOP_FOLDER=${XBB_APPLICATION_DISTRO_TOP_FOLDER:-"xPacks"}
 XBB_APPLICATION_DESCRIPTION="${XBB_APPLICATION_DISTRO_NAME} ${XBB_APPLICATION_NAME}"
 
 declare -a XBB_APPLICATION_DEPENDENCIES=( )
-declare -a XBB_APPLICATION_COMMON_DEPENDENCIES=( zlib gmp mpfr mpc isl libiconv xz zstd binutils-cross gcc-cross newlib-cross expat gettext gpm ncurses readline bzip2 libffi mpdecimal sqlite libxcrypt openssl python3 bison libtool libunistring gettext autotools flex gdb-cross )
+declare -a XBB_APPLICATION_COMMON_DEPENDENCIES=( zlib gmp mpfr mpc isl libiconv xz zstd binutils-cross gcc-cross newlib-cross expat gettext gpm ncurses readline bzip2 libffi mpdecimal sqlite libxcrypt openssl python3 libunistring gdb-cross )
+
+# XBB_APPLICATION_USE_CLANG_ON_LINUX="y"
+
+# Unfortunately libtool creates shared libraries that use the gcc libraries.
+# XBB_APPLICATION_USE_CLANG_LIBCXX="y"
 
 # -----------------------------------------------------------------------------
 
