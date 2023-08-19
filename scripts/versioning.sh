@@ -66,7 +66,7 @@ function application_build_versioned_components()
 
       # Arm: release notes.
       # Repository: git://sourceware.org/git/binutils-gdb.git
-      # Branch: binutils-2_39-branch
+      # Branch: binutils-2_40-branch
       # Revision: 28cb7cd2300df920d6e676af840a7e7970f0d7e6 (from manifest.txt)
 
       # https://github.com/xpack-dev-tools/binutils-gdb/tags
