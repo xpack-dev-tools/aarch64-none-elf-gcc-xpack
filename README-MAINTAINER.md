@@ -207,7 +207,7 @@ Similarly for GDB:
 - push the tag to origin
 - check the tag at <https://github.com/xpack-dev-tools/binutils-gdb/tags/>
 
-### Update local gcc fork (if commit ID present in manifest.txt)
+### Update local gcc fork (if the commit ID present in manifest.txt)
 
 With a Git client:
 
@@ -546,6 +546,10 @@ In this Git repo:
 
 From here it'll be cloned on the production machines.
 
+### Publish helper
+
+Publish a new release of the helper and update the reference in `package.json`.
+
 ### Check for disk space
 
 Check if the build machines have enough free space and eventually
@@ -710,6 +714,7 @@ with all binaries attached.
 ## Prepare a new blog post
 
 - check and possibly update the `templates/body-jekyll-release-*-liquid.md`
+  (for the release dates, use <https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/>)
 - run the xPack action `generate-jekyll-post`; this will leave a file
 on the Desktop.
 
