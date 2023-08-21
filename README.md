@@ -181,7 +181,7 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.
 └── share
     └── gcc-12.3.1
 
-20 directories, 59 files
+21 directories, 59 files
 ```
 
 No other files are installed in any system folders or other locations.

@@ -709,6 +709,15 @@ git clone \
   ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git
 ```
 
+- check version:
+
+```sh
+.../aarch64-none-elf-12.3.1-1.1/bin/aarch64-none-elf-gcc --version
+aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 12.3.1 20230626
+```
+
+- use the toolchain in your own tests.
+
 ## Create a new GitHub pre-release draft
 
 - in `CHANGELOG.md`, add the release date and a message like _* v12.3.1-1.1 released_
