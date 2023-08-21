@@ -21,7 +21,7 @@ libraries, while the compiler uses the libc++ libraries.
 The result is an unwanted reference to libstdc++.so.6, spotted by the
 post-processing scripts.
 
-```
+```console
 libtool 2.4.7
 
 /home/ilg/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/linux-x64/application/lib/gcc/aarch64-none-elf/12.3.1/plugin/libcc1plugin.so.0.0.0:
@@ -52,3 +52,7 @@ libtool.m4:5524
       if test "$with_gnu_ld" = yes; then
         _LT_TAGVAR(archive_cmds, $1)='$CC $pic_flag -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'        _LT_TAGVAR(archive_expsym_cmds, $1)='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
 ```
+
+For the same plugin, when compiled on macOS, the link command is:
+
+libtool: link: /Users/ilg/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/darwin-x64/xpacks/.bin/clang++  -o .libs/libcc1plugin.0.so -bundle  .libs/libcc1plugin.o .libs/context.o .libs/callbacks.o .libs/connection.o .libs/marshall.o   -L/Users/ilg/Work/xpack-dev-tools-build/aarch64-none-elf-gcc-12.3.1-1.1/darwin-x64/x86_64-apple-darwin21.6.0/install/lib  -Wl,-undefined -Wl,dynamic_lookup -mmacosx-version-min=10.13 -Wl,-macosx_version_min -Wl,10.13 -Wl,-headerpad_max_install_names -Wl,-dead_strip -Wl,-rpath -Wl,/Users/ilg/Work/xpack-dev-tools-build/aarch64-none-elf-gcc-12.3.1-1.1/darwin-x64/x86_64-apple-darwin21.6.0/install/lib ../libiberty/pic/libiberty.a   -Wl,-exported_symbols_list,.libs/libcc1plugin-symbols.expsym
