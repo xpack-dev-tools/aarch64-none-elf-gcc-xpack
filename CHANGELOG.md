@@ -4,6 +4,11 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-08-21
 
+* v12.3.1-1.1.1 published on npmjs.com
+* f3fbaf0 package.json: update urls for 12.3.1-1.1 release
+* 0655c0d READMEs updates
+* 1f1cb23 templates/jekyll update
+* ddd8eb0 CHANGELOG update
 * 36e83a0 README update
 * 3a438b7 README update
 * 45c0654 re-generate workflows
