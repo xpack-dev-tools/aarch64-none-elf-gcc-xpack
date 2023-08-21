@@ -605,11 +605,11 @@ These commands use the `xpack-develop` branch of this repo.
 
 The builds take about 3h40 to complete:
 
-- `xbbmi`: 1h00 (vm)
-- `xbbma`: 0h23
-- `xbbli`: 0h31 Linux, 0h27 Windows
-- `xbbla`: 3h30
-- `xbbla32`: 3h37
+- `xbbmi`: 0h57 (nuc)
+- `xbbma`: 0h28
+- `xbbli`: 0h36 Linux, 0h28 Windows
+- `xbbla`: 3h48
+- `xbbla32`: 3h46
 
 The workflows results and logs are available from the
 [Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/) page.
