@@ -4,6 +4,11 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-08-21
 
+* 36e83a0 README update
+* 3a438b7 README update
+* 45c0654 re-generate workflows
+* 233f46e README update
+* 9a01716 CHANGELOG update
 * 85d8822 package.json: update bins
 * 963ddae READMEs update
 * b549d71 package.json: bump deps
