@@ -2,9 +2,44 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-08-21
+
+* 85d8822 package.json: update bins
+* 963ddae READMEs update
+* b549d71 package.json: bump deps
+
+## 2023-08-19
+
+* 85abc8c versioning.sh: cosmetics
+* 0870b16 READMEs update
+* 4b87621 package.json: bump deps
+* 0235aea README update
+* f2aec2a README-DEVELOP notes
+* 693a4de application.sh: commented out USE_CLANG
+
+## 2023-08-18
+
+* 7aad7e0 versioning.sh: XBB_LIBUNISTRING_VERSION
+* 9a92667 versioning.sh: XBB_FLEX_PACKAGE_PATH
+* d0e7f30 versioning.sh: remove local flex
+* d26e1ba package.json: add flex
+* 89fa59c README update
+* 91f8b3a package.json: add bison
+* b12662a package.json: bump deps
+
+## 2023-08-17
+
+* 4c2f876 local build flex
+
+## 2023-08-16
+
+* 2240374 add bison dependency
+
 ## 2023-08-15
 
-* v12.3.1-1.1 prepared
+* 3d539db versioning.sh: update gdb version
+* 5ed7355 README updates
+* 1f3d5ce prepare v12.3.1-1.1
 * 16bf8f1 .vscode/settings.json ignoreWords
 * ab01209 re-generate workflows
 * 3f2b0b9 README-MAINTAINER rename xbbla
