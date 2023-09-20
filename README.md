@@ -99,8 +99,8 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.3.1-1.1/.content/
-/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.3.1-1.1/.content/
+$ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.3.1-2.1/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/12.3.1-2.1/.content/
 ├── README.md
 ├── aarch64-none-elf
 │   ├── bin
@@ -221,13 +221,13 @@ The version strings used by the GCC project are three number strings
 like `12.3.1`; to this string the xPack distribution adds a four number,
 but since semver allows only three numbers, all additional ones can
 be added only as pre-release strings, separated by a dash,
-like `12.3.1-1`.
+like `12.3.1-2`.
 When published as a npm package, the version gets
-a fifth number, like `12.3.1-1.1`.
+a fifth number, like `12.3.1-2.1`.
 
 Since adherence of third party packages to semver is not guaranteed,
 it is recommended to use semver expressions like `^12.3.1` and `~12.3.1`
-with caution, and prefer exact matches, like `12.3.1-1.1`.
+with caution, and prefer exact matches, like `12.3.1-2.1`.
 
 ## Maintainer info
 
