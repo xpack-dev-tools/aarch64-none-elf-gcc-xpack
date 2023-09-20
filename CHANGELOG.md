@@ -2,9 +2,15 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-09-21
+
+* v12.3.1-2.1 released
+
 ## 2023-09-20
 
-* v12.3.1-2.1 prepared
+* 0199432 VERSION 12.3.1-2.1
+* 13a4f9f package.json: bump deps
+* 0f427a8 prepare v12.3.1-2.1
 
 ## 2023-09-16
 
