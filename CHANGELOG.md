@@ -4,7 +4,9 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-09-21
 
-* v12.3.1-2.1 released
+* v12.3.1-2.1.1 published on npmjs.com
+* f45bc06 package.json: update urls for 12.3.1-2.1 release
+* b2c1716 CHANGELOG update
 
 ## 2023-09-20
 
