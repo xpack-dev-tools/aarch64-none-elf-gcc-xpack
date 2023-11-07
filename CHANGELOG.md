@@ -2,9 +2,20 @@
 
 Entries in this file are in reverse chronological order.
 
+2023-09-25
+
+* 27da892 body-jekyll update
+
+## 2023-11-07
+
+* v13.2.1-1.1 prepared
+
 ## 2023-09-21
 
-* v12.3.1-2.1.1 published on npmjs.com
+* e43a632 Revert "test-xpm.yml: temporarily revert to xpm 0.16.3"
+* 49e89ae test-xpm.yml: temporarily revert to xpm 0.16.3
+* 12fab55 12.3.1-2.1.1
+* 9bf9ceb CHANGELOG: publish npm v12.3.1-2.1.1
 * f45bc06 package.json: update urls for 12.3.1-2.1 release
 * b2c1716 CHANGELOG update
 
