@@ -588,9 +588,9 @@ These commands use the `xpack-develop` branch of this repo.
 
 The builds take about 3h40 to complete:
 
-- `xbbmi`: 0h57 (nuc)
-- `xbbma`: 0h28
-- `xbbli`: 0h36 Linux, 0h28 Windows
+- `xbbmi`: 0h58 (nuc)
+- `xbbma`: 0h30
+- `xbbli`: 0h39 Linux, 0h30 Windows
 - `xbbla`: 3h48
 - `xbbla32`: 3h46
 
