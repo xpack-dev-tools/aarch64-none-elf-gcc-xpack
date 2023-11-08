@@ -142,10 +142,7 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/13.
 │   ├── aarch64-none-elf-strings
 │   └── aarch64-none-elf-strip
 ├── distro-info
-│   ├── CHANGELOG.md
-│   ├── licenses
-│   ├── patches
-│   └── scripts
+│   └── licenses
 ├── include
 │   └── gdb
 ├── lib
@@ -177,11 +174,11 @@ $ tree -L 2 /Users/ilg/Library/xPacks/\@xpack-dev-tools/aarch64-none-elf-gcc/13.
 │   ├── libssl.1.1.dylib
 │   ├── libz.1.2.13.dylib
 │   ├── libz.1.dylib -> libz.1.2.13.dylib
-│   └── libzstd.1.5.2.dylib
+│   └── libzstd.1.5.5.dylib
 └── share
     └── gcc-13.2.1
 
-21 directories, 59 files
+19 directories, 58 files
 ```
 
 No other files are installed in any system folders or other locations.

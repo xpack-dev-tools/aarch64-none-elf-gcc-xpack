@@ -696,7 +696,7 @@ git clone \
 
 ```sh
 .../aarch64-none-elf-13.2.1-1.1/bin/aarch64-none-elf-gcc --version
-aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 13.2.1 20230626
+aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 13.2.1 20231009
 ```
 
 - use the toolchain in your own tests.
