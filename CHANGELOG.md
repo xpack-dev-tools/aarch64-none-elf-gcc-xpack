@@ -2,13 +2,20 @@
 
 Entries in this file are in reverse chronological order.
 
-2023-09-25
+## 2023-11-08
 
-* 27da892 body-jekyll update
+* e42137b package.json bump deps
+* 0fd51bd README update
 
 ## 2023-11-07
 
-* v13.2.1-1.1 prepared
+* 1445fb1 application.sh: add texinfo
+* 3955c0b version.sh: add 13.*
+* 15a96c7 prepare v13.2.1-1.1
+
+## 2023-09-25
+
+* 27da892 body-jekyll update
 
 ## 2023-09-21
 
