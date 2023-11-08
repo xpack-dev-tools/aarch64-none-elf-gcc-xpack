@@ -4,6 +4,7 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-11-08
 
+* v13.2.1-1.1 release
 * e42137b package.json bump deps
 * 0fd51bd README update
 
