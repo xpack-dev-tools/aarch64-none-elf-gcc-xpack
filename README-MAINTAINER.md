@@ -284,9 +284,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/darwin-x64/deploy
-total 231336
--rw-r--r--  1 ilg  staff  116547241 Aug 21 08:20 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff        122 Aug 21 08:20 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-x64.tar.gz.sha
+total 262168
+-rw-r--r--  1 ilg  staff  124686175 Nov  8 00:12 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff        122 Nov  8 00:12 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -318,9 +318,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/darwin-arm64/deploy
-total 230152
--rw-r--r--  1 ilg  staff  112840515 Aug 21 07:56 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff        124 Aug 21 07:56 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-arm64.tar.gz.sha
+total 262168
+-rw-r--r--  1 ilg  staff  120872596 Nov  8 00:12 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff        124 Nov  8 00:12 xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -354,9 +354,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/linux-x64/deploy
-total 121032
--rw-r--r-- 1 ilg ilg 123931512 Aug 21 05:03 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-x64.tar.gz
--rw-r--r-- 1 ilg ilg       121 Aug 21 05:03 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-x64.tar.gz.sha
+total 129404
+-rw-rw-rw- 1 ilg ilg 132498980 Nov  7 22:12 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-x64.tar.gz
+-rw-rw-rw- 1 ilg ilg       121 Nov  7 22:12 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Intel Windows binaries
@@ -381,9 +381,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/win32-x64/deploy
-total 119216
--rw-r--r-- 1 ilg ilg 122067500 Aug 21 04:55 xpack-aarch64-none-elf-gcc-13.2.1-1.1-win32-x64.zip
--rw-r--r-- 1 ilg ilg       118 Aug 21 04:55 xpack-aarch64-none-elf-gcc-13.2.1-1.1-win32-x64.zip.sha
+total 133644
+-rw-r--r-- 1 ilg ilg 136839286 Nov  7 22:35 xpack-aarch64-none-elf-gcc-13.2.1-1.1-win32-x64.zip
+-rw-r--r-- 1 ilg ilg       118 Nov  7 22:35 xpack-aarch64-none-elf-gcc-13.2.1-1.1-win32-x64.zip.sha
 ```
 
 #### Arm GNU/Linux 64-bit
@@ -415,9 +415,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/linux-arm64/deploy
-total 117612
--rw-r--r-- 1 ilg ilg 120427899 Aug 21 08:18 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm64.tar.gz
--rw-r--r-- 1 ilg ilg       123 Aug 21 08:18 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm64.tar.gz.sha
+total 126088
+-rw-rw-rw- 1 ilg ilg 129104151 Nov  8 05:08 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm64.tar.gz
+-rw-rw-rw- 1 ilg ilg       123 Nov  8 05:09 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -449,9 +449,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/linux-arm/deploy
-total 111308
--rw-r--r-- 1 ilg ilg 113974287 Aug 21 08:15 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm.tar.gz
--rw-r--r-- 1 ilg ilg       121 Aug 21 08:15 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm.tar.gz.sha
+total 119420
+-rw-rw-rw- 1 ilg ilg 122277679 Nov  8 05:09 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm.tar.gz
+-rw-rw-rw- 1 ilg ilg       121 Nov  8 05:09 xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm.tar.gz.sha
 ```
 
 ### Update README-MAINTAINER listing output
