@@ -56,3 +56,7 @@ libtool.m4:5524
 For the same plugin, when compiled on macOS, the link command is:
 
 libtool: link: /Users/ilg/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build/darwin-x64/xpacks/.bin/clang++  -o .libs/libcc1plugin.0.so -bundle  .libs/libcc1plugin.o .libs/context.o .libs/callbacks.o .libs/connection.o .libs/marshall.o   -L/Users/ilg/Work/xpack-dev-tools-build/aarch64-none-elf-gcc-13.2.1-1.1/darwin-x64/x86_64-apple-darwin21.6.0/install/lib  -Wl,-undefined -Wl,dynamic_lookup -mmacosx-version-min=10.13 -Wl,-macosx_version_min -Wl,10.13 -Wl,-headerpad_max_install_names -Wl,-dead_strip -Wl,-rpath -Wl,/Users/ilg/Work/xpack-dev-tools-build/aarch64-none-elf-gcc-13.2.1-1.1/darwin-x64/x86_64-apple-darwin21.6.0/install/lib ../libiberty/pic/libiberty.a   -Wl,-exported_symbols_list,.libs/libcc1plugin-symbols.expsym
+
+## ampere
+
+A build for the aarch64 on ampere took 1h02!
