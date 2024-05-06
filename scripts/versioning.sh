@@ -9,6 +9,104 @@
 
 # -----------------------------------------------------------------------------
 
+function gcc_cross_build_common()
+{
+  # Build the native dependencies.
+
+  libiconv_build "${XBB_LIBICONV_VERSION}"
+
+  ncurses_build "${XBB_NCURSES_VERSION}"
+
+  # new makeinfo needed by binutils 2.41 and up
+  # checking for suffix of object files...   MAKEINFO doc/bfd.info
+  # /Users/ilg/Work/xpack-dev-tools-build/riscv-none-elf-gcc-13.2.0-1/darwin-x64/sources/binutils-2.41/bfd/doc/bfd.texi:245: Node `Sections' requires a sectioning command (e.g., @unnumberedsubsec).
+
+  # Requires libiconf & ncurses.
+  texinfo_build "${XBB_TEXINFO_VERSION}"
+
+  # -------------------------------------------------------------------------
+
+  if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
+  then
+    echo
+    echo "# Building a bootstrap compiler..."
+
+    # The bootstrap compiler (aarch64-none-elf-gcc),
+    # runs on Linux and produces aarch64 static ELFs.
+    # The executables are not distributed, but the libraries are
+    # copied into the Windows distribution, since building them
+    # with the Windows executable is not realistic.
+
+    gcc_cross_build_dependencies
+
+    gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
+  fi
+
+  # Switch used during development to test bootstrap.
+  if [ "${XBB_APPLICATION_BOOTSTRAP_ONLY:-""}" != "y" ]
+  then
+
+    # -----------------------------------------------------------------------
+    # Build the target dependencies.
+
+    xbb_reset_env
+    xbb_set_target "requested"
+
+    gcc_cross_build_dependencies
+
+    gdb_cross_build_dependencies
+
+    # -----------------------------------------------------------------------
+    # Build the application binaries.
+
+    xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
+    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
+
+    # -----------------------------------------------------------------------
+
+    if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
+    then
+      binutils_cross_build "${XBB_BINUTILS_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
+
+      # As usual, for Windows things require more innovative solutions.
+      # In this case the libraries are copied from the bootstrap,
+      # and only the executables are build for Windows.
+      gcc_cross_copy_linux_libs "${XBB_APPLICATION_TARGET_TRIPLET}"
+
+      (
+        # To access the bootstrap compiler (via CC_FOR_TARGET & Co)
+        xbb_activate_installed_bin
+
+        gcc_cross_build_final "${XBB_GCC_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
+      )
+    else
+      # For macOS & GNU/Linux build the toolchain natively.
+      gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
+    fi
+
+    gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" ""
+
+    if [ "${XBB_WITH_GDB_PY3}" == "y" ]
+    then
+      if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
+      then
+        # Shortcut, use the existing python.exe instead of building
+        # if from sources. It also downloads the sources.
+        python3_download_win "${XBB_PYTHON3_VERSION}"
+        python3_copy_win_syslibs
+      else # linux or darwin
+        # Copy libraries from sources and dependencies.
+        python3_copy_syslibs
+      fi
+
+      gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" "-py3"
+    fi
+
+  fi
+}
+
+# -----------------------------------------------------------------------------
+
 function application_build_versioned_components()
 {
   # This definition also enables building newlib-nano.
@@ -181,44 +279,6 @@ function application_build_versioned_components()
     XBB_TEXINFO_VERSION="7.0.3"
 
     # -------------------------------------------------------------------------
-
-    libiconv_build "${XBB_LIBICONV_VERSION}"
-
-    (
-      XBB_NCURSES_DISABLE_WIDEC="y"
-
-      ncurses_build "${XBB_NCURSES_VERSION}"
-    )
-
-    # new makeinfo needed by binutils 2.41 and up
-    # checking for suffix of object files...   MAKEINFO doc/bfd.info
-    # /Users/ilg/Work/xpack-dev-tools-build/riscv-none-elf-gcc-13.2.0-1/darwin-x64/sources/binutils-2.41/bfd/doc/bfd.texi:245: Node `Sections' requires a sectioning command (e.g., @unnumberedsubsec).
-
-    # Requires libiconf & ncurses.
-    texinfo_build "${XBB_TEXINFO_VERSION}"
-
-    # -------------------------------------------------------------------------
-    # Build the native dependencies.
-
-    if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-    then
-      echo
-      echo "# Building a bootstrap compiler..."
-
-      gcc_cross_build_dependencies
-
-      gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
-    fi
-
-    # -------------------------------------------------------------------------
-    # Build the target dependencies.
-
-    xbb_reset_env
-    xbb_set_target "requested"
-
-    gcc_cross_build_dependencies
-
-    # -------------------------------------------------------------------------
     # GDB dependencies
 
     # https://github.com/libexpat/libexpat/releases
@@ -259,53 +319,8 @@ function application_build_versioned_components()
     # https://www.openssl.org/source/
     XBB_OPENSSL_VERSION="1.1.1w" # "1.1.1s"
 
-    gdb_cross_build_dependencies
+    gcc_cross_build_common
 
-    # -------------------------------------------------------------------------
-    # Build the application binaries.
-
-    xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
-    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
-
-    # -------------------------------------------------------------------------
-
-    if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-    then
-      binutils_cross_build "${XBB_BINUTILS_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
-
-      # As usual, for Windows things require more innovtive solutions.
-      # In this case the libraries are copied from the bootstrap,
-      # and only the executables are build for Windows.
-      gcc_cross_copy_linux_libs "${XBB_APPLICATION_TARGET_TRIPLET}"
-
-      (
-        # To access the bootstrap compiler.
-        xbb_activate_installed_bin
-
-        gcc_cross_build_final "${XBB_GCC_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
-      )
-    else
-      # For macOS & GNU/Linux build the toolchain natively.
-      gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
-    fi
-
-    gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" ""
-
-    if [ "${XBB_WITH_GDB_PY3}" == "y" ]
-    then
-      if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-      then
-        # Shortcut, use the existing python.exe instead of building
-        # if from sources. It also downloads the sources.
-        python3_download_win "${XBB_PYTHON3_VERSION}"
-        python3_copy_win_syslibs
-      else # linux or darwin
-        # Copy libraries from sources and dependencies.
-        python3_copy_syslibs
-      fi
-
-      gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" "-py3"
-    fi
   elif [[ "${XBB_RELEASE_VERSION}" =~ 12[.].*[.].*-.* ]]
   then
 
@@ -500,27 +515,6 @@ function application_build_versioned_components()
     XBB_ZSTD_VERSION="1.5.2"
 
     # -------------------------------------------------------------------------
-    # Build the native dependencies.
-
-    if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-    then
-      echo
-      echo "# Building a bootstrap compiler..."
-
-      gcc_cross_build_dependencies
-
-      gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
-    fi
-
-    # -------------------------------------------------------------------------
-    # Build the target dependencies.
-
-    xbb_reset_env
-    xbb_set_target "requested"
-
-    gcc_cross_build_dependencies
-
-    # -------------------------------------------------------------------------
     # GDB dependencies
 
     # https://github.com/libexpat/libexpat/releases
@@ -564,53 +558,8 @@ function application_build_versioned_components()
     # https://www.openssl.org/source/
     XBB_OPENSSL_VERSION="1.1.1s" # "1.1.1q"
 
-    gdb_cross_build_dependencies
+    gcc_cross_build_common
 
-    # -------------------------------------------------------------------------
-    # Build the application binaries.
-
-    xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
-    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
-
-    # -------------------------------------------------------------------------
-
-    if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-    then
-      binutils_cross_build "${XBB_BINUTILS_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
-
-      # As usual, for Windows things require more innovtive solutions.
-      # In this case the libraries are copied from the bootstrap,
-      # and only the executables are build for Windows.
-      gcc_cross_copy_linux_libs "${XBB_APPLICATION_TARGET_TRIPLET}"
-
-      (
-        # To access the bootstrap compiler.
-        xbb_activate_installed_bin
-
-        gcc_cross_build_final "${XBB_GCC_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
-      )
-    else
-      # For macOS & GNU/Linux build the toolchain natively.
-      gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
-    fi
-
-    gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" ""
-
-    if [ "${XBB_WITH_GDB_PY3}" == "y" ]
-    then
-      if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-      then
-        # Shortcut, use the existing python.exe instead of building
-        # if from sources. It also downloads the sources.
-        python3_download_win "${XBB_PYTHON3_VERSION}"
-        python3_copy_win_syslibs
-      else # linux or darwin
-        # Copy libraries from sources and dependencies.
-        python3_copy_syslibs
-      fi
-
-      gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" "-py3"
-    fi
   elif [[ "${XBB_RELEASE_VERSION}" =~ 11[.].*[.].*-.* ]]
   then
 
@@ -795,27 +744,6 @@ function application_build_versioned_components()
     XBB_ZSTD_VERSION="1.5.2"
 
     # -------------------------------------------------------------------------
-    # Build the native dependencies.
-
-    if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-    then
-      echo
-      echo "# Building a bootstrap compiler..."
-
-      gcc_cross_build_dependencies
-
-      gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
-    fi
-
-    # -------------------------------------------------------------------------
-    # Build the target dependencies.
-
-    xbb_reset_env
-    xbb_set_target "requested"
-
-    gcc_cross_build_dependencies
-
-    # -------------------------------------------------------------------------
     # GDB dependencies
 
     # https://github.com/libexpat/libexpat/releases
@@ -856,53 +784,7 @@ function application_build_versioned_components()
     # https://www.openssl.org/source/
     XBB_OPENSSL_VERSION="1.1.1q"
 
-    gdb_cross_build_dependencies
-
-    # -------------------------------------------------------------------------
-    # Build the application binaries.
-
-    xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
-    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
-
-    # -------------------------------------------------------------------------
-
-    if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-    then
-      binutils_cross_build "${XBB_BINUTILS_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
-
-      # As usual, for Windows things require more innovtive solutions.
-      # In this case the libraries are copied from the bootstrap,
-      # and only the executables are build for Windows.
-      gcc_cross_copy_linux_libs "${XBB_APPLICATION_TARGET_TRIPLET}"
-
-      (
-        # To access the bootstrap compiler.
-        xbb_activate_installed_bin
-
-        gcc_cross_build_final "${XBB_GCC_VERSION}" "${XBB_APPLICATION_TARGET_TRIPLET}"
-      )
-    else
-      # For macOS & GNU/Linux build the toolchain natively.
-      gcc_cross_build_all "${XBB_APPLICATION_TARGET_TRIPLET}"
-    fi
-
-    gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" ""
-
-    if [ "${XBB_WITH_GDB_PY3}" == "y" ]
-    then
-      if [ "${XBB_REQUESTED_HOST_PLATFORM}" == "win32" ]
-      then
-        # Shortcut, use the existing python.exe instead of building
-        # if from sources. It also downloads the sources.
-        python3_download_win "${XBB_PYTHON3_VERSION}"
-        python3_copy_win_syslibs
-      else # linux or darwin
-        # Copy libraries from sources and dependencies.
-        python3_copy_syslibs
-      fi
-
-      gdb_cross_build "${XBB_APPLICATION_TARGET_TRIPLET}" "-py3"
-    fi
+    gcc_cross_build_common
 
   else
     echo "Unsupported ${XBB_APPLICATION_LOWER_CASE_NAME} version ${XBB_RELEASE_VERSION} in ${FUNCNAME[0]}()"
@@ -911,14 +793,20 @@ function application_build_versioned_components()
 
   # ---------------------------------------------------------------------------
 
-  gcc_cross_tidy_up
-
-  if [ "${XBB_REQUESTED_HOST_PLATFORM}" != "win32" ]
+  # Switch used during development to test bootstrap.
+  if [ "${XBB_APPLICATION_BOOTSTRAP_ONLY:-""}" != "y" ]
   then
-    gcc_cross_strip_libs "${XBB_APPLICATION_TARGET_TRIPLET}"
-  fi
 
-  gcc_cross_final_tunings
+    gcc_cross_tidy_up
+
+    if [ "${XBB_REQUESTED_HOST_PLATFORM}" != "win32" ]
+    then
+      gcc_cross_strip_libs "${XBB_APPLICATION_TARGET_TRIPLET}"
+    fi
+
+    gcc_cross_final_tunings
+
+  fi
 
   # ---------------------------------------------------------------------------
 }
