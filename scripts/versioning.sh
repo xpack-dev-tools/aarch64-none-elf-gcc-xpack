@@ -39,8 +39,6 @@ function application_build_versioned_components()
 
   XBB_FIX_LTO_PLUGIN="y"
 
-  XBB_NCURSES_DISABLE_WIDEC="y"
-
   XBB_WITH_GDB_PY3=""
 
   # ---------------------------------------------------------------------------
