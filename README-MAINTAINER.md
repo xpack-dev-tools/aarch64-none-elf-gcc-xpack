@@ -233,6 +233,7 @@ For Intel macOS, first run the build on the development machine
 
 ```sh
 # Update the build scripts.
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull
 
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git
@@ -268,6 +269,7 @@ caffeinate ssh xbbmi
 Repeat the same steps as before.
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -302,6 +304,7 @@ caffeinate ssh xbbma
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -337,6 +340,7 @@ caffeinate ssh xbbli
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -364,6 +368,7 @@ total 129404
 Clean the build folder and prepare the docker container:
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -398,6 +403,7 @@ caffeinate ssh xbbla
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -432,6 +438,7 @@ caffeinate ssh xbbla32
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
