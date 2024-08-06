@@ -1,0 +1,229 @@
+---
+title:  xPack GNU AArch64 Embedded GCC v11.2.1-1.2 released
+
+date: 2022-05-31 07:22:58 +0300
+
+authors: ilg-ul
+
+# To be listed in the Releases page.
+tags:
+  - releases
+
+# ----- Custom properties -----------------------------------------------------
+
+arm_version: 11.2-2022.02
+arm_date: February 15, 2022
+version: 11.2.1-1.2
+npm_subversion: 1
+python_version: 10
+
+download_url: https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/tag/v11.2.1-1.2/
+
+---
+
+Version **11.2.1-1.2** is a maintenance release; it brings back support for parsing XML files in GDB, allowing it to auto-configure on target capabilities when connecting to J-Link GDB server and fixes libgcov.a, which resulted empty in the previous release.
+
+<!-- truncate -->
+
+import Image from '@theme/IdealImage';
+
+[The xPack GNU AArch64 Embedded GCC](https://xpack.github.io/dev-tools/aarch64-none-elf-gcc/)
+is a standalone cross-platform binary distribution of
+[GNU AArch64 Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain).
+
+There are separate binaries for **Windows** (Intel 64-bit),
+**macOS** (Intel 64-bit, Apple Silicon 64-bit)
+and **GNU/Linux** (Intel 64-bit, Arm 32/64-bit).
+
+:::note Raspberry Pi
+
+The main targets for the GNU/Linux Arm
+binaries are the **Raspberry Pi** class devices (armv7l and aarch64;
+armv6 is not supported).
+
+:::
+
+## Download
+
+The binary files are available from <a href={ frontMatter.download_url }>GitHub Releases</a>.
+
+## Prerequisites
+
+- GNU/Linux Intel 64-bit: any system with **GLIBC 2.27** or higher
+  (like Ubuntu 18 or later, Debian 10 or later, RedHat 8 or later,
+  Fedora 29 or later, etc)
+- GNU/Linux Arm 32/64-bit: any system with **GLIBC 2.27** or higher
+  (like Raspberry Pi OS, Ubuntu 18 or later, Debian 10 or later, RedHat 8 or later,
+  Fedora 29 or later, etc)
+- Intel Windows 64-bit: Windows 7 with the Universal C Runtime
+  ([UCRT](https://support.microsoft.com/en-us/topic/update-for-universal-c-runtime-in-windows-c0514201-7fe6-95a3-b0a5-287930f3560c)),
+  Windows 8, Windows 10
+- Intel macOS 64-bit: 10.13 or later
+- Apple Silicon macOS 64-bit: 11.6 or later
+
+## Install
+
+The full details of installing the **xPack GNU AArch64 Embedded GCC** on various platforms
+are presented in the [Install Guide](/docs/install/).
+
+## Compliance
+
+The xPack GNU AArch64 Embedded GCC generally follows the official
+[Arm Embedded GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads/)
+releases.
+
+The current version is based on:
+
+- [GNU AArch64 Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
+release **{ frontMatter.arm_version }** from { frontMatter.arm_date } and uses the same sources. It includes:
+  - GCC 11.2.1
+  - binutils 2.37
+  - newlib 4.1.0
+  - GDB 11.2
+
+## Supported libraries
+
+The supported libraries are:
+
+```console
+$ aarch64-none-elf-gcc -print-multi-lib
+.;
+ilp32;@mabi=ilp32
+```
+
+## Changes
+
+Compared to the Arm version, there should be no functional changes.
+
+### XML parsing in GDB
+
+Some advanced GDB servers, like the one provided with SEGGER J-Link, are
+capable of passing an XML with the target capabilities to the GDB client.
+For unknown reasons, the Arm toolchain distribution came without XML
+parsing support. The xPack distribution brings back support for
+XML parsing and full integration with the SEGGER J-Link GDB server.
+
+### Python
+
+Support for Python scripting was added to GDB. This distribution provides
+a separate binary, `aarch64-none-elf-gdb-py3` with
+support for **Python 3.{ frontMatter.python_version }**.
+
+The Python 3 run-time is included, so GDB does not need any version of
+Python to be installed, and is insensitive to the presence of other
+versions.
+
+### Text User Interface (TUI)
+
+Support for TUI was added to GDB. The `ncurses` library was added to
+the distribution.
+
+:::note
+
+TUI is not available on Windows
+
+:::
+
+### No Guile
+
+Due to the difficulties of building standalone Guile libraries on all
+platforms, support for Guile scripting in GDB is currently not available.
+
+## Bug fixes
+
+- none
+
+## Enhancements
+
+- none
+
+## Known problems
+
+- none
+
+## Documentation
+
+The original GNU GCC documentation is available
+[online](https://gcc.gnu.org/onlinedocs/).
+
+## Build
+
+The binaries for all supported platforms
+(Windows, macOS and GNU/Linux) were built using the
+[xPack Build Box (XBB)](https://xpack.github.io/xbb/), a set
+of build environments based on slightly older distributions, that should be
+compatible with most recent systems.
+
+The scripts used to build this distribution are in:
+
+- `distro-info/scripts`
+
+For the prerequisites and more details on the build procedure, please see the
+[README-MAINTAINER](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/blob/xpack/README-MAINTAINER.md) page.
+
+## CI tests
+
+Before publishing, a set of simple tests were performed on an exhaustive
+set of platforms. The results are available from:
+
+- [GitHub Actions](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/actions/)
+- [Travis CI](https://app.travis-ci.com/github/xpack-dev-tools/aarch64-none-elf-gcc-xpack/builds/)
+
+## Tests
+
+The binaries were tested on a variety of platforms,
+but mainly to check the integrity of the
+build, not the compiler functionality.
+
+## Checksums
+
+The SHA-256 hashes for the files are:
+
+```txt
+13790cf505cda92e12d5da01ac916fdecf4d724b8497828d446b7bc494d13a6b
+xpack-aarch64-none-elf-gcc-11.2.1-1.2-darwin-arm64.tar.gz
+
+d32aa91694e5fea3e721fe9269a74f05887cf94c97636f9ccd4ae3ecfd034fa5
+xpack-aarch64-none-elf-gcc-11.2.1-1.2-darwin-x64.tar.gz
+
+b49737e1ec729fe069cfa33915a209a8a4c155a69d096e92b3e2dc8820ff164b
+xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-arm.tar.gz
+
+9eb0b95e8267e7d86dc18cad44744f984ef8b1c50df030c854abd5e5e99a3c68
+xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-arm64.tar.gz
+
+e14ac6851317da56d192757e028460afc64b998c446d97b3761873a2b91058d8
+xpack-aarch64-none-elf-gcc-11.2.1-1.2-linux-x64.tar.gz
+
+78deba2be085002cb31c80591792264e250aee9ae6d4d996871679781db16706
+xpack-aarch64-none-elf-gcc-11.2.1-1.2-win32-x64.zip
+
+```
+
+## Deprecation notices
+
+### 32-bit support
+
+Support for 32-bit Intel Linux and Intel Windows was
+dropped in 2022. Support for 32-bit Arm Linux (armv7l) will be preserved
+for a while, due to the large user base of 32-bit Raspberry Pi systems.
+
+### Linux minimum requirements
+
+Support for RedHat 7 was dropped in 2022 and the
+minimum requirement was raised to GLIBC 2.27, available starting
+with Ubuntu 18, Debian 10 and RedHat 8.
+
+## Download analytics
+
+- GitHub [xpack-dev-tools/aarch64-none-elf-gcc-xpack](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/)
+  - this release <a href={ `https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/v${ frontMatter.version }/` } ><Image img={ `https://img.shields.io/github/downloads/xpack-dev-tools/aarch64-none-elf-gcc-xpack/v${ frontMatter.version }/total.svg` } alt='Github Release' /></a>
+  - all xPack releases [![Github All Releases](https://img.shields.io/github/downloads/xpack-dev-tools/aarch64-none-elf-gcc-xpack/total.svg)](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/)
+  - [individual file counters](https://somsubhra.github.io/github-release-stats/?username=xpack-dev-tools&repository=aarch64-none-elf-gcc-xpack) (grouped per release)
+- npmjs.com [@xpack-dev-tools/aarch64-none-elf-gcc](https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc)
+  - latest releases [![npm](https://img.shields.io/npm/dw/@xpack-dev-tools/aarch64-none-elf-gcc.svg)](https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc/)
+  - all @xpack-dev-tools releases [![npm](https://img.shields.io/npm/dt/@xpack-dev-tools/aarch64-none-elf-gcc.svg)](https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc/)
+
+Credit to [Shields IO](https://shields.io) for the badges and to
+[Somsubhra/github-release-stats](https://github.com/Somsubhra/github-release-stats)
+for the individual file counters.
