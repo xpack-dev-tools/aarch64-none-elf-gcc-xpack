@@ -6,79 +6,10 @@
   },
   "xpack": {
     "minimumXpmRequired": "0.16.3",
-    "binaries": {
-      "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/download/v13.2.1-1.1",
-      "skip": 1,
-      "platforms": {
-        "darwin-arm64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-arm64.tar.gz",
-          "sha256": "13d1a5b53a847855210b0fc2d2758d0e5cec6e633a2aec920d7a886624082b64"
-        },
-        "darwin-x64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-13.2.1-1.1-darwin-x64.tar.gz",
-          "sha256": "a35b37a9128ca8824bccb0d42da4d77bbbce464b4c5ac3700374f0b2560fdce1"
-        },
-        "linux-arm64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm64.tar.gz",
-          "sha256": "cec5f2820d6c91c612e0a653ee7ada1fb80d93d0e2f4d9ed1dc6f5b477ac349c"
-        },
-        "linux-arm": {
-          "fileName": "xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-arm.tar.gz",
-          "sha256": "4785cdba3e2106dc2a4d921f86d2e0983bbbcc8ece484bf5896cfcbf732986d9"
-        },
-        "linux-x64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-13.2.1-1.1-linux-x64.tar.gz",
-          "sha256": "bda035138579b596d7b0ca8815c06d11df24e063bd12c2a5c410f5ad61ec67a4"
-        },
-        "win32-x64": {
-          "fileName": "xpack-aarch64-none-elf-gcc-13.2.1-1.1-win32-x64.zip",
-          "sha256": "6fb15fcccb4c038b8e0586a03484b58ce63f443cd9c5319b2377063bb665cf98"
-        }
-      }
-    },
-    "bin": {
-      "aarch64-none-elf-addr2line": "./.content/bin/aarch64-none-elf-addr2line",
-      "aarch64-none-elf-ar": "./.content/bin/aarch64-none-elf-ar",
-      "aarch64-none-elf-as": "./.content/bin/aarch64-none-elf-as",
-      "aarch64-none-elf-c++": "./.content/bin/aarch64-none-elf-c++",
-      "aarch64-none-elf-c++filt": "./.content/bin/aarch64-none-elf-c++filt",
-      "aarch64-none-elf-cpp": "./.content/bin/aarch64-none-elf-cpp",
-      "aarch64-none-elf-elfedit": "./.content/bin/aarch64-none-elf-elfedit",
-      "aarch64-none-elf-g++": "./.content/bin/aarch64-none-elf-g++",
-      "aarch64-none-elf-gcc": "./.content/bin/aarch64-none-elf-gcc",
-      "aarch64-none-elf-gcc-ar": "./.content/bin/aarch64-none-elf-gcc-ar",
-      "aarch64-none-elf-gcc-nm": "./.content/bin/aarch64-none-elf-gcc-nm",
-      "aarch64-none-elf-gcc-ranlib": "./.content/bin/aarch64-none-elf-gcc-ranlib",
-      "aarch64-none-elf-gcov": "./.content/bin/aarch64-none-elf-gcov",
-      "aarch64-none-elf-gcov-dump": "./.content/bin/aarch64-none-elf-gcov-dump",
-      "aarch64-none-elf-gcov-tool": "./.content/bin/aarch64-none-elf-gcov-tool",
-      "aarch64-none-elf-gdb": "./.content/bin/aarch64-none-elf-gdb",
-      "aarch64-none-elf-gdb-add-index": "./.content/bin/aarch64-none-elf-gdb-add-index",
-      "aarch64-none-elf-gdb-add-index-py3": "./.content/bin/aarch64-none-elf-gdb-add-index-py3",
-      "aarch64-none-elf-gdb-py3": "./.content/bin/aarch64-none-elf-gdb-py3",
-      "aarch64-none-elf-gfortran": "./.content/bin/aarch64-none-elf-gfortran",
-      "aarch64-none-elf-gprof": "./.content/bin/aarch64-none-elf-gprof",
-      "aarch64-none-elf-ld": "./.content/bin/aarch64-none-elf-ld",
-      "aarch64-none-elf-ld.bfd": "./.content/bin/aarch64-none-elf-ld.bfd",
-      "aarch64-none-elf-lto-dump": "./.content/bin/aarch64-none-elf-lto-dump",
-      "aarch64-none-elf-nm": "./.content/bin/aarch64-none-elf-nm",
-      "aarch64-none-elf-objcopy": "./.content/bin/aarch64-none-elf-objcopy",
-      "aarch64-none-elf-objdump": "./.content/bin/aarch64-none-elf-objdump",
-      "aarch64-none-elf-ranlib": "./.content/bin/aarch64-none-elf-ranlib",
-      "aarch64-none-elf-readelf": "./.content/bin/aarch64-none-elf-readelf",
-      "aarch64-none-elf-size": "./.content/bin/aarch64-none-elf-size",
-      "aarch64-none-elf-strings": "./.content/bin/aarch64-none-elf-strings",
-      "aarch64-none-elf-strip": "./.content/bin/aarch64-none-elf-strip"
-    },
-    "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^3.0.3"
-    },
     "properties": {
       "appName": "GNU AArch64 Embedded GCC",
       "appLcName": "aarch64-none-elf-gcc",
       "platforms": "all",
-      "LIQUIDJS": "liquidjs --context '{ \"XBB_APPLICATION_NAME\": \"{{ properties.appName }}\", \"XBB_APPLICATION_LOWER_CASE_NAME\": \"{{ properties.appLcName }}\", \"platforms\": \"{{ properties.platforms }}\" }'",
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandBashBuild": "bash {{ properties.dbg }} scripts/build.sh --target {{ configuration.name }} --build-folder {{ properties.buildFolderRelativePathPosix }}",
