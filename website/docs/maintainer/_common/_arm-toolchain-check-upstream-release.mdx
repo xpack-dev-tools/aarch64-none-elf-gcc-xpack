@@ -19,27 +19,18 @@ as below.
 
 ### Update to the latest Arm release
 
-Download the new _Source code_ archive (like
+- download the new _Source code_ archive (like
 `arm-gnu-toolchain-src-snapshot-*.tar.xz` from
-[Arm GNU Toolchain Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/).
-
-Download the latest **macOS (x86_64) hosted cross toolchains** archive (like
-<code>arm-gnu-toolchain-*-darwin-x86_64-aarch64-none-elf.tar.xz</code>)
-and copy the file with the configurations
-(<code>\*-darwin-x86_64-aarch64-none-elf-manifest.txt</code>) to extras.
-
-Download the ABE manifest with the individual source URLs
-(<code>arm-gnu-toolchain-aarch64-none-elf-abe-manifest.txt</code>) and copy to extras.
-
-From the ABE manifest, identify the `gcc_url` and `gcc_filespec`,
-compose the url
-(like <code>{`https://developer.arm.com/-/media/Files/downloads/gnu/${versionMajor()}.${versionMinor()}.rel${customField('armSubRelease')}/src/gcc.tar.xz`}</code>)
-and download the archive.
-
-To get the **newlib** version, check the manifest.txt; download the archive from:
-
-<ul>
-<li><a href={`https://developer.arm.com/-/media/Files/downloads/gnu/${versionMajor()}.${versionMinor()}.rel${customField('armSubRelease')}/src/newlib-cygwin.tar.xz `}>{`https://developer.arm.com/-/media/Files/downloads/gnu/${versionMajor()}.${versionMinor()}.rel${customField('armSubRelease')}/src/newlib-cygwin.tar.xz `}</a></li>
-</ul>
-
-and search for `VERSION=` in `newlib/configure`.
+[Arm GNU Toolchain Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/)
+- the GCC version is in `gcc/gcc/BASE-VER`
+- the GDB version is in `binutils-gdb--gdb/gdb/version.in`
+- the newlib version is in `newlib-cygwin/newlib/configure`, search for `VERSION=`
+- download the latest **macOS (x86_64) hosted cross toolchains** archive (like
+<code>arm-gnu-toolchain-{versionMajor()}.{versionMinor()}.rel{customField('armSubRelease')}-darwin-x86_64-aarch64-none-elf.tar.xz</code>)
+- unpack the archive
+- create a folder <code>build-assets/extras/{versionMajor()}.{versionMinor()}.rel{customField('armSubRelease')}</code>
+- copy the file with the configurations
+(<code>{versionMajor()}.{versionMinor()}.rel{customField('armSubRelease')}-darwin-x86_64-aarch64-none-elf-manifest.txt</code>) to the new folder in extras
+- download the ABE manifest with the individual source URLs
+(<code>arm-gnu-toolchain-aarch64-none-elf-abe-manifest.txt</code>)
+- copy to the new folder in extras

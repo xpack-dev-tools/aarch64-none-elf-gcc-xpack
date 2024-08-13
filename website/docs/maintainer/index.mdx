@@ -126,44 +126,27 @@ In the `xpack-dev-tools/aarch64-none-elf-gcc-xpack` Git repo:
 
 - switch to the `xpack-development` branch
 - pull new changes
-- if needed, merge the `website` branch
+- if necessary, merge the `website` branch
 
 The `xpack` branch should be unchanged since the previous release
 and will be updated when the new release is out.
-
-### Fix possible open issues
-
-Check GitHub issues and pull requests:
-
-- https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/
-
-and fix them; assign them to a milestone (like <code>{customField('upstreamVersion')}-{customField('xpackSubversion')}</code>).
 
 ### Update helper & other dependencies
 
 Check the latest versions at https://github.com/xpack-dev-tools/ and
 update the dependencies in `build-assets/package.json`.
 
-<CheckUpstreamRelease/>
+### Increase the version and update the version in top `package.json`
 
-### Increase the version and update VERSION
-
-Determine the version (like <code>{customField('upstreamVersion')}</code>)
-and update the `build-assets/scripts/VERSION` file; the format
-is <code>{customField('upstreamVersion')}-{customField('xpackSubversion')}</code>.
-{isXpackSubversionDouble() ?
-'The fourth & fifth numbers are the xPack release number of this version. A sixth number will be added to the version in `package.json` when the package is published to the `npm` server' :
-'The fourth number is the xPack release number of this version. A fifth number will be added to the version in `package.json` when the package is published to the `npm` server'}.
-
-### Update the version in top `package.json` to a pre-release
-
-Use the new version, suffixed by `.pre`,
+- determine the version (like <code>{customField('upstreamVersion')}</code>)
+- update the version in top `package.json`
+- use the new version, suffixed by `.pre`,
 like <code>{customField('upstreamVersion')}-{customField('xpackSubversion')}.{customField('npmSubversion')}.pre</code>.
 
-### Update the `customFields` (if needed)
+### Update the `customFields` in `build-assets/package.json` (if necessary)
 
-If the project uses `customFierlds` in `build-assets/package.json`,
-update the release specific properties (if any).
+If the project uses `customFields` in `build-assets/package.json`,
+update them (for example `armSubRelease` for Arm toolchains).
 
 ### Start the local web server
 
@@ -177,7 +160,34 @@ or run the following in a terminal:
 Navigate to the **Maintainer Info** page,
 the **Update the version specific code** section.
 
+### Increase the version and update VERSION
+
+Determine the version (like <code>{customField('upstreamVersion')}</code>)
+and update the `build-assets/scripts/VERSION` file; the format
+is <code>{customField('upstreamVersion')}-{customField('xpackSubversion')}</code>.
+{isXpackSubversionDouble() ?
+'The fourth & fifth numbers are the xPack release number of this version. A sixth number will be added to the version in `package.json` when the package is published to the `npm` server' :
+'The fourth number is the xPack release number of this version. A fifth number will be added to the version in `package.json` when the package is published to the `npm` server'}.
+
+<CheckUpstreamRelease/>
+
+### Update the `customFields` (if necessary)
+
+If the project uses `customFields` in `build-assets/package.json`
+
+- update the release specific properties (if any)
+- restart the local web server
+
+
 <UpdateVersionSpecific/>
+
+### Fix possible open issues
+
+Check GitHub issues and pull requests:
+
+- https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/
+
+and fix them; assign them to a milestone (like <code>{customField('upstreamVersion')}-{customField('xpackSubversion')}</code>).
 
 ### Update `CHANGELOG.md`
 
