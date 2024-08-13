@@ -22,8 +22,8 @@ xpm run link-deps -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build
 xpm run deep-clean --config ${props.platform}  -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets && \\
 xpm run docker-prepare --config ${props.platform} -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets && \\
 xpm run docker-link-deps --config ${props.platform} -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets && \\
-xpm run docker-build-development --config ${props.platform} -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets`
-} </CodeBlock>
+xpm run docker-build-development --config ${props.platform} -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets
+`} </CodeBlock>
 
 {developmentDurations[ props.platform ]}, the output of the build script is a compressed
 archive and its SHA signature, created in
@@ -41,5 +41,5 @@ xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-a
 \\
 xpm run deep-clean --config ${props.platform}  -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets && \\
 xpm run docker-prepare --config ${props.platform} -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets && \\
-xpm run docker-build-development --config ${props.platform} -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets`
-} </CodeBlock>
+xpm run docker-build-development --config ${props.platform} -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets
+`} </CodeBlock>

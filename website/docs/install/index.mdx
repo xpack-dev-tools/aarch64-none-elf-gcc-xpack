@@ -214,8 +214,8 @@ The next step is to install the
 **aarch64-none-elf-gcc** package into the project:
 
 <CodeBlock language="sh"> {
-`xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest --verbose`
-} </CodeBlock>
+`xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest --verbose
+`} </CodeBlock>
 
 <Tabs groupId="operating-systems">
 
@@ -226,8 +226,8 @@ of forwarders in
 the `.bin` folder:
 
 <CodeBlock language="console"> {
-`dir xpacks\\.bin`
-} </CodeBlock>
+`dir xpacks\\.bin
+`} </CodeBlock>
 
 <details>
 <summary>PATH setup</summary>
@@ -257,8 +257,8 @@ of links in
 the `.bin` folder:
 
 <CodeBlock language="console"> {
-`ls -l xpacks/.bin`
-} </CodeBlock>
+`ls -l xpacks/.bin
+`} </CodeBlock>
 
 <details>
 <summary>PATH setup</summary>
@@ -280,8 +280,8 @@ of links in
 the `.bin` folder:
 
 <CodeBlock language="console"> {
-`ls -l xpacks/.bin`
-} </CodeBlock>
+`ls -l xpacks/.bin
+`} </CodeBlock>
 
 <details>
 <summary>PATH setup</summary>
@@ -356,8 +356,8 @@ The result looks like this:
     "properties": {},
     "actions": {},
     "buildConfigurations": {}
-  }`
-} </CodeBlock>
+  }
+`} </CodeBlock>
 
 If the `package.json` is saved in the revision system, the above
 definition acts as a hard reference to the specific version of
@@ -381,8 +381,8 @@ is the developer's responsibility to configure the path to the tools.
 No other files are installed in any system folders or other locations.
 
 <CodeBlock language="sh"> {
-`xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest --global --verbose`
-} </CodeBlock>
+`xpm install @xpack-dev-tools/aarch64-none-elf-gcc@latest --global --verbose
+`} </CodeBlock>
 
 :::note
 
@@ -405,8 +405,8 @@ the project build configurations need a PATH adjustment:
 <TabItem value="windows" label="Windows" default>
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/AppData/Roaming/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH`
-} </CodeBlock>
+`export PATH=$HOME/AppData/Roaming/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH
+`} </CodeBlock>
 
 :::tip
 
@@ -420,16 +420,16 @@ corresponding shell.
 <TabItem value="macos" label="macOS">
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/Library/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH`
-} </CodeBlock>
+`export PATH=$HOME/Library/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH
+`} </CodeBlock>
 
 </TabItem>
 
 <TabItem value="linux" label="GNU/Linux">
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH`
-} </CodeBlock>
+`export PATH=$HOME/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH
+`} </CodeBlock>
 
 </TabItem>
 
@@ -458,14 +458,14 @@ cd my-project
 and ask **xpm** to uninstall the package:
 
 <CodeBlock language="sh"> {
-`xpm uninstall @xpack-dev-tools/aarch64-none-elf-gcc --verbose`
-} </CodeBlock>
+`xpm uninstall @xpack-dev-tools/aarch64-none-elf-gcc --verbose
+`} </CodeBlock>
 
 To completely remove the package from the user global xPack store:
 
 <CodeBlock language="sh"> {
-`xpm uninstall --global @xpack-dev-tools/aarch64-none-elf-gcc --verbose`
-} </CodeBlock>
+`xpm uninstall --global @xpack-dev-tools/aarch64-none-elf-gcc --verbose
+`} </CodeBlock>
 
 <details>
 <summary>Clean-ups</summary>
@@ -579,8 +579,8 @@ example <code>/Users/ilg/Library/xPacks/aarch64-none-elf-gcc/xpack-aarch64-none-
 cd ~/Library/xPacks/aarch64-none-elf-gcc
 
 tar xvf ~/Downloads/xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}-darwin-x64.tar.gz
-chmod -R -w xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}`
-} </CodeBlock>
+chmod -R -w xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}
+`} </CodeBlock>
 
 </TabItem>
 
@@ -613,8 +613,8 @@ example <code>/home/ilg/.local/xPacks/aarch64-none-elf-gcc/xpack-aarch64-none-el
 cd ~/.local/xPacks/aarch64-none-elf-gcc
 
 tar xvf ~/Downloads/xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}-linux-x64.tar.gz
-chmod -R -w xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}`
-} </CodeBlock>
+chmod -R -w xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}
+`} </CodeBlock>
 
 </TabItem>
 

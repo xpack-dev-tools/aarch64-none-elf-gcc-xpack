@@ -742,14 +742,14 @@ When the release is considered stable, promote it as `latest`:
 <CodeBlock language="sh"> {
 `npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc
 npm dist-tag add @xpack-dev-tools/aarch64-none-elf-gcc@${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')} latest
-npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc`
-} </CodeBlock>
+npm dist-tag ls @xpack-dev-tools/aarch64-none-elf-gcc
+`} </CodeBlock>
 
 In case the previous version is not functional and needs to be unpublished:
 
 <CodeBlock language="sh"> {
-`npm unpublish @xpack-dev-tools/aarch64-none-elf-gcc@${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}`
-} </CodeBlock>
+`npm unpublish @xpack-dev-tools/aarch64-none-elf-gcc@${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}
+`} </CodeBlock>
 
 ### Build the static website locally
 
