@@ -15,9 +15,10 @@
         "branding": "aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) ",
         "triplet": "aarch64-none-elf",
         "armSubRelease": "1",
-        "gdbVersionMajor": "13",
+        "gdbVersionMajor": "14",
+        "gdbVersionMinor": "2",
         "binutilsVersionMajor": "2",
-        "binutilsVersionMinor": "41"
+        "binutilsVersionMinor": "42"
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
