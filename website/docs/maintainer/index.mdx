@@ -21,7 +21,7 @@ import UpdateVersionSpecific from './_update-version-specific.mdx'
 import GitHubActionsDurations from './_github-actions-durations.mdx'
 import MoreTests from './_more-tests.mdx'
 import ShareCustom from './_share-custom.mdx'
-
+import FirstProductionRun from './_first-production-run.mdx'
 import { developmentDurations } from './_development-durations.mdx'
 import Patches from './_patches.mdx'
 
@@ -131,13 +131,6 @@ In the `xpack-dev-tools/aarch64-none-elf-gcc-xpack` Git repo:
 The `xpack` branch should be unchanged since the previous release
 and will be updated when the new release is out.
 
-### Update helper & other dependencies
-
-Check the latest versions at https://github.com/xpack-dev-tools/ and
-update the dependencies in `build-assets/package.json`.
-
-<CheckUpstreamRelease/>
-
 ### Fix possible open issues
 
 Check GitHub issues and pull requests:
@@ -145,6 +138,13 @@ Check GitHub issues and pull requests:
 - https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/issues/
 
 and fix them; assign them to a milestone (like <code>{ customField('upstreamVersion') }-{ customField('xpackSubversion') }</code>).
+
+### Update helper & other dependencies
+
+Check the latest versions at https://github.com/xpack-dev-tools/ and
+update the dependencies in `build-assets/package.json`.
+
+<CheckUpstreamRelease/>
 
 ### Increase the version and update VERSION
 
@@ -159,6 +159,11 @@ is <code>{ customField('upstreamVersion') }-{ customField('xpackSubversion') }</
 
 Use the new version, suffixed by `.pre`,
 like <code>{ customField('upstreamVersion') }-{ customField('xpackSubversion') }.{ customField('npmSubversion') }.pre</code>.
+
+### Update the `customFields` (if needed)
+
+If the project uses `customFierlds` in `build-assets/package.json`,
+update the release specific properties (if any).
 
 ### Start the local web server
 
@@ -374,7 +379,6 @@ place them in the XBB cache (`Work/cache`) and restart the build.
 
 The automation is provided by GitHub Actions and three self-hosted runners.
 
-
 ### Start the self-hosted runners
 
 - on the development machine (`wksi`) open ssh sessions to the build
@@ -475,6 +479,8 @@ xpm run generate-workflows -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.
 
 - commit with the message **Re-generate workflows**
 - push the `xpack-dependency` branch to GitHub
+
+<FirstProductionRun/>
 
 ### Manually trigger the build GitHub Actions
 

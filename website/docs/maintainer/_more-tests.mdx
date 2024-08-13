@@ -1,10 +1,13 @@
 
+import CodeBlock from '@theme/CodeBlock';
+
+import customField from '@site/src/libs/customField';
+
 {/* ------------------------------------------------------------------------ */}
 
 - check version:
 
-```sh
-.../aarch64-none-elf-13.2.1-1.1/bin/aarch64-none-elf-gcc --version
-aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) 13.2.1 20231009
-```
-
+<CodeBlock language="sh"> {
+`.../aarch64-none-elf-${ customField('upstreamVersion') }-${ customField('xpackSubversion') }/bin/aarch64-none-elf-gcc --version
+aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) ${ customField('upstreamVersion') }
+`} </CodeBlock>

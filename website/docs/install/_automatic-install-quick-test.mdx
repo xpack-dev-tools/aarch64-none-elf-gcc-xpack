@@ -1,16 +1,13 @@
 
-import AutomaticInstallQuickTest from './_common/_automatic-install-quick-test.mdx'
+import customField from '@site/src/libs/customField';
 
-export const appName = 'GNU AArch64 Embedded GCC';
-export const appLcName = 'aarch64-none-elf-gcc';
-export const programName = 'aarch64-none-elf-gcc';
-export const branding = 'aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) ';
+import AutomaticInstallQuickTest from './_common/_automatic-install-quick-test.mdx'
 
 {/* ------------------------------------------------------------------------ */}
 
 <AutomaticInstallQuickTest
-  appName={ appName }
-  appLcName={ appLcName }
-  programName={ programName }
-  branding={ branding }
+  appName={ customField('appName') }
+  appLcName={ customField('appLcName') }
+  programName={ customField('programName') }
+  branding={ customField('branding') }
 />

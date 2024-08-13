@@ -51,12 +51,15 @@ function getCustomFields() {
     rootPackageJson = topPackageJson;
   }
 
+  const customFields = rootPackageJson?.xpack?.properties?.customFields ?? {};
+
   return {
     appName: rootPackageJson.xpack.properties.appName,
     appLcName: rootPackageJson.xpack.properties.appLcName,
     upstreamVersion,
     xpackSubversion,
     npmSubversion,
+    ...customFields,
   }
 }
 
