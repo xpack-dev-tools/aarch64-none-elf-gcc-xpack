@@ -34,7 +34,7 @@ portable archives.
 
 The easiest (and recommended) way to install GNU AArch64 Embedded GCC
 is by using the **binary xPack**, available
-as <a href={ `https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc` }><code>@xpack-dev-tools/aarch64-none-elf-gcc</code></a> from
+as <a href={`https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc`}><code>@xpack-dev-tools/aarch64-none-elf-gcc</code></a> from
 the [`npmjs.com`](https://www.npmjs.com) registry.
 
 <details>
@@ -348,7 +348,7 @@ The result looks like this:
     "dependencies": {},
     "devDependencies": {
       "@xpack-dev-tools/aarch64-none-elf-gcc": {
-        "specifier": "${ customField('upstreamVersion') }-${ customField('xpackSubversion') }.${ customField('npmSubversion') }",
+        "specifier": "${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}",
         "local": "link",
         "platforms": "all"
       }
@@ -405,7 +405,7 @@ the project build configurations need a PATH adjustment:
 <TabItem value="windows" label="Windows" default>
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/AppData/Roaming/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${ customField('upstreamVersion') }-${ customField('xpackSubversion') }.${ customField('npmSubversion') }/.content/bin:$PATH`
+`export PATH=$HOME/AppData/Roaming/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH`
 } </CodeBlock>
 
 :::tip
@@ -420,7 +420,7 @@ corresponding shell.
 <TabItem value="macos" label="macOS">
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/Library/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${ customField('upstreamVersion') }-${ customField('xpackSubversion') }.${ customField('npmSubversion') }/.content/bin:$PATH`
+`export PATH=$HOME/Library/xPacks/\@pack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH`
 } </CodeBlock>
 
 </TabItem>
@@ -428,7 +428,7 @@ corresponding shell.
 <TabItem value="linux" label="GNU/Linux">
 
 <CodeBlock language="sh"> {
-`export PATH=$HOME/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc /${ customField('upstreamVersion') }-${ customField('xpackSubversion') }.${ customField('npmSubversion') }/.content/bin:$PATH`
+`export PATH=$HOME/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc /${customField('upstreamVersion')}-${customField('xpackSubversion')}.${customField('npmSubversion')}/.content/bin:$PATH`
 } </CodeBlock>
 
 </TabItem>
@@ -442,12 +442,12 @@ corresponding shell.
 
 The binaries do not use any form of installer; instead they
 are distributed as
-portable { props.isWindows ? <code>.zip</code> : <code>.tar.gz</code> } archives;
+portable {props.isWindows ? <code>.zip</code> : <code>.tar.gz</code>} archives;
 therefore they do not require to run any uninstaller; simply removing the
 links and possibly the user global xPack store folder and
 the user xPack cache folder is enough.
 
-To remove the <LinksVsForwarders isWindows={ props.isWindows }/> created by
+To remove the <LinksVsForwarders isWindows={props.isWindows}/> created by
 **xpm** in the current project,
 go to the project folder:
 
@@ -513,7 +513,7 @@ For all platforms, the **xPack GNU AArch64 Embedded GCC** binaries are released 
 archives that can be installed in any location.
 
 The archives can be downloaded from
-the <a href={ `https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/` }>GitHub Releases</a> pages.
+the <a href={`https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/`}>GitHub Releases</a> pages.
 
 ### Download & unpack {#manual-install-download-and-unpack}
 
@@ -525,7 +525,7 @@ The Windows versions of **xPack GNU AArch64 Embedded GCC**
 are packed as `.zip` files.
 Download the latest version named like:
 
-* <code>xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }-win32-x64.zip</code>
+* <code>xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}-win32-x64.zip</code>
 
 :::note
 
@@ -540,7 +540,7 @@ unpack the archive and move it to a location of your choice.
 
 The recommended location is
 the <code>%USERPROFILE%\\AppData\\Roaming\\xPacks\\aarch64-none-elf-gcc</code> folder, for
-example <code>C:\\Users\\ilg\\AppData\\Roaming\\xPacks\\aarch64-none-elf-gcc\\xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }</code>.
+example <code>C:\\Users\\ilg\\AppData\\Roaming\\xPacks\\aarch64-none-elf-gcc\\xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}</code>.
 
 :::note
 
@@ -557,8 +557,8 @@ The macOS versions of **xPack GNU AArch64 Embedded GCC**
 are packed as `.tar.gz` archives.
 Download the latest version named like:
 
-* <code>xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }-darwin-x64.tar.gz</code>
-* <code>xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }-darwin-arm64.tar.gz</code>
+* <code>xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}-darwin-x64.tar.gz</code>
+* <code>xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}-darwin-arm64.tar.gz</code>
 
 :::note
 
@@ -572,14 +572,14 @@ unpack the archive and move it to a location of your choice.
 
 The recommended location is
 the <code>~/Library/xPacks/aarch64-none-elf-gcc</code> folder, for
-example <code>/Users/ilg/Library/xPacks/aarch64-none-elf-gcc/xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }</code>:
+example <code>/Users/ilg/Library/xPacks/aarch64-none-elf-gcc/xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}</code>:
 
 <CodeBlock language="console"> {
 `mkdir -p ~/Library/xPacks/aarch64-none-elf-gcc
 cd ~/Library/xPacks/aarch64-none-elf-gcc
 
-tar xvf ~/Downloads/xpack-aarch64-none-elf-gcc-${ customField('upstreamVersion') }-${ customField('xpackSubversion') }-darwin-x64.tar.gz
-chmod -R -w xpack-aarch64-none-elf-gcc-${ customField('upstreamVersion') }-${ customField('xpackSubversion') }`
+tar xvf ~/Downloads/xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}-darwin-x64.tar.gz
+chmod -R -w xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}`
 } </CodeBlock>
 
 </TabItem>
@@ -590,9 +590,9 @@ The GNU/Linux versions of **xPack GNU AArch64 Embedded GCC**
 are packed as `.tar.gz` archives.
 Download the latest version named like:
 
-* <code>xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }-darwin-x64.tar.gz</code>
-* <code>xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }-darwin-arm64.tar.gz</code>
-* <code>xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }-darwin-arm.tar.gz</code>
+* <code>xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}-darwin-x64.tar.gz</code>
+* <code>xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}-darwin-arm64.tar.gz</code>
+* <code>xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}-darwin-arm.tar.gz</code>
 
 :::note
 
@@ -606,14 +606,14 @@ unpack the archive and move it to a location of your choice.
 
 The recommended location is
 the <code>~/.local/xPacks/aarch64-none-elf-gcc</code> folder, for
-example <code>/home/ilg/.local/xPacks/aarch64-none-elf-gcc/xpack-aarch64-none-elf-gcc-{ customField('upstreamVersion') }-{ customField('xpackSubversion') }</code>:
+example <code>/home/ilg/.local/xPacks/aarch64-none-elf-gcc/xpack-aarch64-none-elf-gcc-{customField('upstreamVersion')}-{customField('xpackSubversion')}</code>:
 
 <CodeBlock language="console"> {
 `mkdir -p ~/.local/xPacks/aarch64-none-elf-gcc
 cd ~/.local/xPacks/aarch64-none-elf-gcc
 
-tar xvf ~/Downloads/xpack-aarch64-none-elf-gcc-${ customField('upstreamVersion') }-${ customField('xpackSubversion') }-linux-x64.tar.gz
-chmod -R -w xpack-aarch64-none-elf-gcc-${ customField('upstreamVersion') }-${ customField('xpackSubversion') }`
+tar xvf ~/Downloads/xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}-linux-x64.tar.gz
+chmod -R -w xpack-aarch64-none-elf-gcc-${customField('upstreamVersion')}-${customField('xpackSubversion')}`
 } </CodeBlock>
 
 </TabItem>

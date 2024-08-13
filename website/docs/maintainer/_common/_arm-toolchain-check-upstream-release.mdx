@@ -33,13 +33,13 @@ Download the ABE manifest with the individual source URLs
 
 From the ABE manifest, identify the `gcc_url` and `gcc_filespec`,
 compose the url
-(like <code>{`https://developer.arm.com/-/media/Files/downloads/gnu/${ versionMajor() }.${ versionMinor() }.rel${ customField('armSubRelease')}/src/gcc.tar.xz`}</code>)
+(like <code>{`https://developer.arm.com/-/media/Files/downloads/gnu/${versionMajor()}.${versionMinor()}.rel${customField('armSubRelease')}/src/gcc.tar.xz`}</code>)
 and download the archive.
 
 To get the **newlib** version, check the manifest.txt; download the archive from:
 
 <ul>
-<li><a href={ `https://developer.arm.com/-/media/Files/downloads/gnu/${ versionMajor() }.${ versionMinor() }.rel${ customField('armSubRelease') }/src/newlib-cygwin.tar.xz `}>{ `https://developer.arm.com/-/media/Files/downloads/gnu/${ versionMajor() }.${ versionMinor() }.rel${ customField('armSubRelease') }/src/newlib-cygwin.tar.xz `}</a></li>
+<li><a href={`https://developer.arm.com/-/media/Files/downloads/gnu/${versionMajor()}.${versionMinor()}.rel${customField('armSubRelease')}/src/newlib-cygwin.tar.xz `}>{`https://developer.arm.com/-/media/Files/downloads/gnu/${versionMajor()}.${versionMinor()}.rel${customField('armSubRelease')}/src/newlib-cygwin.tar.xz `}</a></li>
 </ul>
 
 and search for `VERSION=` in `newlib/configure`.
