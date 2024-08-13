@@ -6,6 +6,9 @@
   },
   "xpack": {
     "minimumXpmRequired": "0.16.3",
+    "devDependencies": {
+      "@xpack-dev-tools/xbb-helper": "^3.0.7"
+    },
     "properties": {
       "appName": "GNU AArch64 Embedded GCC",
       "appLcName": "aarch64-none-elf-gcc",
