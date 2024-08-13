@@ -13,6 +13,7 @@
       "customFields": {
         "programName": "aarch64-none-elf-gcc",
         "branding": "aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) ",
+        "triplet": "aarch64-none-elf",
         "armSubRelease": "1",
         "gdbVersionMajor": "13",
         "binutilsVersionMajor": "2",
