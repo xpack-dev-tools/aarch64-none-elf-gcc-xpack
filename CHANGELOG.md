@@ -2,9 +2,26 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2024-08-15
+
+* 20a5abf website: durations update
+
+## 2024-08-14
+
+* 14d046e website updates
+* 5ed03f3 build-assets/package.json: bump deps
+* 9dbc508 website updates
+* 20b63e7 build-assets/package.json: update actions
+* 224107a website update
+* 550b54d package.json: .pre
+
 ## 2024-08-13
 
-* v13.3.1-1.1 prepared
+* 6fc50e5 website update
+* 9634998 build-assets/package.json: deps
+* 4f7e3e7 build-assets/package-lock.json update
+* c51796d website; re-generate commons
+* 1184157 prepare v13.3.1-1.1
 * fa8156c website update
 * c3e21ad add build-assets/extras/13.3.rel1
 * d2c20c5 website: `} </CodeBlock>
