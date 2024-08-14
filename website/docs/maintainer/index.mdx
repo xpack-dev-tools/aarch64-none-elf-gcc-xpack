@@ -21,6 +21,7 @@ import UpdateVersionSpecific from './_update-version-specific.mdx'
 import GitHubActionsDurations from './_github-actions-durations.mdx'
 import MoreTests from './_more-tests.mdx'
 import ShareCustom from './_share-custom.mdx'
+import FirstDevelopmentRun from './_first-development-run.mdx'
 import FirstProductionRun from './_first-production-run.mdx'
 import {developmentDurations} from './_development-durations.mdx'
 import Patches from './_patches.mdx'
@@ -128,6 +129,12 @@ In the `xpack-dev-tools/aarch64-none-elf-gcc-xpack` Git repo:
 - pull new changes
 - if necessary, merge the `website` branch
 
+:::caution
+
+This is really important, otherwise the next steps will build again the previous release!
+
+:::
+
 The `xpack` branch should be unchanged since the previous release
 and will be updated when the new release is out.
 
@@ -178,7 +185,6 @@ If the project uses `customFields` in `build-assets/package.json`
 - update the release specific properties (if any)
 - restart the local web server
 
-
 <UpdateVersionSpecific/>
 
 ### Fix possible open issues
@@ -196,7 +202,7 @@ and fix them; assign them to a milestone (like <code>{customField('upstreamVersi
 - add a new entry like _**\* v{customField('upstreamVersion')}-{customField('xpackSubversion')} prepared**_
 - commit with a message like _**prepare v{customField('upstreamVersion')}-{customField('xpackSubversion')}**_
 
-### Push the changes to Git
+### Push the changes to the `xpack-development` branch
 
 Be sure that the latest commit that updates `VERSION` is pushed
 to the `xpack-development` branch!
@@ -215,11 +221,13 @@ arm64 GNU/Linux, arm GNU/Linux, x64 macOS and arm64 macOS).
 
 Before the real build, run test builds on all platforms.
 
-### Visual Studio Code
+<FirstDevelopmentRun/>
+
+### Visual Studio Code extension
 
 All actions are defined as **xPack actions** and can be conveniently
 triggered via the VS Code graphical interface, using the
-[xPack extension](https://marketplace.visualstudio.com/items?itemName=ilg-vscode.xpack).
+[xPack C/C++ Managed Build Tools extension](https://marketplace.visualstudio.com/items?itemName=ilg-vscode.xpack).
 
 <Patches/>
 
@@ -236,6 +244,12 @@ machines:
 sudo systemctl restart docker
 ```
 
+### Check if both projects are pushed
+
+Check if both the current project and the helper are
+on the `xpack-development` branch and the latest
+commits are pushed to GitHub.
+
 ### Build the x64 macOS binaries
 
 For x64 macOS, first run the build on the development machine
@@ -246,7 +260,7 @@ export XBB_ENVIRONMENT_SKIP_CHECKS="y"
 ```
 
 ```sh
-rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/package-lock.json
+rm -f ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets/package-lock.json
 git -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git pull
 
 xpm run install -C ~/Work/xpack-dev-tools/aarch64-none-elf-gcc-xpack.git/build-assets
@@ -344,8 +358,11 @@ Copy the trees displayed at the end of the test builds and paste to
 
 - `website/docs/install/_miscellaneous.mdx`
 
-Replace **{customField('upstreamVersion')}** with
-`${customField('upstreamVersion')}`.
+Replace **{customField('upstreamVersion')}** with the following expression:
+
+```txt
+${customField('upstreamVersion')}
+```
 
 :::tip
 
@@ -360,6 +377,13 @@ via HomeBrew, and make a link to `/usr/local/bin`.
 Copy/paste the full list of links displayed at the end of the build, in
 sequence, for each platform (GNU/Linux, macOS, Windows), and check the
 differences compared to the repository.
+
+Commit if necessary.
+
+### Update the durations of the development builds
+
+In `website/docs/maintainer/_development-durations.mdx`, update
+the durations of the builds.
 
 Commit if necessary.
 
