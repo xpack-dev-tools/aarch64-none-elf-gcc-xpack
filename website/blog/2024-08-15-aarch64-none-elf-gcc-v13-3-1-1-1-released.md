@@ -26,7 +26,7 @@ download_url: https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/rele
 
 ---
 
-summary: "Version **13.3.1-1.1** is a new release; it follows the upstream Arm release."
+Version **13.3.1-1.1** is a new release; it follows the upstream Arm release. It also adds support for `ld.gold`.
 
 <!-- truncate -->
 
