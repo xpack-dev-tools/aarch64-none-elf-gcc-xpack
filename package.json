@@ -86,6 +86,7 @@
       "aarch64-none-elf-gprof": "./.content/bin/aarch64-none-elf-gprof",
       "aarch64-none-elf-ld": "./.content/bin/aarch64-none-elf-ld",
       "aarch64-none-elf-ld.bfd": "./.content/bin/aarch64-none-elf-ld.bfd",
+      "aarch64-none-elf-ld.gold": "./.content/bin/aarch64-none-elf-ld.gold",
       "aarch64-none-elf-lto-dump": "./.content/bin/aarch64-none-elf-lto-dump",
       "aarch64-none-elf-nm": "./.content/bin/aarch64-none-elf-nm",
       "aarch64-none-elf-objcopy": "./.content/bin/aarch64-none-elf-objcopy",
