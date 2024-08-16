@@ -5,19 +5,22 @@ import customField from '@site/src/libs/customField';
 
 ## Announce to the Arm community
 
-If released at the same time with GNU Arm Embedded GCC, anounce both
-in the same post.
+Add a new topic in the **Compilers and Libraries** forum of the
+[Arm Developer Community](https://community.arm.com/support-forums/f/compilers-and-libraries-forum).
 
-Otherwise add a new topic in the **Compilers and Libraries** forum of the
-[Arm Developer Community](https://community.arm.com/support-forums/f/compilers-and-libraries-forum)
+Click the **+ New** button:
 
-- title: xPack GNU AArch64 Embedded GCC v{customField('upstreamVersion')}-{customField('xpackSubversion')} released
-- content:
-  - The **xPack GNU AArch64 Embedded GCC** is an alternate binary distribution that complements the official GNU AArch64 Embedded Toolchain maintained by Arm.
-  - The latest release is [{customField('upstreamVersion')}-{customField('xpackSubversion')}](/blog/) following Arm release from DATE (version VERSION).
-- tags: xpack, gnu, gcc, arm, aarch64, toolchain
+- Title: **xPack GNU AArch64 Embedded GCC v{customField('upstreamVersion')}-{customField('xpackSubversion')} released**
+- Description; switch **Tools** -> **Source code**:
+
+<CodeBlock language="html"> {
+`<p>The <strong>xPack GNU AArch64 Embedded GCC</strong> package is part of the alternate xPack binary distribution that complements the official Arm GNU Toolchains maintained by Arm.</p>
+<p>The latest release is ${customField('upstreamVersion')}-${customField('xpackSubversion')} following Arm release ${customField('armMajorMinorRelease')}.rel${customField('armSubRelease')} from ${customField('armReleaseDate')}:</p>
+<ul>
+<li><a href="https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/tag/v${customField('upstreamVersion')}-${customField('xpackSubversion')}/" rel="noopener noreferrer" target="_blank">xPack GNU AArch64 Embedded GCC v${customField('upstreamVersion')}-${customField('xpackSubversion')}</a></li>
+</ul>
+`} </CodeBlock>
+
+- Tags: xpack, gnu, gcc, aarch64, toolchain
 
 NOTE: do not use markdown, but format the text with the blog editor.
-
-Update with actual details from
-[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/).

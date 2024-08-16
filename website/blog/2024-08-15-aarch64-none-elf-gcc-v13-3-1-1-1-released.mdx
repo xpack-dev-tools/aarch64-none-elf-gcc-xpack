@@ -106,40 +106,6 @@ ilp32;@mabi=ilp32
 
 Compared to the Arm version, there should be no functional changes.
 
-### XML parsing in GDB
-
-Some advanced GDB servers, like the one provided with SEGGER J-Link, are
-capable of passing an XML with the target capabilities to the GDB client.
-For unknown reasons, the Arm toolchain distribution came without XML
-parsing support. The xPack distribution brings back support for
-XML parsing and full integration with the SEGGER J-Link GDB server.
-
-### Python
-
-Support for Python scripting was added to GDB. This distribution provides
-a separate binary, `aarch64-none-elf-gdb-py3` with
-support for **Python {frontMatter.python_version}**.
-
-The Python 3 run-time is included, so GDB does not need any version of
-Python to be installed, and is insensitive to the presence of other
-versions.
-
-### Text User Interface (TUI)
-
-Support for TUI was added to GDB. The `ncurses` library was added to
-the distribution.
-
-:::note
-
-TUI is not available on Windows
-
-:::
-
-### No Guile
-
-Due to the difficulties of building standalone Guile libraries on all
-platforms, support for Guile scripting in GDB is currently not available.
-
 ## Bug fixes
 
 - none
@@ -154,8 +120,8 @@ platforms, support for Guile scripting in GDB is currently not available.
 
 ## Documentation
 
-The original GNU GCC documentation is available
-[online](https://gcc.gnu.org/onlinedocs/).
+The original GNU Arm Embedded GCC documentation is available from the
+[GCC online documentation](https://gcc.gnu.org/onlinedocs/) web site.
 
 ## Build
 
