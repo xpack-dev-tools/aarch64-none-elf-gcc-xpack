@@ -7,7 +7,7 @@
   "xpack": {
     "minimumXpmRequired": "0.16.3",
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^3.0.8"
+      "@xpack-dev-tools/xbb-helper": "^3.0.10"
     },
     "properties": {
       "appName": "GNU AArch64 Embedded GCC",
@@ -17,11 +17,15 @@
         "programName": "aarch64-none-elf-gcc",
         "branding": "aarch64-none-elf-gcc (xPack GNU AArch64 Embedded GCC x86_64) ",
         "triplet": "aarch64-none-elf",
+        "armMajorMinorRelease": "13.3",
         "armSubRelease": "1",
+        "armReleaseDate": "4 July, 2024",
         "gdbVersionMajor": "14",
         "gdbVersionMinor": "2",
         "binutilsVersionMajor": "2",
-        "binutilsVersionMinor": "42"
+        "binutilsVersionMinor": "42",
+        "pythonVersion": "3.11.4",
+        "newlibVersion": "4.4.0"
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
