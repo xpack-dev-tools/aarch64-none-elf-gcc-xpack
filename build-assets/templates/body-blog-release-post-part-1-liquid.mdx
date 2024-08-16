@@ -11,13 +11,14 @@ tags:
 
 # ----- Custom properties -----------------------------------------------------
 
-arm_version: "13.3.Rel1"
-arm_date: "4 July, 2024"
-gcc_version: "13.3.1"
-binutils_version: "2.42"
-gdb_version: "14.2"
-newlib_version: "4.4.0"
-python_version: "3.11.4"
+arm_version: "{{customFields.armMajorMinorRelease}}.Rel{{customFields.armSubRelease}}"
+arm_date: "{{customFields.armReleaseDate}}"
+
+gcc_version: "{{upstreamVersion}}"
+binutils_version: "{{customFields.binutilsVersionMajor}}.{{customFields.binutilsVersionMinor}}"
+gdb_version: "{{customFields.gdbVersionMajor}}.{{customFields.gdbVersionMinor}}"
+newlib_version: "{{customFields.newlibVersion}}"
+python_version: "{{customFields.pythonVersion}}"
 
 version: "{{ XBB_RELEASE_VERSION }}"
 npm_subversion: "1"
@@ -28,9 +29,9 @@ download_url: https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/rele
 
 TODO: select one summary
 
-summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fixes <...>."
+Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fixes ...
 
-summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream Arm release."
+Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream Arm release.
 
 <!-- truncate -->
 
@@ -60,19 +61,7 @@ armv6 is not supported).
 
 The binary files are available from <a href={frontMatter.download_url}>GitHub Releases</a>.
 
-## Prerequisites
-
-- x64 GNU/Linux: any system with **GLIBC 2.27** or higher
-  (like Ubuntu 18 or later, Debian 10 or later, RedHat 8 or later,
-  Fedora 29 or later, etc)
-- arm64/arm GNU/Linux: any system with **GLIBC 2.27** or higher
-  (like Raspberry Pi OS, Ubuntu 18 or later, Debian 10 or later, RedHat 8 or later,
-  Fedora 29 or later, etc)
-- x64 Windows: Windows 7 with the Universal C Runtime
-  ([UCRT](https://support.microsoft.com/en-us/topic/update-for-universal-c-runtime-in-windows-c0514201-7fe6-95a3-b0a5-287930f3560c)),
-  Windows 8, Windows 10
-- x64 macOS: 10.13 or later
-- arm64 macOS: 11.6 or later
+<Prerequisites/>
 
 ## Install
 
@@ -110,40 +99,6 @@ ilp32;@mabi=ilp32
 
 Compared to the Arm version, there should be no functional changes.
 
-### XML parsing in GDB
-
-Some advanced GDB servers, like the one provided with SEGGER J-Link, are
-capable of passing an XML with the target capabilities to the GDB client.
-For unknown reasons, the Arm toolchain distribution came without XML
-parsing support. The xPack distribution brings back support for
-XML parsing and full integration with the SEGGER J-Link GDB server.
-
-### Python
-
-Support for Python scripting was added to GDB. This distribution provides
-a separate binary, `aarch64-none-elf-gdb-py3` with
-support for **Python {frontMatter.python_version}**.
-
-The Python 3 run-time is included, so GDB does not need any version of
-Python to be installed, and is insensitive to the presence of other
-versions.
-
-### Text User Interface (TUI)
-
-Support for TUI was added to GDB. The `ncurses` library was added to
-the distribution.
-
-:::note
-
-TUI is not available on Windows
-
-:::
-
-### No Guile
-
-Due to the difficulties of building standalone Guile libraries on all
-platforms, support for Guile scripting in GDB is currently not available.
-
 ## Bug fixes
 
 - none
@@ -158,8 +113,8 @@ platforms, support for Guile scripting in GDB is currently not available.
 
 ## Documentation
 
-The original GNU GCC documentation is available
-[online](https://gcc.gnu.org/onlinedocs/).
+The original GNU Arm Embedded GCC documentation is available from the
+[GCC online documentation](https://gcc.gnu.org/onlinedocs/) web site.
 
 ## Build
 
