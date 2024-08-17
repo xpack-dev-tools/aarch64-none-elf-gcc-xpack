@@ -1,10 +1,10 @@
-![Github Releases (by Release)](https://img.shields.io/github/downloads/xpack-dev-tools/aarch64-none-elf-gcc-xpack/v{{ XBB_RELEASE_VERSION }}/total.svg)
+![Github Releases (by Release)](https://img.shields.io/github/downloads/xpack-dev-tools/aarch64-none-elf-gcc-xpack/v{{releaseVersion}}/total.svg)
 
-Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release of the **xPack GNU AArch64 Embedded GCC** package; it fixes <...>.
+TODO: select one
 
-Or (TODO: edit!):
+Version **{{releaseVersion}}** is a maintenance release of the **xPack GNU AArch64 Embedded GCC** package; it fixes ...
 
-Version **{{ XBB_RELEASE_VERSION }}** is a new release of the **xPack GNU AArch64 Embedded GCC** package, following the Arm [release](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/).
+Version **{{releaseVersion}}** is a new release of the **xPack GNU AArch64 Embedded GCC** package, following the Arm [release](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads/).
 
 [Continue reading »](will-be-updated-shortly)
 
