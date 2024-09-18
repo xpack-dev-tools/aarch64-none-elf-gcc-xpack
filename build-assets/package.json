@@ -19,7 +19,7 @@
         "triplet": "aarch64-none-elf",
         "armMajorMinorRelease": "13.3",
         "armSubRelease": "1",
-        "armReleaseDate": "4 July, 2024",
+        "armReleaseDate": "4 Jul 2024",
         "gdbVersionMajor": "14",
         "gdbVersionMinor": "2",
         "binutilsVersionMajor": "2",
