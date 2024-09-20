@@ -322,7 +322,7 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Pages',
           items: [
             {
               label: 'Install',
@@ -336,11 +336,19 @@ const config: Config = {
               label: 'Releases',
               to: '/docs/releases',
             },
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
           ],
         },
         {
           title: 'Community',
           items: [
+            {
+              label: 'GitHub Discussions',
+              href: 'https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/discussions',
+            },
             {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/xpack',
@@ -358,10 +366,6 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub aarch64-none-elf-gcc-xpack',
               href: 'https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/',
