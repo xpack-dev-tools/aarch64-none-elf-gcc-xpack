@@ -46,9 +46,5 @@
   "link.item.label.xpack-dev-tools": {
     "message": "xpack-dev-tools",
     "description": "The label of footer link with label=xpack-dev-tools linking to https://github.com/xpack-dev-tools/"
-  },
-  "copyright": {
-    "message": "Copyright © 2024 Liviu Ionescu. Built with Docusaurus.",
-    "description": "The footer copyright"
   }
 }

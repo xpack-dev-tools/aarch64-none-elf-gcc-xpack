@@ -377,7 +377,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Liviu Ionescu. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Liviu Ionescu. Built with Docusaurus ${getCustomFields().docusaurusVersion} on ${new Date().toDateString()}.`,
     },
     prism: {
       theme: prismThemes.github,
