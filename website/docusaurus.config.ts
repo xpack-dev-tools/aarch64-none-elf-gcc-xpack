@@ -367,6 +367,10 @@ const config: Config = {
           title: 'More',
           items: [
             {
+              label: 'Donate via PayPal',
+              href: 'https://www.paypal.com/donate/?hosted_button_id=5MFRG9ZRBETQ8',
+            },
+            {
               label: 'GitHub aarch64-none-elf-gcc-xpack',
               href: 'https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/',
             },
