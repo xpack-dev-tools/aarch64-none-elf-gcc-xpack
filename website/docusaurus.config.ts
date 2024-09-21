@@ -61,12 +61,12 @@ function getCustomFields() {
     upstreamVersion = xpackSemver;
   }
 
-  const websiteFilePath = path.join(path.dirname(path.dirname(pwd)), 'website', 'package.json');
-  // logger.info(filePath);
-  const websiteFileContent = fs.readFileSync(websiteFilePath);
-  const websitePackageJson = JSON.parse(websiteFileContent.toString());
+  // const websiteFilePath = path.join(path.dirname(path.dirname(pwd)), 'website', 'package.json');
+  // // logger.info(filePath);
+  // const websiteFileContent = fs.readFileSync(websiteFilePath);
+  // const websitePackageJson = JSON.parse(websiteFileContent.toString());
 
-  const docusaurusVersion = websitePackageJson.dependencies['@docusaurus/core'].replace ('^', '');
+  // const docusaurusVersion = websitePackageJson.dependencies['@docusaurus/core'].replace ('^', '');
 
   return {
     appName: rootPackageJson.xpack.properties.appName,
@@ -77,7 +77,8 @@ function getCustomFields() {
     xpackSubversion,
     npmSubversion,
     upstreamVersion,
-    docusaurusVersion,
+    docusaurusVersion: require('@docusaurus/core/package.json').version,
+    buildTime: new Date().getTime(),
     ...customFields,
   }
 }
@@ -385,7 +386,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Liviu Ionescu. Built with Docusaurus ${getCustomFields().docusaurusVersion} on ${new Date().toDateString()}.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Liviu Ionescu. Built with Docusaurus v${getCustomFields().docusaurusVersion} on ${new Date(getCustomFields().buildTime).toDateString()}.`,
     },
     prism: {
       theme: prismThemes.github,
