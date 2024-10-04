@@ -61,13 +61,6 @@ function getCustomFields() {
     upstreamVersion = xpackSemver;
   }
 
-  // const websiteFilePath = path.join(path.dirname(path.dirname(pwd)), 'website', 'package.json');
-  // // logger.info(filePath);
-  // const websiteFileContent = fs.readFileSync(websiteFilePath);
-  // const websitePackageJson = JSON.parse(websiteFileContent.toString());
-
-  // const docusaurusVersion = websitePackageJson.dependencies['@docusaurus/core'].replace ('^', '');
-
   return {
     appName: rootPackageJson.xpack.properties.appName,
     appLcName: rootPackageJson.xpack.properties.appLcName,
@@ -273,6 +266,10 @@ const config: Config = {
             {
               label: 'Releases',
               to: '/docs/releases'
+            },
+            {
+              label: 'About',
+              to: '/docs/about'
             }
           ]
         },
@@ -303,9 +300,9 @@ const config: Config = {
           'aria-label': 'GitHub repository',
         },
         {
-          label: `v${customFields.upstreamVersion}-${customFields.xpackSubversion}`,
+          label: `v${customFields.xpackVersion}`,
           position: 'right',
-          href: `https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/tag/v${customFields.upstreamVersion}-${customFields.xpackSubversion}`,
+          href: `https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/tag/v${customFields.xpackVersion}`,
         },
         {
           href: 'https://github.com/xpack-dev-tools/',
@@ -359,7 +356,7 @@ const config: Config = {
               href: 'https://discord.gg/kbzWaJerFG',
             },
             {
-              label: 'Twitter',
+              label: 'X/Twitter',
               href: 'https://twitter.com/xpack_project',
             },
           ],
@@ -386,7 +383,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Liviu Ionescu. Built with Docusaurus v${getCustomFields().docusaurusVersion} on ${new Date(getCustomFields().buildTime).toDateString()}.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Liviu Ionescu. Built with Docusaurus v${customFields.docusaurusVersion} on ${new Date(customFields.buildTime).toDateString()}.`,
     },
     prism: {
       theme: prismThemes.github,

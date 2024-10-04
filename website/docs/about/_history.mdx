@@ -1,0 +1,40 @@
+
+import HistoryXBBv5 from './_common/_history-xbb-v5.mdx'
+import HistoryRestructuring from './_common/_history-restructuring.mdx'
+
+{/* ------------------------------------------------------------------------ */}
+
+The project was created in **April 2022**,
+following Arm's reorganization of
+the [Arm GNU Toolchain](https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain)
+which resulted in a family of toolchains for bare metal AArch64 and AArch32 targets.
+
+The build scripts were initially a copy/paste of the
+[`arm-none-eabi-gcc-xpack`](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack) project.
+
+Both `aarch64-none-elf` and `arm-none-eabi` toolchains follow the Arm
+releases schedule (which are usually one major version behind the GNU releases),
+utilizing the same sources and similar build configurations as the
+official Arm releases. They are designed to be fully compatible
+with the official Arm GNU Toolchains.
+
+### May 2022
+
+The first **xPack GNU AArch64 Embedded GCC** release was
+[v11.2.1-1.1](/blog/2022/05/15/aarch64-none-elf-gcc-v11-2-1-1-1-released/).
+
+Support for  parsing XML files in GDB was added
+(in [v11.2.1-1.2](/blog/2022/05/31/aarch64-none-elf-gcc-v11-2-1-1-2-released/)).
+
+### December 2022
+
+<HistoryXBBv5/>
+
+### August 2024
+
+<HistoryRestructuring/>
+
+Support for `ld.gold` was added
+(in [v13.3.1-1.1](/blog/2024/08/15/aarch64-none-elf-gcc-v13-3-1-1-1-released/)).
+
+Support for TUI in GDB was added on Windows too (in [v13.3.1-1.1](/blog/2024/08/15/aarch64-none-elf-gcc-v13-3-1-1-1-released/)).
