@@ -7,8 +7,9 @@ date: 2020-09-28 17:49:00 +0300
 
 ---
 
-<details>
-<summary>Warum?</summary>
+import NixOs from './_common/_nixos.mdx'
+import FlatpackSnap from './_common/_flatpack-snap.mdx'
 
-Darum.
-</details>
+<NixOs />
+
+<FlatpackSnap />

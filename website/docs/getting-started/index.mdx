@@ -41,6 +41,33 @@ this project also includes the
 
 <UpgradeNotice/>
 
+## xPacks
+
+<details>
+<summary>What the heck are xPacks? Please, not yet another package format!</summary>
+
+**xPacks** are general purpose multi-version software packages.
+
+There are two types of xPacks:
+
+- **source xPacks** (that install source files, usually libraries) and
+- **binary xPacks** (that install executables/binary files, usually tools).
+
+The xPacks project **does NOT introduce a new package format**; instead,
+it uses **the same format as npm**. xPacks can be installed from the
+same repositories as npm packages, whether public or private. Additionally,
+binary xPacks include standard archives with the binaries, such as
+`.tar.gz` or `.zip` for Windows.
+
+
+xPacks are managed by **xpm** (the xPack Project Manager)
+which is built on top of **npm**, the
+popular JavaScript package manager. It extends npm with new
+language-neutral features.
+
+</details>
+
+
 ## Features
 
 All binaries are:
