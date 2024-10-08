@@ -29,11 +29,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/mosaic.svg').default,
     description: (
       <>
-        <b>Binary xPacks</b> are packages with executables.
-        By design, <b>multiple versions</b> of the same programs can be
-        installed at the same time on the same
-        system. The supported platforms are: <b>Windows</b>, <b>macOS</b>, <b>GNU/Linux</b>.
-        The packages include <b>all required libraries</b> and can be <b>installed in any folder</b>.
+        The <b>xPack Framework</b> aims to automate the installation of <b>multiple versions</b> of development tools that are otherwise not easily available in common software distributions, across multiple platforms (<b>Windows</b>, <b>macOS</b>, <b>GNU/Linux</b>).
       </>
     ),
   },
