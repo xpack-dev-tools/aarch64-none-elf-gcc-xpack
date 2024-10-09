@@ -135,12 +135,12 @@ If multiple binary packages are installed, in order to allow
 the executables to be accessed, one possible solution is to add
 all `<package>/.content/bin` folders to the `PATH`.
 
-To simplify things, **npm** employs a separate `node_modules/.bin` folder
+To simplify things, **npm** employs a separate `<project>/node_modules/.bin` folder
 where it places links/forwarders
 pointing to the actual executable files.
 
 Similarly, **xpm** adds links/forwarders into
-a separate `xpacks/.bin` folder.
+a separate `<project>/xpacks/.bin` folder.
 
 With this setup, the project needs to prepend only this `.bin` folder
 to the `PATH`, and all the required tools are accesible
