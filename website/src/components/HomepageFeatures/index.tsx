@@ -38,7 +38,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/check-badge.svg').default,
     description: (
       <>
-        The binary xPacks can be added to projects
+        The binary packages can be added to projects
         as <b>development dependencies</b>,
         and conveniently installed with <code>xpm install</code>.
         This feature also ensures reproducibility, which is particularly
