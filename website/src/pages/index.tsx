@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout 
       title={`Hello from xPack Binary Development Tools`}
-      description="A binary package with the GNU AArch64 Embedded GCC executables">
+      description="A binary package with the aarch64-none-elf-gcc executables">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
