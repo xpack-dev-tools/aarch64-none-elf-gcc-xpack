@@ -42,8 +42,8 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout 
-      title={`Hello from xPack Binary Development Tools`}
-      description="A binary package with the GNU AArch64 Embedded GCC executables">
+      title={`Hello from aarch64-none-elf-gcc`}
+      description="A binary package with the aarch64-none-elf-gcc executables">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

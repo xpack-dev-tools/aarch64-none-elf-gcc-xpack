@@ -4,7 +4,7 @@
 # Automatically generated from xbb-helper/templates/docusaurus/common.
 
 title: Releases of aarch64-none-elf-gcc
-description: List of releases
+description: The full list of project releases.
 keywords:
   - xpack
   - aarch64-none-elf-gcc
