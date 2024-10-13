@@ -241,7 +241,6 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: {
-        'data-rh': 'true',
         rel: 'icon',
         type: 'image/png',
         href: '/aarch64-none-elf-gcc/favicons/favicon-48x48.png',
@@ -251,7 +250,6 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: {
-        'data-rh': 'true',
         rel: 'icon',
         type: 'image/svg+xml',
         href: '/aarch64-none-elf-gcc/favicons/favicon.svg'
@@ -260,7 +258,6 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: {
-        'data-rh': 'true',
         rel: 'shortcut icon',
         href: '/aarch64-none-elf-gcc/favicons/favicon.ico'
       }
@@ -276,7 +273,6 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: {
-        'data-rh': 'true',
         rel: 'manifest',
         href: '/aarch64-none-elf-gcc/favicons/site.webmanifest'
       }
