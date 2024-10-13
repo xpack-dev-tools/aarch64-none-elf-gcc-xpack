@@ -82,7 +82,8 @@ logger.info(customFields);
 const config: Config = {
   title: 'xPack GNU AArch64 Embedded GCC',
   tagline: 'A binary distribution of GNU AArch64 Embedded GCC',
-  favicon: 'img/favicon.ico',
+  // Explicitly set in headTags.
+  // favicon: '/img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://xpack-dev-tools.github.io',
@@ -235,9 +236,62 @@ const config: Config = {
     './src/plugins/SelectReleasesPlugin',
   ],
 
+  // https://docusaurus.io/docs/api/docusaurus-config#headTags
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        'data-rh': 'true',
+        rel: 'icon',
+        type: 'image/png',
+        href: '/aarch64-none-elf-gcc/favicons/favicon-48x48.png',
+        sizes: '48x48'
+      }
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        'data-rh': 'true',
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: '/aarch64-none-elf-gcc/favicons/favicon.svg'
+      }
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        'data-rh': 'true',
+        rel: 'shortcut icon',
+        href: '/aarch64-none-elf-gcc/favicons/favicon.ico'
+      }
+    },
+    {
+      // This might also go to themeConfig.metadata.
+      tagName: 'meta',
+      attributes: {
+        name: 'apple-mobile-web-app-title',
+        content: 'xPack'
+      }
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        'data-rh': 'true',
+        rel: 'manifest',
+        href: '/aarch64-none-elf-gcc/favicons/site.webmanifest'
+      }
+    }
+  ],
+  // https://docusaurus.io/docs/seo
   themeConfig: {
     // Replace with your project's social card
     // image: 'img/docusaurus-social-card.jpg',
+    metadata: [
+      {
+        name: 'keywords',
+        content: 'xpack, binary, development, tools, aarch64-none-elf-gcc'
+      }
+    ],
     navbar: {
        // overriden by i18n/en/docusaurus-theme-classic.
       title: 'The xPack Binary Development Tools',
