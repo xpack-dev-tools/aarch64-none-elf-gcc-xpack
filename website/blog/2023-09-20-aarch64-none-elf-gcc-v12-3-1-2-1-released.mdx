@@ -1,5 +1,6 @@
 ---
 title: xPack GNU AArch64 Embedded GCC v12.3.1-2.1 released
+seo_title: Version 12.3.1-2.1 released
 description: Version 12.3.1-2.1 is a maintenance release of xPack GNU AArch64 Embedded GCC.
 keywords:
   - xpack
@@ -31,17 +32,15 @@ download_url: https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/rele
 
 ---
 
-<head>
-  <title>{frontMatter.title}</title>
-  <meta property="og:title" content={frontMatter.title} />
-</head>
+import {PageMetadata} from '@docusaurus/theme-common';
+import Image from '@theme/IdealImage';
+import CodeBlock from '@theme/CodeBlock';
 
 Version **12.3.1-2.1** is a maintenance release; it fixes the GNU/Linux GDB issues with loading ELF files.
 
 <!-- truncate -->
 
-import Image from '@theme/IdealImage';
-import CodeBlock from '@theme/CodeBlock';
+<PageMetadata title={frontMatter.seo_title} />
 
 The [xPack GNU AArch64 Embedded GCC](https://xpack-dev-tools.github.io/aarch64-none-elf-gcc-xpack/)
 is a standalone cross-platform binary distribution of
