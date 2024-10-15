@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout 
-      title={`Welcome to aarch64-none-elf-gcc`}
+      title="Welcome!"
       description="A binary package with the aarch64-none-elf-gcc executables">
       <HomepageHeader />
       <main>
