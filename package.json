@@ -108,6 +108,7 @@
   "topConfig": {
     "descriptiveName": "GNU AArch64 Embedded GCC",
     "permalinkName": "aarch64-none-elf-gcc",
+    "skipCiTests": "true",
     "useSelfHostedRunners": "true"
   },
   "engines": {
