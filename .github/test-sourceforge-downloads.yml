@@ -41,23 +41,12 @@
             # The script is in the xbb-helper-xpack repo.
             source maintenance-scripts/download-sourceforge-source.sh
 
-            function download_sourceforge_2025_no_darwin()
-            {
-              local name="$1"
-              local version="$2"
-              local threshold=$3
-
-              download_sourceforge_one "${name}" "${version}" "win32-x64" ${threshold}
-              download_sourceforge_one "${name}" "${version}" "linux-x64" ${threshold}
-              download_sourceforge_one "${name}" "${version}" "linux-arm64" ${threshold}
-            }
-
             date
 
             # https://sourceforge.net/projects/aarch64-none-elf-gcc-xpack/files/
             name="aarch64-none-elf-gcc"
             threshold=00000
-            
+
             download_sourceforge_2025 "${name}" "14.2.1-1.1"  ${threshold}
 
             download_sourceforge_2023 "${name}" "13.3.1-1.1"  ${threshold}
