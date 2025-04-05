@@ -45,7 +45,7 @@
 
             # https://sourceforge.net/projects/aarch64-none-elf-gcc-xpack/files/
             name="aarch64-none-elf-gcc"
-            threshold=00000
+            threshold=16383 # (50%)
 
             download_sourceforge_2025 "${name}" "14.2.1-1.1"  ${threshold}
 
