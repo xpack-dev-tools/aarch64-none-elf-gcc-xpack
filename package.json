@@ -101,17 +101,18 @@
     }
   },
   "devDependencies": {
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "json": "^11.0.0",
-    "liquidjs": "^10.19.1"
+    "liquidjs": "^10.23.0"
   },
   "topConfig": {
-    "descriptiveName": "GNU AArch64 Embedded GCC",
+    "descriptiveName": "xPack GNU AArch64 Embedded GCC",
+    "upstreamDescriptiveName": "GNU AArch64 Embedded GCC",
     "permalinkName": "aarch64-none-elf-gcc",
     "skipCiTests": "true",
     "useSelfHostedRunners": "true"
   },
   "engines": {
-    "node": " >=18.0.0"
+    "node": " >=20.0"
   }
 }
