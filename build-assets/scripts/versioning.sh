@@ -75,7 +75,7 @@ function application_build_versioned_components()
       # https://github.com/xpack-dev-tools/binutils-gdb/tags
 
       XBB_BINUTILS_VERSION="2.45"
-      XBB_BINUTILS_TAG_NAME="binutils-${XBB_BINUTILS_VERSION}-arm-none-eabi-${XBB_ARM_RELEASE}"
+      XBB_BINUTILS_TAG_NAME="binutils-${XBB_BINUTILS_VERSION}-aarch64-none-elf-${XBB_ARM_RELEASE}"
 
       XBB_BINUTILS_SRC_FOLDER_NAME="binutils-gdb-${XBB_BINUTILS_TAG_NAME}"
       XBB_BINUTILS_ARCHIVE_NAME="${XBB_BINUTILS_TAG_NAME}.tar.gz"
@@ -95,7 +95,7 @@ function application_build_versioned_components()
 
       # From `gdb/version.in`
       XBB_GDB_VERSION="16.3"
-      XBB_GDB_TAG_NAME="gdb-16-arm-none-eabi-${XBB_ARM_RELEASE}"
+      XBB_GDB_TAG_NAME="gdb-16-aarch64-none-elf-${XBB_ARM_RELEASE}"
 
       XBB_GDB_SRC_FOLDER_NAME="binutils-gdb-${XBB_GDB_TAG_NAME}"
       XBB_GDB_ARCHIVE_NAME="${XBB_GDB_TAG_NAME}.tar.gz"
