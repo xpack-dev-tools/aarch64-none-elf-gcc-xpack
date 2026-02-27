@@ -2,8 +2,15 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2026-02-27
+
+* f1f5c19 website: update folder hierarchies
+* 6b327d1 website: update development durations
+
 ## 2026-02-26
 
+* 67d0d0f versioning.sh: fix binutils & gdb tags
+* eedefb0 prepare v15.2.1-1.1
 * e358558 re-generate website commons
 * 7da67ac re-generate website commons
 * df7dfcf copyright updates
