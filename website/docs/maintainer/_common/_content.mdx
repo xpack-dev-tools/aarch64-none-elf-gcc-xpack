@@ -255,11 +255,11 @@ caffeinate ssh xbbli
 
 ### Build the ARM64 GNU/Linux binaries
 
-Execute the Docker build on the production machine (`ampere`);
+Execute the Docker build on the production machine (`berry5`);
 start a VS Code remote session, or connect with a terminal:
 
 ```sh
-caffeinate ssh ampere
+caffeinate ssh berry5
 ```
 
 <CommonPlatformDockerBuild platform="linux-arm64"/>
@@ -355,13 +355,13 @@ is available in the `xbb-helper` and
 requires `GITHUB_API_XPACK_DEV_TOOLS_RUNNERS_TOKEN` to be present.
 
 - On the development machine (`wksi`) open
-SSH sessions to the build machines (`xbbli`, `xbbmi`, `xbbma`, `ampere`):
+SSH sessions to the build machines (`xbbli`, `xbbmi`, `xbbma`, `berry5`):
 
 ```sh
 caffeinate ssh xbbli
 caffeinate ssh xbbmi
 caffeinate ssh xbbma
-caffeinate ssh ampere
+caffeinate ssh berry5
 ```
 
 Create a `screen` session, to provide a persistent standard output for
@@ -373,7 +373,7 @@ screen -S ga
 
 To exit it, use `# Ctrl-a Ctrl-d`.
 
-For `xbbli` & `ampere`, which have additional memory, start two runners:
+For `xbbli` & `berry5`, which have additional memory, start two runners:
 
 ```sh
 ~/actions-runners/xpack-dev-tools/1/run.sh &
