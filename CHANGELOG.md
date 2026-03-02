@@ -4,6 +4,7 @@ Entries in this file are in reverse chronological order.
 
 ## 2026-03-02
 
+* v15.2.1-1.1.1 published on npmjs.com
 * v15.2.1-1.1 released
 * 2111211 website: update actions durations
 * bc0ddaa package.json bump helper
