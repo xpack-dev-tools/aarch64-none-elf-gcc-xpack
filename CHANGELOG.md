@@ -2,8 +2,22 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2026-03-02
+
+* v15.2.1-1.1 released
+* 2111211 website: update actions durations
+* bc0ddaa package.json bump helper
+* 8132b47 package.json bump helper
+
+## 2026-03-01
+
+* 0069f32 website maintainer update
+* 9ce6c72 package.json bump helper
+
 ## 2026-02-27
 
+* 526c991 re-generate top commons
+* 6c89d80 CHANGELOG update
 * f1f5c19 website: update folder hierarchies
 * 6b327d1 website: update development durations
 
