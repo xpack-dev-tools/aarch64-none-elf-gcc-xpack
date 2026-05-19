@@ -1,0 +1,8 @@
+{
+  "descriptiveName": "xPack GNU AArch64 Embedded GCC",
+  "permalinkName": "aarch64-none-elf-gcc",
+  "preferredName": "xPack GNU AArch64 Embedded GCC",
+  "upstreamDescriptiveName": "GNU AArch64 Embedded GCC",
+  "skipCiTests": true,
+  "useSelfHostedRunners": true
+}
