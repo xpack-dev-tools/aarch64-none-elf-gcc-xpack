@@ -18,7 +18,8 @@ For information on how to install and use this project, please refer to the
 ## Project source
 
 The source code of the current release is available on
-[GitHub tag v15.2.1-1.1.1 tree](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/tree/v15.2.1-1.1.1).
+GitHub as [xpack-dev-tools/aarch64-none-elf-gcc-xpack](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack),
+the [v15.2.1-1.1.1](https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/tree/v15.2.1-1.1.1) tree.
 
 ## License
 
